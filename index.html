@@ -205,9 +205,32 @@ text-decoration:none;
     justify-content: center;
     gap: 20px;
 }
-
 .card{
     text-align: center;
+}
+  .search-box {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-box input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    background: #004d99;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #003366;
 }
 </style>
 <style>
@@ -228,7 +251,10 @@ text-decoration:none;
  <button>አማርኛ</button>
 <button>English</button>
 </header>
-
+<div class="search-box">
+    <input type="text" placeholder="Search services...">
+    <button>Search</button>
+</div>
 <div class="container">
 
 <div class="card">
