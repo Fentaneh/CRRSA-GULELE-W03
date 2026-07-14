@@ -502,5 +502,22 @@ function setLanguage(lang) {
 
 }
 </script>
+ <script>
+function searchService() {
+    let text = document.getElementById("searchInput").value.toLowerCase();
+
+    if (text.includes("resident")) {
+        window.location.href = "resident.html";
+    } else if (text.includes("vital")) {
+        window.location.href = "vital-events.html";
+    } else if (text.includes("printing")) {
+        window.location.href = "printing.html";
+    } else if (text.includes("remark")) {
+        window.location.href = "remark.html";
+    } else {
+        alert("Service not found.");
+    }
+}
+</script>
 </body>
 </html>
