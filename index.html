@@ -231,184 +231,161 @@ text-decoration:none;
     margin: 20px 0;
 }
 </style>
-<style>
- .welcome {
-    background: #ffffff;
-    width: 80%;
-    margin: 30px auto;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    text-align: center;
-}
+<<style>
 
-.welcome h2 {
-    color: #0056b3;
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-.welcome p {
-    color: #333;
-    font-size: 20px;
-    line-height: 1.8;
-}
-}
- .search-box {
-    display: block;
-    text-align: center;
-    margin: 20px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;700;800&display=swap');
 
-.search-box input {
-    display: inline-block;
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-}
 
-.search-box button {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #004d99;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-.services {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 30px;
-}
-
-.card {
-    width: 220px;
-    padding: 20px;
-    text-align: center;
-    background: #f4f4f4;
-    border-radius: 10px;
-}
-
-.card h3 {
-    color: #004d99;
-}
-
-.card button {
-    background: #004d99;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-}
- @media screen and (max-width: 600px) {
-
-    header h1 {
-        font-size: 24px;
-    }
-
-    header p {
-        font-size: 14px;
-    }
-
-    .services {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 85%;
-    }
-
-    button {
-        width: 80%;
-    }
-
-}
- #contact-form{
+body{
+    font-family:'Noto Sans Ethiopic', Arial, sans-serif;
+    margin:0;
+    background:#f7f9fc;
+    color:#333;
     text-align:center;
-    margin:40px;
 }
 
-#contact-form input,
-#contact-form textarea{
-    width:60%;
-    padding:10px;
-    border:1px solid #ccc;
-    border-radius:5px;
+
+/* Header */
+
+header{
+    background:linear-gradient(135deg,#004d99,#0073e6);
+    color:white;
+    padding:35px 20px;
 }
 
-#contact-form textarea{
+
+header img{
+    width:120px;
     height:120px;
+    object-fit:contain;
+    border-radius:15px;
 }
 
-#contact-form button{
+
+header h1{
+    font-size:32px;
+    font-weight:800;
+}
+
+
+header p{
+    font-size:18px;
+}
+
+
+
+/* Search */
+
+.search-box{
+    margin:25px auto;
+}
+
+
+.search-box input{
+    width:300px;
+    padding:12px;
+    border-radius:25px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+
+.search-box button{
+    padding:12px 25px;
+    border-radius:25px;
     background:#004d99;
     color:white;
     border:none;
-    padding:10px 20px;
-    border-radius:5px;
-}
- #map{
-    margin:40px;
-    text-align:center;
+    cursor:pointer;
 }
 
-#map iframe{
-    border-radius:10px;
-}
- nav{
-    background:#004d99;
-    padding:15px;
-}
 
-nav ul{
-    list-style:none;
-    margin:0;
-    padding:0;
+
+/* Services */
+
+.services{
     display:flex;
     justify-content:center;
+    gap:25px;
     flex-wrap:wrap;
+    margin:30px;
 }
 
-nav li{
-    margin:8px 15px;
-}
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:16px;
-}
-
-nav a:hover{
-    color:yellow;
-}
- footer {
-    background: #004d99;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-}
- button{
-    background:#004d99;
-    color:white;
-    border:none;
-    border-radius:6px;
-    padding:10px 20px;
-    cursor:pointer;
-    font-size:16px;
+.card{
+    width:250px;
+    padding:25px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
     transition:0.3s;
 }
 
-button:hover{
-    background:#0066cc;
-    transform:scale(1.05);
+
+.card:hover{
+    transform:translateY(-8px);
 }
-</style> 
+
+
+.card h3{
+    color:#004d99;
+    font-size:22px;
+}
+
+
+.card p{
+    line-height:1.8;
+    font-size:16px;
+}
+
+
+.card button{
+    background:#004d99;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:25px;
+    cursor:pointer;
+}
+
+
+.card button:hover{
+    background:#0066cc;
+}
+
+
+
+/* Footer */
+
+footer{
+    background:#004d99;
+    color:white;
+    padding:20px;
+    margin-top:40px;
+}
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.search-box input{
+    width:80%;
+}
+
+
+.card{
+    width:85%;
+}
+
+
+header h1{
+    font-size:24px;
+}
+
+}
+
+</style>
 </head>
 <body>
 </header>
