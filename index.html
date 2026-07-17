@@ -759,6 +759,19 @@ document.getElementById("welcomeText").innerHTML="Civil Registration and Residen
 }
 
 }
+ window.onload = function(){
+
+const lang = localStorage.getItem("language");
+
+if(lang){
+
+document.getElementById("language").value = lang;
+
+changeLanguage();
+
+}
+
+}
 </script>
 </body>
 </html>
