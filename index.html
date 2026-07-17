@@ -400,6 +400,24 @@ nav ul li a:hover{
     background:#0066cc;
     color:#fff;
 }
+ .language-box{
+    text-align:right;
+    margin:15px 30px;
+}
+
+.language-box label{
+    font-size:18px;
+    font-weight:bold;
+    color:#004d99;
+}
+
+.language-box select{
+    padding:8px 12px;
+    font-size:16px;
+    border:2px solid #004d99;
+    border-radius:6px;
+    cursor:pointer;
+}
  /* Welcome Section */
 
 .welcome{
@@ -486,7 +504,15 @@ header h1{
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
- 
+ <div class="language-box">
+    <label for="language"><strong>🌐 Language:</strong></label>
+
+    <select id="language" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="am">አማርኛ</option>
+        <option value="om">Afaan Oromoo</option>
+    </select>
+</div>
 <section class="welcome">
 
     <h2>Welcome to CRRSA Gulele Woreda 03 Office</h2>
