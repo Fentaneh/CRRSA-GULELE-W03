@@ -113,25 +113,25 @@ footer{
 
 <h2>የነዋሪነት አገልግሎት</h2>
 
-<button onclick="location.href='resident-id.html'">
+<button id="btnResidentId" onclick="location.href='resident-id.html'">
 Resident (መታወቂያ)
 </button>
 
-<button onclick="location.href='resident-service.html'">
+<button id="btnResidentService" onclick="location.href='resident-service.html'">
 Resident Service (የነዋሪነት)
 </button>
 
-<button onclick="location.href='proof-of-life.html'">
+<button id="btnProofLife" onclick="location.href='proof-of-life.html'">
 Proof of Life (በሕይወት መኖር)
 </button>
 
-<button onclick="location.href='single-status.html'">
+<button id="btnSingleStatus" onclick="location.href='single-status.html'">
 Single Status (ያላገባ)
 </button>
-    
-<button onclick="location.href='transfer-letter.html'">
-transfer-lette (መሸኛ)
-</button>    
+
+<button id="btnTransfer" onclick="location.href='transfer-letter.html'">
+Transfer Letter (መሸኛ)
+</button>
 
 </div>
 <section class="requirements">
@@ -198,11 +198,6 @@ transfer-lette (መሸኛ)
 <footer>
 © 2026 CRRSA Gulele Woreda 03. All Rights Reserved.  Crated by Fentaneh.D
 </footer>
-...
-<footer>
-    <p>&copy; 2026 CRRSA Gulele Woreda 03</p>
-</footer>
-
 <script>
 
 function changeLanguage(){
@@ -232,6 +227,44 @@ document.title="Resident Service";
 
 }
 
+function changeLanguage(){
+
+    let lang = document.getElementById("language").value;
+
+    if(lang=="am"){
+
+  document.getElementById("btnResidentId").innerHTML="መታወቂያ";
+document.getElementById("btnResidentService").innerHTML="የነዋሪነት አገልግሎት";
+document.getElementById("btnProofLife").innerHTML="በሕይወት መኖር";
+document.getElementById("btnSingleStatus").innerHTML="ያላገባ";
+document.getElementById("btnTransfer").innerHTML="መሸኛ";
+
+    }
+
+    else if(lang=="om"){
+document.getElementById("btnResidentId").innerHTML="Eenyummaa";
+document.getElementById("btnResidentService").innerHTML="Tajaajila Jiraattotaa";
+document.getElementById("btnProofLife").innerHTML="Ragaa Jireenyaa";
+document.getElementById("btnSingleStatus").innerHTML="Kan Hin Fuune";
+document.getElementById("btnTransfer").innerHTML="Xalayaa Dabarsaa";
+    }
+
+    else{
+
+      document.getElementById("btnResidentId").innerHTML="Resident ID";
+document.getElementById("btnResidentService").innerHTML="Resident Service";
+document.getElementById("btnProofLife").innerHTML="Proof of Life";
+document.getElementById("btnSingleStatus").innerHTML="Single Status";
+document.getElementById("btnTransfer").innerHTML="Transfer Letter";
+
+    }
+
+}   <!-- ይህ የfunction መዝጊያ } ነው -->
+
+</script>
+
+</body>
+</html>
 
 </script>
 
