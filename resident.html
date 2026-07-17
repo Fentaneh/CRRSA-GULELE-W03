@@ -260,7 +260,12 @@ document.getElementById("btnTransfer").innerHTML="Transfer Letter";
     }
 
 }   <!-- ይህ የfunction መዝጊያ } ነው -->
-if(lang=="am"){
+
+function changeLanguage(){
+
+    let lang = document.getElementById("language").value;
+
+   if(lang=="am"){
 
 document.getElementById("officeTitle").innerHTML =
 "የአዲስ አበባ ሲቪል ምዝገባና ነዋሪነት አገልግሎት ጉለሌ ወረዳ 03";
@@ -278,6 +283,9 @@ else{
 
 document.getElementById("officeTitle").innerHTML =
 "AACRRSA Woreda 03";
+
+    }
+    
 }
 </script>
 
