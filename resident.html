@@ -99,7 +99,7 @@ footer{
 <header>
 <img src="logo.png">
 <h1>AACRRSA Woreda 03</h1>
-<p>Resident Service</p>
+<p id="residentTitle">Resident Service</p>
 </header>
 <div class="box">
 
@@ -190,6 +190,44 @@ transfer-lette (መሸኛ)
 <footer>
 © 2026 CRRSA Gulele Woreda 03. All Rights Reserved.  Crated by Fentaneh.D
 </footer>
+...
+<footer>
+    <p>&copy; 2026 CRRSA Gulele Woreda 03</p>
+</footer>
 
+<script>
+
+function changeLanguage(){
+
+let lang=document.getElementById("language").value;
+
+if(lang=="am"){
+
+document.getElementById("residentTitle").innerHTML="የነዋሪነት አገልግሎት";
+document.title="የነዋሪነት አገልግሎት";
+
+}
+
+else if(lang=="om"){
+
+document.getElementById("residentTitle").innerHTML="Tajaajila Jiraattotaa";
+document.title="Tajaajila Jiraattotaa";
+
+}
+
+else{
+
+document.getElementById("residentTitle").innerHTML="Resident Service";
+document.title="Resident Service";
+
+}
+
+}
+
+
+</script>
+
+</body>
+</html>
 </body>
 </html>
