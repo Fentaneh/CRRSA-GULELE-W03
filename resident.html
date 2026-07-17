@@ -106,7 +106,7 @@ footer{
         <option value="om">Afaan Oromoo</option>
     </select>
 <img src="logo.png">
-<h1>AACRRSA Woreda 03</h1>
+<h1 id="officeTitle">AACRRSA Gulele Woreda 03</h1>
 <p id="residentTitle">Resident Service</p>
 </header>
 <div class="box">
@@ -260,7 +260,25 @@ document.getElementById("btnTransfer").innerHTML="Transfer Letter";
     }
 
 }   <!-- ይህ የfunction መዝጊያ } ነው -->
+if(lang=="am"){
 
+document.getElementById("officeTitle").innerHTML =
+"የአዲስ አበባ ሲቪል ምዝገባና ነዋሪነት አገልግሎት ጉለሌ ወረዳ 03";
+
+}
+
+else if(lang=="om"){
+
+document.getElementById("officeTitle").innerHTML =
+"AACRRSA Aanaa Gulleellee 03";
+
+}
+
+else{
+
+document.getElementById("officeTitle").innerHTML =
+"AACRRSA Woreda 03";
+}
 </script>
 
 </body>
