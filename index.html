@@ -708,26 +708,57 @@ function searchService() {
 <p>© 2026 CRRSA Gulele Woreda 03. All Rights Reserved.</p>
 
 </footer>
- <script>
-
+<script>
 function changeLanguage(){
 
-let lang = document.getElementById("language").value;
+const lang = document.getElementById("language").value;
 
 if(lang=="am"){
-alert("አማርኛ ተመርጧል");
+
+document.getElementById("navHome").innerHTML="መነሻ";
+document.getElementById("navResident").innerHTML="የነዋሪነት";
+document.getElementById("navVital").innerHTML="የሲቪል ምዝገባ";
+document.getElementById("navPrinting").innerHTML="ህትመት";
+document.getElementById("navRemark").innerHTML="ማስተካከያ";
+document.getElementById("navContact").innerHTML="አድራሻ";
+
+document.getElementById("welcomeTitle").innerHTML="እንኳን ወደ ጉለሌ ወረዳ 03 የሲቪል ምዝገባ እና የነዋሪነት አገልግሎት ጽ/ቤት በደህና መጡ!!";
+
+document.getElementById("welcomeText").innerHTML="የሲቪል ምዝገባ እና የነዋሪነት አገልግሎት ጽ/ቤት ለህብረተሰቡ የልደት፣ የጋብቻ፣ የፍቺ፣ የሞት፣ የነዋሪነት፣ የህትመት እና ሌሎች አገልግሎቶችን ይሰጣል።";
+
 }
 
 else if(lang=="om"){
-alert("Afaan Oromoo filatameera");
+
+document.getElementById("navHome").innerHTML="Mana";
+document.getElementById("navResident").innerHTML="Tajaajila Jiraattotaa";
+document.getElementById("navVital").innerHTML="Galmee Sivilii";
+document.getElementById("navPrinting").innerHTML="Maxxansaa";
+document.getElementById("navRemark").innerHTML="Fooyya'iinsa";
+document.getElementById("navContact").innerHTML="Qunnamtii";
+
+document.getElementById("welcomeTitle").innerHTML="Baga Nagaan Gara Waajjira CRRSA Aanaa Gullallee 03 Dhuftan!";
+
+document.getElementById("welcomeText").innerHTML="Waajjirri kun tajaajila galmee dhalootaa, gaa'elaa, hiikkaa gaa'elaa, du'aa fi tajaajila jiraattotaa kenna.";
+
 }
 
 else{
-alert("English Selected");
-}
+
+document.getElementById("navHome").innerHTML="Home";
+document.getElementById("navResident").innerHTML="Resident";
+document.getElementById("navVital").innerHTML="Vital Events";
+document.getElementById("navPrinting").innerHTML="Printing";
+document.getElementById("navRemark").innerHTML="Remark";
+document.getElementById("navContact").innerHTML="Contact";
+
+document.getElementById("welcomeTitle").innerHTML="Welcome to CRRSA Gulele Woreda 03";
+
+document.getElementById("welcomeText").innerHTML="Civil Registration and Residency Service Office provides Birth Registration, Marriage Registration, Divorce Registration, Death Registration, Resident Services, Printing Services, Remark Services and other public services.";
 
 }
 
+}
 </script>
 </body>
 </html>
