@@ -96,7 +96,15 @@ footer{
 </head>
 <body>
 
-<header>
+<header> 
+    <div class="language-box">
+    <label for="language"><strong>🌐 Language:</strong></label>
+
+    <select id="language" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="am">አማርኛ</option>
+        <option value="om">Afaan Oromoo</option>
+    </select>
 <img src="logo.png">
 <h1>AACRRSA Woreda 03</h1>
 <p id="residentTitle">Resident Service</p>
