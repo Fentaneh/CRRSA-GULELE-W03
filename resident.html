@@ -170,15 +170,18 @@ Transfer Letter (መሸኛ)
 
 <h2 id="lostHeading">የጠፋ መታወቂያ</h2>
 
-<p>
-መታወቂያ የጠፋበት ነዋሪ በወረዳው ጽ/ቤት በአካል ቀርቦ የቀድሞ መታወቂያውን
-መረጃዎች በመጥቀስ ማመልከት አለበት።
+<p id="lostDescription">
+መታወቂያ የጠፋበት ነዋሪ በወረዳው ጽ/ቤት በአካል ቀርቦ
+የቀድሞ መታወቂያውን መረጃዎች በመጥቀስ ማመልከት አለበት።
 </p>
 
 <ul>
-<li>ነዋሪ መሆኑ በወረዳው ከተረጋገጠ በኋላ ለሚመለከተው የፖሊስ ጣቢያ ደብዳቤ ይጻፍለታል።</li>
-
-<li>ከፖሊስ ጣቢያ የጠፋ መታወቂያ ማስረጃ ይዞ ሲቀርብ በምትኩ አዲስ መታወቂያ ይሰጠዋል።</li>
+<li id="lostItem1">
+ነዋሪ መሆኑ በወረዳው ከተረጋገጠ በኋላ ለሚመለከተው የፖሊስ ጣቢያ ደብዳቤ ይጻፍለታል።
+</li>
+<li id="lostItem2">
+ከፖሊስ ጣቢያ የጠፋ መታወቂያ ማስረጃ ይዞ ሲቀርብ በምትኩ አዲስ መታወቂያ ይሰጠዋል።
+</li>
 </ul>
 
 </section>
@@ -219,7 +222,14 @@ Transfer Letter (መሸኛ)
         document.getElementById("requirementsHeading").innerHTML="የነዋሪነት መታወቂያ ለማግኘት የሚያስፈልጉ መስፈርቶች";
 
         document.getElementById("lostHeading").innerHTML="የጠፋ መታወቂያ";
+document.getElementById("lostDescription").innerHTML =
+"መታወቂያ የጠፋበት ነዋሪ በወረዳው ጽ/ቤት በአካል ቀርቦ የቀድሞ መታወቂያውን መረጃዎች በመጥቀስ ማመልከት አለበት።";
 
+document.getElementById("lostItem1").innerHTML =
+"ነዋሪ መሆኑ በወረዳው ከተረጋገጠ በኋላ ለሚመለከተው የፖሊስ ጣቢያ ደብዳቤ ይጻፍለታል።";
+
+document.getElementById("lostItem2").innerHTML =
+"ከፖሊስ ጣቢያ የጠፋ መታወቂያ ማስረጃ ይዞ ሲቀርብ በምትኩ አዲስ መታወቂያ ይሰጠዋል።";
         document.getElementById("renewHeading").innerHTML="የመታወቂያ እድሳት";
 
         document.getElementById("btnResidentId").innerHTML="መታወቂያ";
@@ -243,7 +253,14 @@ Transfer Letter (መሸኛ)
         document.getElementById("requirementsHeading").innerHTML="Ulaagaalee Eenyummaa Jiraataa Argachuuf";
 
         document.getElementById("lostHeading").innerHTML="Eenyummaan Bade";
+document.getElementById("lostDescription").innerHTML =
+"Namni eenyummaan isaa bade ragaa duraanii waliin waajjiratti qaamaan dhiyaachuu qaba.";
 
+document.getElementById("lostItem1").innerHTML =
+"Erga jiraataa ta'uun isaa mirkanaa'e booda gara buufata poolisii xalayaan ni ergama.";
+
+document.getElementById("lostItem2").innerHTML =
+"Ragaa poolisii fidee yoo dhiyaate bakka bu'iinsaatti eenyummaan haaraan ni kennama.";
         document.getElementById("renewHeading").innerHTML="Haaromsaa Eenyummaa";
 
         document.getElementById("btnResidentId").innerHTML="Eenyummaa";
@@ -267,7 +284,14 @@ Transfer Letter (መሸኛ)
         document.getElementById("requirementsHeading").innerHTML="Requirements for Obtaining a Resident ID";
 
         document.getElementById("lostHeading").innerHTML="Lost Resident ID";
+document.getElementById("lostDescription").innerHTML =
+"A resident who has lost a Resident ID must appear in person at the Woreda office and submit an application using the previous ID information.";
 
+document.getElementById("lostItem1").innerHTML =
+"After the resident's information is verified, a referral letter will be issued to the appropriate police station.";
+
+document.getElementById("lostItem2").innerHTML =
+"When the resident returns with a police confirmation letter, a new Resident ID will be issued.";
         document.getElementById("renewHeading").innerHTML="Resident ID Renewal";
 
         document.getElementById("btnResidentId").innerHTML="Resident ID";
