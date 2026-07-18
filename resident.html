@@ -138,7 +138,9 @@ Transfer Letter (መሸኛ)
 </div>
 <section class="requirements">
 
-<h2>የነዋሪነት መታወቂያ ለማግኘት የሚያስፈልጉ መስፈርቶች</h2>
+<h2 id="requirementsHeading">
+የነዋሪነት መታወቂያ ለማግኘት የሚያስፈልጉ መስፈርቶች
+</h2>
 
 <p>
 ማንኛውም በነዋሪነት የተመዘገበ ሰው የነዋሪነት መታወቂያ ለማግኘት
@@ -166,7 +168,7 @@ Transfer Letter (መሸኛ)
 </section>
      <section class="requirements">
 
-<h2>የጠፋ መታወቂያ</h2>
+<h2 id="lostHeading">የጠፋ መታወቂያ</h2>
 
 <p>
 መታወቂያ የጠፋበት ነዋሪ በወረዳው ጽ/ቤት በአካል ቀርቦ የቀድሞ መታወቂያውን
@@ -183,8 +185,7 @@ Transfer Letter (መሸኛ)
 
 <section class="requirements">
 
-<h2>የመታወቂያ እድሳት</h2>
-
+<h2 id="renewHeading">የመታወቂያ እድሳት</h2>
 <ul>
 
 <li>በመመሪያው መሠረት የተሰጠ መታወቂያ የአገልግሎት ዘመኑ ሲያበቃ ነዋሪው በአካል በመቅረብ መታወቂያውን ማደስ አለበት።</li>
@@ -289,12 +290,56 @@ document.getElementById("officeTitle").innerHTML =
     }
     
 }
+    function changeLanguage(){
+
+    let lang = document.getElementById("language").value;
+
+    if(lang=="am"){
+        
+    document.getElementById("residentHeading").innerHTML="የነዋሪነት አገልግሎት";
+
+document.getElementById("requirementsHeading").innerHTML=
+"የነዋሪነት መታወቂያ ለማግኘት የሚያስፈልጉ መስፈርቶች";
+
+document.getElementById("lostHeading").innerHTML="የጠፋ መታወቂያ";
+
+document.getElementById("renewHeading").innerHTML="የመታወቂያ እድሳት";
+
+        }
+
+    else if(lang=="om"){
+        
+    document.getElementById("residentHeading").innerHTML="Tajaajila Jiraattotaa";
+
+document.getElementById("requirementsHeading").innerHTML=
+"Ulaagaalee Eenyummaa Jiraataa Argachuuf";
+
+document.getElementById("lostHeading").innerHTML=
+"Eenyummaan Bade";
+
+document.getElementById("renewHeading").innerHTML=
+"Haaromsaa Eenyummaa";
+     }
+
+else{
+    
+    document.getElementById("residentHeading").innerHTML="Resident Service";
+
+document.getElementById("requirementsHeading").innerHTML=
+"Requirements for Obtaining a Resident ID";
+
+document.getElementById("lostHeading").innerHTML=
+"Lost Resident ID";
+
+document.getElementById("renewHeading").innerHTML=
+"Resident ID Renewal";
+  }
+    
+}       
 </script>
 
 </body>
 </html>
-
-</script>
 
 </body>
 </html>
