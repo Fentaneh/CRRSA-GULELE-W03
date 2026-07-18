@@ -201,139 +201,83 @@ Transfer Letter (መሸኛ)
 <footer>
 © 2026 CRRSA Gulele Woreda 03. All Rights Reserved.  Crated by Fentaneh.D
 </footer>
-
 <script>
-     function changeLanguage(){
-
-let lang=document.getElementById("language").value;
-
-if(lang=="am"){
-
-document.getElementById("residentTitle").innerHTML="የነዋሪነት አገልግሎት";
-document.title="የነዋሪነት አገልግሎት";
-
-}
-
-else if(lang=="om"){
-
-document.getElementById("residentTitle").innerHTML="Tajaajila Jiraattotaa";
-document.title="Tajaajila Jiraattotaa";
-
-}
-
-else{
-
-document.getElementById("residentTitle").innerHTML="Resident Service";
-document.title="Resident Service";
-
-    }
-
-}
-
-    function changeLanguage(){
+      function changeLanguage(){
 
     let lang = document.getElementById("language").value;
 
     if(lang=="am"){
 
-  document.getElementById("btnResidentId").innerHTML="መታወቂያ";
-document.getElementById("btnResidentService").innerHTML="የነዋሪነት አገልግሎት";
-document.getElementById("btnProofLife").innerHTML="በሕይወት መኖር";
-document.getElementById("btnSingleStatus").innerHTML="ያላገባ";
-document.getElementById("btnTransfer").innerHTML="መሸኛ";
+        document.title="የነዋሪነት አገልግሎት";
+
+        document.getElementById("officeTitle").innerHTML="የአዲስ አበባ ሲቪል ምዝገባና ነዋሪነት አገልግሎት ጉለሌ ወረዳ 03";
+
+        document.getElementById("residentTitle").innerHTML="የነዋሪነት አገልግሎት";
+
+        document.getElementById("residentHeading").innerHTML="የነዋሪነት አገልግሎት";
+
+        document.getElementById("requirementsHeading").innerHTML="የነዋሪነት መታወቂያ ለማግኘት የሚያስፈልጉ መስፈርቶች";
+
+        document.getElementById("lostHeading").innerHTML="የጠፋ መታወቂያ";
+
+        document.getElementById("renewHeading").innerHTML="የመታወቂያ እድሳት";
+
+        document.getElementById("btnResidentId").innerHTML="መታወቂያ";
+        document.getElementById("btnResidentService").innerHTML="የነዋሪነት አገልግሎት";
+        document.getElementById("btnProofLife").innerHTML="በሕይወት መኖር";
+        document.getElementById("btnSingleStatus").innerHTML="ያላገባ";
+        document.getElementById("btnTransfer").innerHTML="መሸኛ";
 
     }
 
     else if(lang=="om"){
-document.getElementById("btnResidentId").innerHTML="Eenyummaa";
-document.getElementById("btnResidentService").innerHTML="Tajaajila Jiraattotaa";
-document.getElementById("btnProofLife").innerHTML="Ragaa Jireenyaa";
-document.getElementById("btnSingleStatus").innerHTML="Kan Hin Fuune";
-document.getElementById("btnTransfer").innerHTML="Xalayaa Dabarsaa";
+
+        document.title="Tajaajila Jiraattotaa";
+
+        document.getElementById("officeTitle").innerHTML="AACRRSA Aanaa Gulleellee 03";
+
+        document.getElementById("residentTitle").innerHTML="Tajaajila Jiraattotaa";
+
+        document.getElementById("residentHeading").innerHTML="Tajaajila Jiraattotaa";
+
+        document.getElementById("requirementsHeading").innerHTML="Ulaagaalee Eenyummaa Jiraataa Argachuuf";
+
+        document.getElementById("lostHeading").innerHTML="Eenyummaan Bade";
+
+        document.getElementById("renewHeading").innerHTML="Haaromsaa Eenyummaa";
+
+        document.getElementById("btnResidentId").innerHTML="Eenyummaa";
+        document.getElementById("btnResidentService").innerHTML="Tajaajila Jiraattotaa";
+        document.getElementById("btnProofLife").innerHTML="Ragaa Jireenyaa";
+        document.getElementById("btnSingleStatus").innerHTML="Kan Hin Fuune";
+        document.getElementById("btnTransfer").innerHTML="Xalayaa Dabarsaa";
+
     }
 
     else{
 
-      document.getElementById("btnResidentId").innerHTML="Resident ID";
-document.getElementById("btnResidentService").innerHTML="Resident Service";
-document.getElementById("btnProofLife").innerHTML="Proof of Life";
-document.getElementById("btnSingleStatus").innerHTML="Single Status";
-document.getElementById("btnTransfer").innerHTML="Transfer Letter";
+        document.title="Resident Service";
 
-      }
+        document.getElementById("officeTitle").innerHTML="AACRRSA Woreda 03";
 
-}   <!-- ይህ የfunction መዝጊያ } ነው -->
+        document.getElementById("residentTitle").innerHTML="Resident Service";
 
-   function changeLanguage(){
+        document.getElementById("residentHeading").innerHTML="Resident Service";
 
-    let lang = document.getElementById("language").value;
+        document.getElementById("requirementsHeading").innerHTML="Requirements for Obtaining a Resident ID";
 
-   if(lang=="am"){
+        document.getElementById("lostHeading").innerHTML="Lost Resident ID";
 
-document.getElementById("officeTitle").innerHTML =
-"የአዲስ አበባ ሲቪል ምዝገባና ነዋሪነት አገልግሎት ጉለሌ ወረዳ 03";
+        document.getElementById("renewHeading").innerHTML="Resident ID Renewal";
 
-}
-
-else if(lang=="om"){
-
-document.getElementById("officeTitle").innerHTML =
-"AACRRSA Aanaa Gulleellee 03";
-
-}
-
-else{
-
-document.getElementById("officeTitle").innerHTML =
-"AACRRSA Woreda 03";
+        document.getElementById("btnResidentId").innerHTML="Resident ID";
+        document.getElementById("btnResidentService").innerHTML="Resident Service";
+        document.getElementById("btnProofLife").innerHTML="Proof of Life";
+        document.getElementById("btnSingleStatus").innerHTML="Single Status";
+        document.getElementById("btnTransfer").innerHTML="Transfer Letter";
 
     }
-    
-}
-    function changeLanguage(){
 
-    let lang = document.getElementById("language").value;
-
-    if(lang=="am"){
-        
-    document.getElementById("residentHeading").innerHTML="የነዋሪነት አገልግሎት";
-
-document.getElementById("requirementsHeading").innerHTML=
-"የነዋሪነት መታወቂያ ለማግኘት የሚያስፈልጉ መስፈርቶች";
-
-document.getElementById("lostHeading").innerHTML="የጠፋ መታወቂያ";
-
-document.getElementById("renewHeading").innerHTML="የመታወቂያ እድሳት";
-
-     }
-     else if(lang=="om"){
-        
-    document.getElementById("residentHeading").innerHTML="Tajaajila Jiraattotaa";
-
-document.getElementById("requirementsHeading").innerHTML=
-"Ulaagaalee Eenyummaa Jiraataa Argachuuf";
-
-document.getElementById("lostHeading").innerHTML=
-"Eenyummaan Bade";
-
-document.getElementById("renewHeading").innerHTML=
-"Haaromsaa Eenyummaa";
- }
-
- else{
-    
-    document.getElementById("residentHeading").innerHTML="Resident Service";
-
-document.getElementById("requirementsHeading").innerHTML=
-"Requirements for Obtaining a Resident ID";
-
-document.getElementById("lostHeading").innerHTML=
-"Lost Resident ID";
-
-document.getElementById("renewHeading").innerHTML=
-"Resident ID Renewal";
-    }
-    
 }
    
     function changeLanguage(){
