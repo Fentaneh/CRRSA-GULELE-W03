@@ -96,69 +96,67 @@ margin-top:40px;
 </div>
 <img src="logo.png">
 
-<h1>CRRSA Gulele Woreda 03</h1>
+<h1 id="officeTitle">CRRSA ጉለሌ ወረዳ 03</h1>
 
-<p>Transfer Letter Service</p>
+<p id="pageTitle">የመሸኛ አገልግሎት</p>
 
 </header>
 
 <div class="container">
 
-<h2>የመሸኛ አገልግሎት</h2>
+<h2 id="serviceTitle">የመሸኛ አገልግሎት</h2>
 
-<p>
+<p id="requirementsTitle">
 የመሸኛ አገልግሎት ለማግኘት የሚያስፈልጉ መስፈርቶች፦
 </p>
 
 <ul>
 
-<li>
+<li id="req1">
 ጠያቂው ባለጉዳይ በአካል በጽ/ቤቱ መቅረብ አለበት።
 </li>
-
-<li>
+<li id="req2">
 መሸኛውን ሲወስድ ቀደም ሲል የወሰደውን መታወቂያ መመለስ አለበት።
 </li>
 
-<li>
+<li id="req3">
 በመንግስት ቤት የሚኖር ከሆነ የቤቱን ማስረከቢያ ማስረጃ ማቅረብ አለበት።
 </li>
 
-<li>
+<li id="req4">
 ከ6 ወር ወዲህ የተነሳ 4×4 መጠን ያለው ሁለት ፎቶ ማቅረብ አለበት።
 </li>
 
-<li>
+<li id="req5">
 ከ18 ዓመት በላይ ለሆኑ ሰዎች የፎቶ ማስረጃ መቅረብ አለበት።
 </li>
-
-<li>
+<li id="req6">
 መታወቂያ ከጠፋ ከፖሊስ የጠፋበት ማስረጃ ወይም በፎቶ የተደገፈ ማስረጃ ማቅረብ አለበት።
 </li>
 
-<li>
+<li id="req7">
 በውክልና ከሆነ ልዩ የውክልና ሰነድ እንዲሁም የወካይ እና ተወካይ የታደሰ የነዋሪነት መታወቂያ ማቅረብ ይጠበቅበታል።
 </li>
 
-<li>
+<li id="req8">
 ከነዋሪነት መዝገብ የተሰረዘ ነዋሪ መሸኛ ማግኘት ይችላል።
 </li>
-  <p>
- ማንኛውም መሸኛ ሲወስዱ ወይም ሲያቀርቡ ማሟላት ያለበት 
-  </p>
-   <li>
+  <p id="requirementTitle">
+የመሸኛ አገልግሎት ለማግኘት የሚያስፈልጉ መስፈርቶች
+</p>
+   <li><li id="req1">
 ➢ ሙሉ ስም የአባት ስም ________,የእናት ሙሉ ስም ______,የትውልድ ቀን ወር ዓ.ም _________ ,ብሔር _____, አድራሻ _______.
 </li>
-    <li>
+   <li id="req2">
 ➢ የተወለደበት ሀገር ______ ክልል ______ ወረዳ ______ ቀበሌ ______,መሸኛው የት የሚሄድ መሆኑን አለበት_________,ቀን,ቁጥር. 
 </li>
-   <li>
+   <li id="req3">
 ➢መሽኛው ፎቶ ያለው መሆን አለበት,የሰጠው አካል ፊርማ ማህተም ማድረግ አለበት  
 </li>
-  <li>
- ➢የራስጌ እና የግርጌ ማህተም መኖር አለበት, መኖሪያው የተፈታበት በግልጽ መጻፍ አለበት 
+<li id="req4">
+ ➢የራስጌ እና የግርጌ ማህተም መኖር አለበት, መሸኛው  የተፃፈበት አድራሻ  በግልጽ መጻፍ አለበት 
 </li>
-  <li>
+  <li id="req5">
 ➢ ማህተሙ ፎቶውን በደንብ መንካት አለበት አንዲሁም መሸኛው 6 ወር ብቻ የሚያገለግል ነው
   </li>
 </ul>
@@ -181,7 +179,103 @@ margin-top:40px;
 © 2026 CRRSA Gulele Woreda 03. All Rights Reserved.
 
 </footer>
+<script>
 
+function changeLanguage(){
+
+let lang=document.getElementById("language").value;
+
+
+if(lang=="am"){
+  <h1 id="officeTitle">CRRSA ጉለሌ ወረዳ 03</h1>
+
+<p id="pageTitle">የመሸኛ አገልግሎት</p>
+
+<h2 id="serviceTitle">የመሸኛ አገልግሎት</h2>
+
+<p id="requirementsTitle">
+የመሸኛ አገልግሎት ለማግኘት የሚያስፈልጉ መስፈርቶች፦
+</p>
+
+<!-- የአማርኛ ዝርዝሮች እንደጻፉት ይቀራሉ -->
+    }
+
+
+else if(lang=="om"){
+
+    <h1 id="officeTitle">CRRSA Aanaa Gulleellee 03</h1>
+
+<p id="pageTitle">Tajaajila Xalayaa Dabarsaa</p>
+
+<h2 id="serviceTitle">Tajaajila Xalayaa Dabarsaa</h2>
+
+<p id="requirementsTitle">
+Ulaagaalee Xalayaa Dabarsaa Argachuuf Barbaachisan:
+</p>
+
+<ul>
+
+<li id="req1">
+Gaafatamaan qaamaan waajjiratti dhiyaachuu qaba.
+</li>
+
+<li id="req2">
+Yeroo xalayaa dabarsaa fudhatu eenyummaa duraan qabu deebisuu qaba.
+</li>
+
+<li id="req3">
+Yoo mana mootummaa keessa jiraatu ta'e ragaa mootummaa mana dabarsuu dhiyeessuu qaba.
+</li>
+
+<li id="req4">
+Suuraawwan lama (4×4) ji'a jahan darban keessatti kaafaman dhiyeessuu qaba.
+</li>
+
+<li id="req5">
+Namoonni umurii waggaa 18 ol ta'an ragaa suuraa qabu dhiyeessuu qabu.
+</li>
+
+<li id="req6">
+Yoo eenyummaan bade ragaa poolisii ykn ragaa suuraan deeggarame dhiyeessuu qaba.
+</li>
+
+<li id="req7">
+Yoo bakka bu'iinsaan ta'e sanada bakka bu'iinsaa addaa fi eenyummaa haaromfame kan bakka bu'aa fi bakka buufamuu dhiyeessuu qaba.
+</li>
+
+<li id="req8">
+Namni galmee jiraattummaa irraa haqame xalayaa dabarsaa argachuu ni danda'a.
+</li>
+
+</ul>
+
+<p id="noteTitle">
+Xalayaan Dabarsaa kamiyyuu odeeffannoo armaan gadii qabaachuu qaba:
+</p>
+
+<ul>
+
+<li id="note1">
+Maqaa guutuu, maqaa abbaa, maqaa haadhaa, guyyaa dhalootaa, sablammummaa fi teessoo.
+</li>
+
+<li id="note2">
+Biyya dhalootaa, naannoo, aanaa, ganda, bakka itti dabarfamu, guyyaa fi lakkoofsa.
+</li>
+
+<li id="note3">
+Xalayaan dabarsaa suuraa qabaachuu qaba; mallattoo fi chaappaan mootummaa irratti argamuu qaba.
+</li>
+
+<li id="note4">
+Chaappaan mataa fi jalaa qabaachuu qaba; bakka jireenyaa irraa bahe ifatti ibsamuu qaba.
+</li>
+
+<li id="note5">
+Chaappaan suuraa irratti sirriitti qubachuu qaba; xalayaan dabarsaa ji'a jaha (6) qofa tajaajila.
+</li>
+
+</ul>
 </body>
 
 </html>
