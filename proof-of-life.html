@@ -143,6 +143,84 @@ CRRSA Gulele Woreda 03
 © 2026 CRRSA Gulele Woreda 03. All Rights Reserved.
 
 </footer>
+<script>
 
+function changeLanguage(){
+
+let lang=document.getElementById("language").value;
+
+
+if(lang=="am"){
+
+document.title="በሕይወት መኖር ማረጋገጫ";
+
+document.getElementById("officeTitle").innerHTML=
+"CRRSA ጉለሌ ወረዳ 03";
+
+document.getElementById("residentTitle").innerHTML=
+"በሕይወት መኖር ማረጋገጫ";
+
+
+document.getElementById("serviceTitle").innerHTML=
+"በሕይወት መኖር ማረጋገጫ";
+  document.getElementById("verificationReqTitle").innerHTML =
+"አገልግሎቱን ለማግኘት የሚያስፈልጉ መስፈርቶች";
+
+document.getElementById("verReq1").innerHTML =
+"ጠያቂው የታደሰ መታወቂያ (ዋና እና ኮፒ) ይዞ በአካል መቅረብ አለበት።";
+
+document.getElementById("verReq2").innerHTML =
+"በአካል መቅረብ ያልቻለ ሰው የተወካይና ወካይ የታደሰ መታወቂያ ዋናና ኮፒ ማቅረብ አለበት።";
+
+document.getElementById("verReq3").innerHTML =
+"በውክልና ከሆነ ህጋዊ የውክልና ሰነድ ማቅረብ አለበት።";
+
+document.getElementById("verReq4").innerHTML =
+"ለማን እንደሚፃፍ የጽሁፍ ማመልከቻ ለወረዳ ጽ/ቤት ማቅረብ አለበት።";
+}
+
+
+
+else if(lang=="om"){
+
+  document.getElementById("verificationReqTitle").innerHTML =
+"Ulaagaalee Tajaajila Kana Argachuuf Barbaachisan";
+
+document.getElementById("verReq1").innerHTML =
+"Gaafatamaan eenyummaa haaromfame (isaa fi kooppii) qabatee qaamaan dhiyaachuu qaba.";
+
+document.getElementById("verReq2").innerHTML =
+"Namni qaamaan dhiyaachuu hin dandeenye, eenyummaa haaromfame bakka bu'aa fi kan bakka buufamu (isaa fi kooppii) dhiyeessuu qaba.";
+
+document.getElementById("verReq3").innerHTML =
+"Bakka bu'iinsa yoo ta'e sanada bakka bu'iinsaa seeraa dhiyeessuu qaba.";
+}
+
+
+
+else{
+
+document.getElementById("verReq4").innerHTML =
+"Iyyata barreeffamaa namaaf akka barreeffamu ibsu gara waajjira woredaa dhiyeessuu qaba.";
+  document.getElementById("verificationReqTitle").innerHTML =
+"Requirements to Get This Service";
+
+document.getElementById("verReq1").innerHTML =
+"The applicant must appear in person with a renewed Resident ID (original and copy).";
+
+document.getElementById("verReq2").innerHTML =
+"If the applicant cannot appear in person, the representative must provide renewed Resident ID of both parties (original and copy).";
+
+document.getElementById("verReq3").innerHTML =
+"If applying by representation, a legal authorization document must be provided.";
+
+document.getElementById("verReq4").innerHTML =
+"A written application stating the recipient must be submitted to the Woreda office.";
+  
+}
+
+}
+
+</script>
 </body>
 </html>
