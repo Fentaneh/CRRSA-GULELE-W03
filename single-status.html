@@ -79,9 +79,7 @@ margin-top:40px;
 
 </head>
 
-
 <body>
-
 
 <header>
 <div>
@@ -96,96 +94,226 @@ margin-top:40px;
 </div>
 <img src="logo.png">
 
-<h1>CRRSA Gulele Woreda 03</h1>
+<h1 id="officeTitle">CRRSA Gulele Woreda 03</h1>
 
-<p>Single Status Service</p>
+<p id="serviceTitle">Single Status Service</p>
 
 </header>
 
-
-
 <div class="container">
 
+<h2 id="singleTitle">ያላገባ አገልግሎት</h2>
 
-<h2>ያላገባ አገልግሎት</h2>
-
-
-<p>
+<p id="description">
 ያላገባ ማረጋገጫ ለማግኘት የሚያስፈልጉ መስፈርቶች፦
 </p>
 
-
 <ul>
-<li>
+<li id="req1">
 የጠያቂው የነዋሪነት መታወቂያ ፋይዳ ጋር ማስተሳሰር ይኖርበታል (aacrrsa.gov.et) ላይ አስተሳስሩ ወይም በአካል ።
 </li>
 
-  <li>
+ <li id="req2">
   መታወቂያውን ካስተሳሰሩ በኃላ ያላገባ ኦንላዬን መጠየቅ ይችላሉ ለመውሰድ ብቻ ይመጣሉ  
  </li>
   
-<li>
+<li id="req3">
 የጠያቂው የታደሰ የነዋሪነት መታወቂያ ዋና እና ኮፒ ማቅረብ።
 </li>
 
-
-<li>
+<li id="req4">
 በነዋሪነት መመዝገቢያ ቅጽ ላይ ጋብቻ እንዳልፈጸመ መረጋገጥ።
 </li>
 
-
-<li>
+<li id="req5">
 የቃለ መሃላ ማረጋገጫ መፈጸም።
 </li>
 
-
-<li>
+<li id="req6">
 ከ6 ወር ወዲህ የተነሳ ፓስፖርት ሳይዝ ሁለት ጉርድ ፎቶ ማቅረብ።
 </li>
 
-
-<li>
+<li id="req7">
 በውክልና ከሆነ ልዩ የውክልና ሰነድ እና የሚመለከተው ወካይ/ተወካይ የታደሰ መታወቂያ/ፓስፖርት ኮፒ ማቅረብ።
 </li>
 
-
-<li>
+<li id="req8">
 የሚሰጠው ያላገባ ማስረጃ የአገልግሎት ጊዜው 6 ወር ብቻ ነው።
 </li>
 
-
-<li>
+<li id="req9">
 ፍቺ ከፈጸመ ወይም ባለቤቱ ከሞተ የሚያረጋግጥ ሰነድ ወይም የፍርድ ቤት ማስረጃ ማቅረብ አለበት።
 </li>
 
-
 </ul>
-
-
 
 <div class="back">
 
-<button onclick="location.href='resident.html'">
-
+<button id="backButton" onclick="location.href='resident.html'">
 ⬅ Back to Resident Service
+</button>
 
 </button>
 
 </div>
-
-
-
-</div>
-
-
 
 <footer>
 
 © 2026 CRRSA Gulele Woreda 03. All Rights Reserved.
 
 </footer>
+<script>
+function changeLanguage(){
+
+let lang=document.getElementById("language").value;
+
+if(lang=="am"){
+
+document.title="ያላገባ አገልግሎት";
+
+document.getElementById("officeTitle").innerHTML=
+"CRRSA ጉለሌ ወረዳ 03";
+
+document.getElementById("serviceTitle").innerHTML=
+"ያላገባ አገልግሎት";
+
+document.getElementById("singleTitle").innerHTML=
+"ያላገባ አገልግሎት";
+
+document.getElementById("description").innerHTML=
+"ያላገባ ማረጋገጫ ለማግኘት የሚያስፈልጉ መስፈርቶች፦";
+
+document.getElementById("req1").innerHTML=
+"የጠያቂው የነዋሪነት መታወቂያ ከ AACRRSA ስርዓት ጋር ማስተሳሰር አለበት።";
+
+document.getElementById("req2").innerHTML=
+"መታወቂያውን ካስተሳሰሩ በኋላ ያላገባ ማረጋገጫ በኦንላይን መጠየቅ ይችላሉ።";
+
+document.getElementById("req3").innerHTML=
+"የታደሰ የነዋሪነት መታወቂያ ዋና እና ኮፒ ማቅረብ።";
+
+document.getElementById("req4").innerHTML=
+"በነዋሪነት መመዝገቢያ ቅጽ ላይ ጋብቻ እንዳልፈጸመ መረጋገጥ።";
+
+document.getElementById("req5").innerHTML=
+"የቃለ መሃላ ማረጋገጫ መፈጸም።";
+
+document.getElementById("req6").innerHTML=
+"ከ6 ወር ወዲህ የተነሳ ፓስፖርት ሳይዝ ሁለት ጉርድ ፎቶ ማቅረብ።";
+
+document.getElementById("req7").innerHTML=
+"በውክልና ከሆነ ህጋዊ የውክልና ሰነድ እና የወካይ መታወቂያ ኮፒ ማቅረብ።";
+
+document.getElementById("req8").innerHTML=
+"የሚሰጠው ያላገባ ማስረጃ የአገልግሎት ጊዜው 6 ወር ብቻ ነው።";
+
+document.getElementById("req9").innerHTML=
+"ፍቺ ከፈጸመ ወይም ባለቤቱ ከሞተ ማረጋገጫ ሰነድ ማቅረብ አለበትፃ";
+
+document.getElementById("backButton").innerHTML=
+"⬅ ወደ ነዋሪነት አገልግሎት ተመለስ";
+
+}
+
+else if(lang=="om"){
 
 
+document.title="Tajaajila Ragaa Hin Fuune";
+
+document.getElementById("officeTitle").innerHTML=
+"CRRSA Aanaa Gulleellee 03";
+
+document.getElementById("serviceTitle").innerHTML=
+"Tajaajila Ragaa Hin Fuune";
+
+document.getElementById("singleTitle").innerHTML=
+"Tajaajila Ragaa Hin Fuune";
+
+document.getElementById("description").innerHTML=
+"Ulaagaalee Ragaa Hin Fuune Argachuuf Barbaachisan:";
+
+document.getElementById("req1").innerHTML=
+"Eenyummaan jiraataa sirna AACRRSA waliin walqabsiifamuu qaba.";
+
+document.getElementById("req2").innerHTML=
+"Eenyummaa erga walqabsiifanii booda ragaa hin fuune online gaafachuun ni danda'ama.";
+
+document.getElementById("req3").innerHTML=
+"Eenyummaa jiraataa haaromfame isa jalqabaa fi kooppii dhiyeessuu qaba.";
+
+document.getElementById("req4").innerHTML=
+"Galmee jiraattummaa irratti gaa'ela hin raawwanne jechuun mirkanaa'uu qaba.";
+
+document.getElementById("req5").innerHTML=
+"Ragaa kakuu seeraa kennuu qaba.";
+
+document.getElementById("req6").innerHTML=
+"Suuraa paaspoortii fakkaatu lama dhiyeessuu qaba.";
+
+document.getElementById("req7").innerHTML=
+"Yoo bakka bu'aan ta'e sanada bakka bu'iinsaa fi kooppii eenyummaa dhiyeessuu qaba.";
+
+document.getElementById("req8").innerHTML=
+"Ragaan Ragaa Hin Fuune yeroo tajaajilaa ji'a 6 qofa qaba.";
+
+document.getElementById("req9").innerHTML=
+"Yoo hiikaan ykn duuti abbaa manaa jiraate ragaa isaa dhiyeessuu qaba.";
+
+document.getElementById("backButton").innerHTML=
+"⬅ Gara Tajaajila Jiraattotaa Deebi'i";
+
+}
+
+
+else{
+
+document.title="Single Status Service";
+
+document.getElementById("officeTitle").innerHTML=
+"CRRSA Gulele Woreda 03";
+
+document.getElementById("serviceTitle").innerHTML=
+"Single Status Service";
+
+document.getElementById("singleTitle").innerHTML=
+"Single Status Service";
+
+document.getElementById("description").innerHTML=
+"Requirements to obtain Single Status Certificate:";
+
+document.getElementById("req1").innerHTML=
+"The applicant's Resident ID must be linked with AACRRSA system.";
+
+document.getElementById("req2").innerHTML=
+"After linking the ID, the applicant can request Single Status online.";
+
+document.getElementById("req3").innerHTML=
+"Submit renewed Resident ID (original and copy).";
+
+document.getElementById("req4").innerHTML=
+"Marriage status must be verified in the resident registration record.";
+
+document.getElementById("req5").innerHTML=
+"Provide legal oath confirmation.";
+
+document.getElementById("req6").innerHTML=
+"Provide two recent passport-size photographs.";
+
+document.getElementById("req7").innerHTML=
+"If represented, provide legal authorization document and ID copy of representative.";
+
+document.getElementById("req8").innerHTML=
+"The Single Status certificate is valid for only 6 months.";
+
+document.getElementById("req9").innerHTML=
+"If divorced or spouse is deceased, supporting legal documents must be provided.";
+
+document.getElementById("backButton").innerHTML=
+"⬅ Back to Resident Service";
+}
+
+}
+</script>  
 </body>
 
 </html>
