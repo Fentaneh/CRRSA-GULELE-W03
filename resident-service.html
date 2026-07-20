@@ -111,18 +111,24 @@ Resident Verification Service
 
 <ul>
 
-<li>በቤተሰብ ቅጽ ላይ ተመዝግቦ መገኘት አለበት።</li>
-
-<li>የታደሰ መታወቂያ (ዋናና ኮፒ) ማቅረብ አለበት።</li>
-
-<li>ማመልከቻ በማቅረብ ለማን እንደሚፃፍ መግለጽ አለበት።</li>
-
-<li>የቆይታ ማረጋገጫ ከተጠየቀ በነዋሪ መዝገብ ላይ ተመዝግቦ መገኘት አለበት።</li>
-
-<li>አስፈላጊ ከሆነ በቃለ መሃላ ማረጋገጥ አለበት።</li>
-
-<li>በውክልና ከሆነ ህጋዊ የውክልና ሰነድ እና የወካይ/የተወካይ መታወቂያ ኮፒ ማቅረብ አለበት።</li>
-
+<li id="req1">
+  በቤተሰብ ቅጽ ላይ ተመዝግቦ መገኘት አለበት።
+</li>
+<li id="req2">
+  የታደሰ መታወቂያ (ዋናና ኮፒ) ማቅረብ አለበት።
+</li>
+<li id="req3">
+  ማመልከቻ በማቅረብ ለማን እንደሚፃፍ መግለጽ አለበት።
+</li>
+<li id="req4">
+  የቆይታ ማረጋገጫ ከተጠየቀ በነዋሪ መዝገብ ላይ ተመዝግቦ መገኘት አለበት።
+</li>
+<li id="req5">
+  አስፈላጊ ከሆነ በቃለ መሃላ ማረጋገጥ አለበት።
+</li>
+<li id="req6">
+  በውክልና ከሆነ ህጋዊ ልዩ የውክልና ሰነድ እና የወካይ/የተወካይ መታወቂያ ኮፒ ማቅረብ አለበት።
+</li>
 </ul>
 
 <div class="back">
@@ -142,6 +148,130 @@ Resident Verification Service
 © 2026 CRRSA Gulele Woreda 03. All Rights Reserved.
 
 </footer>
+<script>
 
+function changeLanguage(){
+
+let lang=document.getElementById("language").value;
+
+
+if(lang=="am"){
+
+document.title="የነዋሪነት ማረጋገጫ";
+
+document.getElementById("officeTitle").innerHTML=
+"CRRSA ጉለሌ ወረዳ 03";
+
+document.getElementById("residentTitle").innerHTML=
+"የነዋሪነት አገልግሎት";
+
+
+document.getElementById("serviceTitle").innerHTML=
+"የነዋሪነት ማረጋገጫ አገልግሎት";
+
+
+document.getElementById("req1").innerHTML=
+"በቤተሰብ ቅጽ ላይ ተመዝግቦ መገኘት አለበት።";
+
+document.getElementById("req2").innerHTML=
+"የታደሰ መታወቂያ (ዋናና ኮፒ) ማቅረብ አለበት።";
+
+document.getElementById("req3").innerHTML=
+"ማመልከቻ በማቅረብ ለማን እንደሚፃፍ መግለጽ አለበት።";
+
+document.getElementById("req4").innerHTML=
+"የቆይታ ማረጋገጫ ከተጠየቀ በነዋሪ መዝገብ ላይ መመዝገብ አለበት።";
+
+document.getElementById("req5").innerHTML=
+"አስፈላጊ ከሆነ በቃለ መሃላ ማረጋገጥ አለበት።";
+
+document.getElementById("req6").innerHTML=
+"በውክልና ከሆነ ህጋዊ የውክልና ሰነድ ማቅረብ አለበት።";
+
+}
+
+
+
+else if(lang=="om"){
+
+
+document.title="Mirkaneessa Jiraattotaa";
+
+
+document.getElementById("officeTitle").innerHTML=
+"CRRSA Aanaa Gulleellee 03";
+
+
+document.getElementById("residentTitle").innerHTML=
+"Tajaajila Jiraattotaa";
+
+
+document.getElementById("serviceTitle").innerHTML=
+"Tajaajila Mirkaneessa Jiraattotaa";
+
+
+document.getElementById("req1").innerHTML=
+"Unka maatii irratti galmaa'ee jiraachuu qaba.";
+
+document.getElementById("req2").innerHTML=
+"Eenyummaa haaromfame (isaa fi kooppii) dhiyeessuu qaba.";
+
+document.getElementById("req3").innerHTML=
+"Xalayaa iyyataa dhiyeessuun eenyuuf akka barreeffamu ibsuu qaba.";
+
+document.getElementById("req4").innerHTML=
+"Ragaa turtii yoo barbaadame galmee jiraattotaa irratti galmaa'uu qaba.";
+
+document.getElementById("req5").innerHTML=
+"Yoo barbaachise kakuu seeraa irratti mirkaneessuu qaba.";
+
+document.getElementById("req6").innerHTML=
+"Bakka bu'iinsa yoo ta'e sanada seeraa dhiyeessuu qaba.";
+
+}
+
+
+
+else{
+
+
+document.title="Resident Verification Service";
+
+
+document.getElementById("officeTitle").innerHTML=
+"CRRSA Gulele Woreda 03";
+
+
+document.getElementById("residentTitle").innerHTML=
+"Resident Service";
+
+
+document.getElementById("serviceTitle").innerHTML=
+"Resident Verification Service";
+
+
+document.getElementById("req1").innerHTML=
+"Must be registered on the family form.";
+
+document.getElementById("req2").innerHTML=
+"Must provide renewed Resident ID (original and copy).";
+
+document.getElementById("req3").innerHTML=
+"Must submit an application and specify the recipient.";
+
+document.getElementById("req4").innerHTML=
+"Must be registered in resident records if residence confirmation is required.";
+
+document.getElementById("req5").innerHTML=
+"Must provide legal confirmation if necessary.";
+
+document.getElementById("req6").innerHTML=
+"For representation, legal authorization document must be provided.";
+
+}
+
+}
+
+</script>
 </body>
 </html>
