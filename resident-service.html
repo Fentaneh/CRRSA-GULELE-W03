@@ -132,11 +132,8 @@ Resident Verification Service
 </ul>
 
 <div class="back">
-
-<button onclick="location.href='transfer-letter.html'">
-
+<button id="backButton" onclick="location.href='resident.html'">
 ⬅ Back to Resident Service
-
 </button>
 
 </div>
@@ -187,9 +184,10 @@ document.getElementById("req5").innerHTML=
 
 document.getElementById("req6").innerHTML=
 "በውክልና ከሆነ ህጋዊ የውክልና ሰነድ ማቅረብ አለበት።";
+document.getElementById("backButton").innerHTML=
+"⬅ ወደ ነዋሪነት አገልግሎት ተመለስ";
 
 }
-
 
 
 else if(lang=="om"){
@@ -227,6 +225,8 @@ document.getElementById("req5").innerHTML=
 
 document.getElementById("req6").innerHTML=
 "Bakka bu'iinsa yoo ta'e sanada seeraa dhiyeessuu qaba.";
+document.getElementById("backButton").innerHTML=
+"⬅ Gara Tajaajila Jiraattotaa Deebi'i";
 
 }
 
@@ -267,6 +267,8 @@ document.getElementById("req5").innerHTML=
 
 document.getElementById("req6").innerHTML=
 "For representation, legal authorization document must be provided.";
+document.getElementById("backButton").innerHTML=
+"⬅ Back to Resident Service";  
 
 }
 
