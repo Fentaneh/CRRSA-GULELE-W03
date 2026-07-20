@@ -187,95 +187,141 @@ let lang=document.getElementById("language").value;
 
 
 if(lang=="am"){
-  <h1 id="officeTitle">CRRSA ጉለሌ ወረዳ 03</h1>
 
-<p id="pageTitle">የመሸኛ አገልግሎት</p>
+document.title="የመሸኛ አገልግሎት";
 
-<h2 id="serviceTitle">የመሸኛ አገልግሎት</h2>
+document.getElementById("officeTitle").innerHTML="CRRSA ጉለሌ ወረዳ 03";
 
-<p id="requirementsTitle">
-የመሸኛ አገልግሎት ለማግኘት የሚያስፈልጉ መስፈርቶች፦
-</p>
+document.getElementById("pageTitle").innerHTML="የመሸኛ አገልግሎት";
 
-<!-- የአማርኛ ዝርዝሮች እንደጻፉት ይቀራሉ -->
-    }
+document.getElementById("serviceTitle").innerHTML="የመሸኛ አገልግሎት";
 
+document.getElementById("requirementsTitle").innerHTML="የመሸኛ አገልግሎት ለማግኘት የሚያስፈልጉ መስፈርቶች፦";
+
+document.getElementById("req1").innerHTML="ጠያቂው ባለጉዳይ በአካል በጽ/ቤቱ መቅረብ አለበት።";
+
+document.getElementById("req2").innerHTML="መሸኛውን ሲወስድ ቀደም ሲል የወሰደውን መታወቂያ መመለስ አለበት።";
+
+document.getElementById("req3").innerHTML="በመንግስት ቤት የሚኖር ከሆነ የቤቱን ማስረከቢያ ማስረጃ ማቅረብ አለበት።";
+
+document.getElementById("req4").innerHTML="ከ6 ወር ወዲህ የተነሳ 4×4 መጠን ያለው ሁለት ፎቶ ማቅረብ አለበት።";
+
+document.getElementById("req5").innerHTML="ከ18 ዓመት በላይ ለሆኑ ሰዎች የፎቶ ማስረጃ መቅረብ አለበት።";
+
+document.getElementById("req6").innerHTML="መታወቂያ ከጠፋ ከፖሊስ የጠፋበት ማስረጃ ወይም በፎቶ የተደገፈ ማስረጃ ማቅረብ አለበት።";
+
+document.getElementById("req7").innerHTML="በውክልና ከሆነ ልዩ የውክልና ሰነድ እና የወካይ/ተወካይ የታደሰ መታወቂያ ማቅረብ አለበት።";
+
+document.getElementById("req8").innerHTML="ከነዋሪነት መዝገብ የተሰረዘ ነዋሪ መሸኛ ማግኘት ይችላል።";
+
+document.getElementById("infoTitle").innerHTML="ማንኛውም መሸኛ ሲወስዱ ወይም ሲያቀርቡ ማሟላት ያለበት";
+
+document.getElementById("info1").innerHTML="➢ ሙሉ ስም፣ የአባት ስም፣ የእናት ሙሉ ስም፣ የትውልድ ቀን፣ ወር፣ ዓ.ም፣ ብሔር እና አድራሻ።";
+
+document.getElementById("info2").innerHTML="➢ የተወለደበት ሀገር፣ ክልል፣ ወረዳ፣ ቀበሌ፣ መሸኛው የሚሄድበት ቦታ፣ ቀን እና ቁጥር።";
+
+document.getElementById("info3").innerHTML="➢ መሸኛው ፎቶ ያለው መሆን አለበት፤ የሰጠው አካል ፊርማና ማህተም ማድረግ አለበት።";
+
+document.getElementById("info4").innerHTML="➢ የራስጌና የግርጌ ማህተም መኖር አለበት፤ የተፈታበት መኖሪያ በግልጽ መጻፍ አለበት።";
+
+document.getElementById("info5").innerHTML="➢ ማህተሙ ፎቶውን በደንብ መንካት አለበት፤ መሸኛው ለ6 ወር ብቻ ያገለግላል።";
+
+document.getElementById("backBtn").innerHTML="⬅ ወደ ነዋሪነት አገልግሎት ተመለስ";
+
+}
 
 else if(lang=="om"){
 
-    <h1 id="officeTitle">CRRSA Aanaa Gulleellee 03</h1>
+document.title="Tajaajila Xalayaa Dabarsaa";
 
-<p id="pageTitle">Tajaajila Xalayaa Dabarsaa</p>
+document.getElementById("officeTitle").innerHTML="CRRSA Aanaa Gulleellee 03";
 
-<h2 id="serviceTitle">Tajaajila Xalayaa Dabarsaa</h2>
+document.getElementById("pageTitle").innerHTML="Tajaajila Xalayaa Dabarsaa";
 
-<p id="requirementsTitle">
-Ulaagaalee Xalayaa Dabarsaa Argachuuf Barbaachisan:
-</p>
+document.getElementById("serviceTitle").innerHTML="Tajaajila Xalayaa Dabarsaa";
 
-<ul>
+document.getElementById("requirementsTitle").innerHTML="Ulaagaalee Xalayaa Dabarsaa Argachuuf Barbaachisan";
 
-<li id="req1">
-Gaafatamaan qaamaan waajjiratti dhiyaachuu qaba.
-</li>
+document.getElementById("req1").innerHTML="Gaafatamaan qaamaan waajjiratti dhiyaachuu qaba.";
 
-<li id="req2">
-Yeroo xalayaa dabarsaa fudhatu eenyummaa duraan qabu deebisuu qaba.
-</li>
+document.getElementById("req2").innerHTML="Yeroo xalayaa dabarsaa fudhatu eenyummaa duraan qabu deebisuu qaba.";
 
-<li id="req3">
-Yoo mana mootummaa keessa jiraatu ta'e ragaa mootummaa mana dabarsuu dhiyeessuu qaba.
-</li>
+document.getElementById("req3").innerHTML="Yoo mana mootummaa keessa jiraatu ragaa mana dabarsuu dhiyeessuu qaba.";
 
-<li id="req4">
-Suuraawwan lama (4×4) ji'a jahan darban keessatti kaafaman dhiyeessuu qaba.
-</li>
+document.getElementById("req4").innerHTML="Suuraa lama (4×4) ji'a jahan darban keessatti kaafame dhiyeessuu qaba.";
 
-<li id="req5">
-Namoonni umurii waggaa 18 ol ta'an ragaa suuraa qabu dhiyeessuu qabu.
-</li>
+document.getElementById("req5").innerHTML="Namoota umurii waggaa 18 ol ta'aniif ragaan suuraa barbaachisaadha.";
 
-<li id="req6">
-Yoo eenyummaan bade ragaa poolisii ykn ragaa suuraan deeggarame dhiyeessuu qaba.
-</li>
+document.getElementById("req6").innerHTML="Yoo eenyummaan bade ragaa poolisii yookaan ragaa suuraadhaan deeggarame dhiyeessuu qaba.";
 
-<li id="req7">
-Yoo bakka bu'iinsaan ta'e sanada bakka bu'iinsaa addaa fi eenyummaa haaromfame kan bakka bu'aa fi bakka buufamuu dhiyeessuu qaba.
-</li>
+document.getElementById("req7").innerHTML="Yoo bakka bu'iinsaan ta'e sanada bakka bu'iinsaa addaa fi eenyummaa haaromfame dhiyeessuu qaba.";
 
-<li id="req8">
-Namni galmee jiraattummaa irraa haqame xalayaa dabarsaa argachuu ni danda'a.
-</li>
+document.getElementById("req8").innerHTML="Jiraataan galmee irraa haqame xalayaa dabarsaa argachuu danda'a.";
 
-</ul>
+document.getElementById("infoTitle").innerHTML="Xalayaan Dabarsaa kamiyyuu odeeffannoo armaan gadii qabaachuu qaba";
 
-<p id="noteTitle">
-Xalayaan Dabarsaa kamiyyuu odeeffannoo armaan gadii qabaachuu qaba:
-</p>
+document.getElementById("info1").innerHTML="➢ Maqaa guutuu, maqaa abbaa, maqaa haadhaa, guyyaa dhalootaa, sablammummaa fi teessoo.";
 
-<ul>
+document.getElementById("info2").innerHTML="➢ Biyya dhalootaa, naannoo, aanaa, ganda, bakka itti geeffamu, guyyaa fi lakkoofsa.";
 
-<li id="note1">
-Maqaa guutuu, maqaa abbaa, maqaa haadhaa, guyyaa dhalootaa, sablammummaa fi teessoo.
-</li>
+document.getElementById("info3").innerHTML="➢ Xalayaan suuraa, mallattoo fi chaappaa qabaachuu qaba.";
 
-<li id="note2">
-Biyya dhalootaa, naannoo, aanaa, ganda, bakka itti dabarfamu, guyyaa fi lakkoofsa.
-</li>
+document.getElementById("info4").innerHTML="➢ Chaappaan mataa fi jalaa qabaachuu qaba; teessoon duraanii ifatti ibsamuu qaba.";
 
-<li id="note3">
-Xalayaan dabarsaa suuraa qabaachuu qaba; mallattoo fi chaappaan mootummaa irratti argamuu qaba.
-</li>
+document.getElementById("info5").innerHTML="➢ Chaappaan suuraa tuquu qaba; xalayaan ji'a 6 qofa tajaajila.";
 
-<li id="note4">
-Chaappaan mataa fi jalaa qabaachuu qaba; bakka jireenyaa irraa bahe ifatti ibsamuu qaba.
-</li>
+document.getElementById("backBtn").innerHTML="⬅ Gara Tajaajila Jiraattotaa Deebi'i";
 
-<li id="note5">
-Chaappaan suuraa irratti sirriitti qubachuu qaba; xalayaan dabarsaa ji'a jaha (6) qofa tajaajila.
-</li>
+}
+else{
 
-</ul>
+document.title="Transfer Letter Service";
+
+document.getElementById("officeTitle").innerHTML="CRRSA Gulele Woreda 03";
+
+document.getElementById("pageTitle").innerHTML="Transfer Letter Service";
+
+document.getElementById("serviceTitle").innerHTML="Transfer Letter Service";
+
+document.getElementById("requirementsTitle").innerHTML="Requirements for Obtaining a Transfer Letter";
+
+document.getElementById("req1").innerHTML="The applicant must appear in person at the Woreda office.";
+
+document.getElementById("req2").innerHTML="The applicant must return the previously issued Resident ID.";
+
+document.getElementById("req3").innerHTML="Applicants living in government housing must provide a house handover certificate.";
+
+document.getElementById("req4").innerHTML="Two recent 4×4 passport-size photographs taken within the last six months must be submitted.";
+
+document.getElementById("req5").innerHTML="Applicants aged 18 years and above must provide photo identification.";
+
+document.getElementById("req6").innerHTML="If the Resident ID has been lost, a police report or another supporting document must be submitted.";
+
+document.getElementById("req7").innerHTML="If applying through a representative, a special power of attorney and renewed Resident IDs of both parties must be submitted.";
+
+document.getElementById("req8").innerHTML="A resident removed from the resident register may obtain a Transfer Letter.";
+
+document.getElementById("infoTitle").innerHTML="Every Transfer Letter must include the following information";
+
+document.getElementById("info1").innerHTML="➢ Full name, father's name, mother's full name, date of birth, nationality and address.";
+
+document.getElementById("info2").innerHTML="➢ Country, region, woreda, kebele of birth, destination, date and reference number.";
+
+document.getElementById("info3").innerHTML="➢ The Transfer Letter must contain a photograph, official signature and seal.";
+
+document.getElementById("info4").innerHTML="➢ It must contain both header and footer official seals and clearly state the previous residence.";
+
+document.getElementById("info5").innerHTML="➢ The official seal must overlap the photograph. The Transfer Letter is valid for six months only.";
+
+document.getElementById("backBtn").innerHTML="⬅ Back to Resident Service";
+
+}
+
+
+}
+
+
+  </script>   
 </body>
 
 </html>
