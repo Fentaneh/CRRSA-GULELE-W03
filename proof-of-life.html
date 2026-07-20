@@ -77,33 +77,57 @@ margin-top:40px;
 <body>
 
 <header>
+<div>
+<label>🌐 Language:</label>
 
+<select id="language" onchange="changeLanguage()">
+<option value="en">English</option>
+<option value="am">አማርኛ</option>
+<option value="om">Afaan Oromoo</option>
+</select>
+
+</div>
 <img src="logo.png">
 
-<h1>CRRSA Gulele Woreda 03</h1>
+<h1 id="officeTitle">
+CRRSA Gulele Woreda 03
+</h1>
 
-<p>Proof of Life Service</p>
+<p id="proofoflifeTilte">
+  Proof of Life Service
+</p>
 
 </header>
 
 <div class="container">
 
-<h2>በሕይወት መኖር ማረጋገጫ</h2>
+<h2 id="serviceTitle">
+  በሕይወት መኖር ማረጋገጫ
+</h2>
 
-<p><strong>አገልግሎቱን ለማግኘት የሚያስፈልጉ መስፈርቶች</strong></p>
+<p id="proofoflifeReqTitle">
+<strong>አገልግሎቱን ለማግኘት የሚያስፈልጉ መስፈርቶች</strong>
+</p>
 
 <ul>
 
-<li>ጠያቂው የታደሰ መታወቂያ (ዋና እና ኮፒ) በመያዝ  በአካል መቅረብ አለበት።</li>
+<li id="verReq1">
+ጠያቂው የታደሰ መታወቂያ (ዋና እና ኮፒ) ይዞ በአካል መቅረብ አለበት።
+</li>
 
-<li>በአካል መቅረብ ያልቻሉ የተወካይ/ወካይ የታደሰ  የነዋሪነት መታወቂያ ዋና አና ኮፒ(ተወካይ) ።</li>
+<li id="verReq2">
+በአካል መቅረብ ያልቻለ ሰው የተወካይና ወካይ የታደሰ መታወቂያ ዋናና ኮፒ ማቅረብ አለበት።
+</li>
 
-<li>በውክልና ከሆነ ህጋዊ የውክልና ሰነድ ማቅረብ።</li>
+<li id="verReq3">
+በውክልና ከሆነ ህጋዊ የውክልና ሰነድ ማቅረብ አለበት።
+</li>
 
-<li>ለማን እንደሚፃፍላቸው የፅሁፍ ማመልከቻ ለወረዳ ጽ /ቤት በማቅረብ  ።</li>
+<li id="verReq4">
+ለማን እንደሚፃፍ የጽሁፍ ማመልከቻ ለወረዳ ጽ/ቤት ማቅረብ አለበት።
+</li>
 
 </ul>
-
 <div class="back">
 
 <button onclick="location.href='resident.html'">
