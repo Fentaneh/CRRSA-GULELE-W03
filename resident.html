@@ -142,27 +142,40 @@ Transfer Letter (መሸኛ)
 የነዋሪነት መታወቂያ ለማግኘት የሚያስፈልጉ መስፈርቶች
 </h2>
 
-<p>
+<p id="requirementsDescription">
 ማንኛውም በነዋሪነት የተመዘገበ ሰው የነዋሪነት መታወቂያ ለማግኘት
 የሚከተሉትን መስፈርቶች ማሟላት ይኖርበታል።
 
 </p>
-
 <ul>
 
-<li>በነዋሪነት መመዝገቢያ ቅፅ 001 ላይ የተመዘገበ መሆን አለበት።</li>
+<li id="req1">
+በነዋሪነት መመዝገቢያ ቅፅ 001 ላይ የተመዘገበ መሆን አለበት።
+</li>
 
-<li>ዕድሜው 18 ዓመት እና ከዚያ በላይ መሆን እንዲሁም በአካል መቅረብ አለበት።</li>
+<li id="req2">
+ዕድሜው 18 ዓመት እና ከዚያ በላይ መሆን እንዲሁም በአካል መቅረብ አለበት።
+</li>
 
-<li>መታወቂያ በውክልና አይሰጥም፤ በውክልናም አይታደስም።</li>
+<li id="req3">
+መታወቂያ በውክልና አይሰጥም፤ በውክልናም አይታደስም።
+</li>
 
-<li>በውጭ ሀገር የሚኖሩ ኢትዮጵያውያንና የውጭ ሀገር ዜጎች የነዋሪነት መታወቂያ አይሰጣቸውም።</li>
+<li id="req4">
+በውጭ ሀገር የሚኖሩ ኢትዮጵያውያንና የውጭ ሀገር ዜጎች የነዋሪነት መታወቂያ አይሰጣቸውም።
+</li>
 
-<li>በማንኛውም የንግድ ቤት የነዋሪነት መታወቂያ አይሰጥም።</li>
+<li id="req5">
+በማንኛውም የንግድ ቤት የነዋሪነት መታወቂያ አይሰጥም።
+</li>
 
-<li>የነዋሪነት መታወቂያ ለ4 ዓመት ያገለግላል፤ የአገልግሎት ጊዜው ሲያበቃ አሮጌው ተመልሶ አዲስ መታወቂያ ይሰጣል።</li>
+<li id="req6">
+የነዋሪነት መታወቂያ ለ4 ዓመት ያገለግላል፤ የአገልግሎት ጊዜው ሲያበቃ አሮጌው ተመልሶ አዲስ መታወቂያ ይሰጣል።
+</li>
 
-<li>የነዋሪዎች አገልግሎት መመሪያ 145/2015 ያንብቡ።</li>
+<li id="req7">
+የነዋሪዎች አገልግሎት መመሪያ 145/2015 ያንብቡ።
+</li>
 
 </ul>
 </section>
@@ -227,6 +240,29 @@ Transfer Letter (መሸኛ)
 
         document.getElementById("requirementsHeading").innerHTML="የነዋሪነት መታወቂያ ለማግኘት የሚያስፈልጉ መስፈርቶች";
 
+document.getElementById("requirementsDescription").innerHTML =
+"ማንኛውም በነዋሪነት የተመዘገበ ሰው የነዋሪነት መታወቂያ ለማግኘት የሚከተሉትን መስፈርቶች ማሟላት ይኖርበታል።";
+
+document.getElementById("req1").innerHTML =
+"በነዋሪነት መመዝገቢያ ቅፅ 001 ላይ የተመዘገበ መሆን አለበት።";
+
+document.getElementById("req2").innerHTML =
+"ዕድሜው 18 ዓመት እና ከዚያ በላይ መሆን እንዲሁም በአካል መቅረብ አለበት።";
+
+document.getElementById("req3").innerHTML =
+"መታወቂያ በውክልና አይሰጥም፤ በውክልናም አይታደስም።";
+
+document.getElementById("req4").innerHTML =
+"በውጭ ሀገር የሚኖሩ ኢትዮጵያውያንና የውጭ ሀገር ዜጎች የነዋሪነት መታወቂያ አይሰጣቸውም።";
+
+document.getElementById("req5").innerHTML =
+"በማንኛውም የንግድ ቤት የነዋሪነት መታወቂያ አይሰጥም።";
+
+document.getElementById("req6").innerHTML =
+"የነዋሪነት መታወቂያ ለ4 ዓመት ያገለግላል፤ የአገልግሎት ጊዜው ሲያበቃ አሮጌው ተመልሶ አዲስ መታወቂያ ይሰጣል።";
+
+document.getElementById("req7").innerHTML =
+"የነዋሪዎች አገልግሎት መመሪያ 145/2015 ያንብቡ።";
         document.getElementById("lostHeading").innerHTML="የጠፋ መታወቂያ";
 document.getElementById("lostDescription").innerHTML =
 "መታወቂያ የጠፋበት ነዋሪ በወረዳው ጽ/ቤት በአካል ቀርቦ የቀድሞ መታወቂያውን መረጃዎች በመጥቀስ ማመልከት አለበት።";
@@ -264,7 +300,29 @@ document.getElementById("renewItem3").innerHTML =
         document.getElementById("residentHeading").innerHTML="Tajaajila Jiraattotaa";
 
         document.getElementById("requirementsHeading").innerHTML="Ulaagaalee Eenyummaa Jiraataa Argachuuf";
+document.getElementById("requirementsDescription").innerHTML =
+"Namni kamiyyuu jiraataa galmaa'e eenyummaa jiraataa argachuuf ulaagaalee armaan gadii guutuu qaba.";
 
+document.getElementById("req1").innerHTML =
+"Unka galmee jiraattummaa Lak.001 irratti galmaa'ee ta'uu qaba.";
+
+document.getElementById("req2").innerHTML =
+"Umuriin isaa waggaa 18 fi isaa ol ta'uu qaba; akkasumas qaamaan dhiyaachuu qaba.";
+
+document.getElementById("req3").innerHTML =
+"Eenyummaan mootummaa bakka bu'aan hin kennamu; bakka bu'aanis hin haaromfamu.";
+
+document.getElementById("req4").innerHTML =
+"Lammiileen Itoophiyaa fi alagoonni biyya alaa keessa jiraatan eenyummaa jiraattummaa hin argatan.";
+
+document.getElementById("req5").innerHTML =
+"Dhaabbilee daldalaa kamiyyuu keessatti eenyummaan jiraattummaa hin kennamu.";
+
+document.getElementById("req6").innerHTML =
+"Eenyummaan jiraattummaa waggaa 4f tajaajila. Yeroon isaa yoo xumurame, kan duraa deebifamee haaraan ni kennama.";
+
+document.getElementById("req7").innerHTML =
+"Qajeelfama Tajaajila Jiraattotaa Lakk.145/2015 dubbisaa.";
         document.getElementById("lostHeading").innerHTML="Eenyummaan Bade";
 document.getElementById("lostDescription").innerHTML =
 "Namni eenyummaan isaa bade ragaa duraanii waliin waajjiratti qaamaan dhiyaachuu qaba.";
@@ -302,7 +360,29 @@ document.getElementById("renewItem3").innerHTML =
         document.getElementById("residentHeading").innerHTML="Resident Service";
 
         document.getElementById("requirementsHeading").innerHTML="Requirements for Obtaining a Resident ID";
+document.getElementById("requirementsDescription").innerHTML =
+"Any person registered as a resident must fulfill the following requirements to obtain a Resident ID.";
 
+document.getElementById("req1").innerHTML =
+"The applicant must be registered on Resident Registration Form No. 001.";
+
+document.getElementById("req2").innerHTML =
+"The applicant must be at least 18 years old and appear in person.";
+
+document.getElementById("req3").innerHTML =
+"A Resident ID cannot be issued or renewed through a representative.";
+
+document.getElementById("req4").innerHTML =
+"Ethiopian citizens and foreign nationals residing abroad are not eligible for a Resident ID.";
+
+document.getElementById("req5").innerHTML =
+"A Resident ID is not issued to any business organization.";
+
+document.getElementById("req6").innerHTML =
+"A Resident ID is valid for four years. When it expires, the old ID must be returned and a new one will be issued.";
+
+document.getElementById("req7").innerHTML =
+"Please refer to the Resident Service Directive No. 145/2015.";
         document.getElementById("lostHeading").innerHTML="Lost Resident ID";
 document.getElementById("lostDescription").innerHTML =
 "A resident who has lost a Resident ID must appear in person at the Woreda office and submit an application using the previous ID information.";
