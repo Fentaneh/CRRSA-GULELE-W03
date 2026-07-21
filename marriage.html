@@ -1,1 +1,204 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
 
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Marriage Registration</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f5f5f5;
+}
+
+header{
+background:#004d99;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+header img{
+width:90px;
+}
+
+.container{
+width:90%;
+max-width:950px;
+margin:30px auto;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+h2,h3{
+color:#004d99;
+}
+
+ul{
+line-height:2;
+}
+
+button{
+background:#004d99;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0066cc;
+}
+
+.back{
+text-align:center;
+margin-top:30px;
+}
+
+footer{
+background:#004d99;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="language-box">
+
+<label><strong>🌐 Language:</strong></label>
+
+<select id="language">
+<option value="en">English</option>
+<option value="am" selected>አማርኛ</option>
+<option value="om">Afaan Oromoo</option>
+</select>
+
+</div>
+
+<img src="logo.png">
+
+<h1 id="officeTitle">AACRRSA Woreda 03</h1>
+
+<p id="pageTitle">Marriage Registration Service</p>
+
+</header>
+
+<div class="container">
+
+<h2 id="serviceTitle">የጋብቻ ምዝገባ</h2>
+
+<h3 id="civilTitle">
+1. አዲስ /ብሔራዊ/ ተጋቢዎች የሚያስፈልጉ ቅድመ ሁኔታዎች
+</h3>
+
+<ul>
+<li id="civilReq1">
+ከሁለቱ አንዳቸው የእኛ ወረዳ ነዋሪ መሆን አለባቸው።</li>
+
+<li id="civilReq2">
+  መታወቂያ ከፋይዳ ጋር የተሳሰረ መሆን አለበት።</li>
+
+<li id="civilReq3">
+  ከአዲስ አበባ ውጭ የሆኑ የታደሰ መታወቂያ እና ፋይዳ ማቅረብ አለባቸው።</li>
+
+<li id="civilReq4">
+  ሁለቱም ተጋቢዎች የታደሰ መታወቂያ ወይም ፓስፖርት (ዋናና ኮፒ) በማቅረብ በአካል መቅረብ አለባቸው።</li>
+
+<li id="civilReq5">
+  ከማመልከቻው ቀጥሎ ለ15 ቀናት የጋብቻ ማስታወቂያ (Online) ይለጠፋል።</li>
+
+<li id="civilReq6">
+  በጋብቻ ቀን ሁለቱም ተጋቢዎች የታደሰ መታወቂያ ወይም ፓስፖርት ዋና ማቅረብ አለባቸው።</li>
+
+<li id="civilReq7">
+  ከሚስት 2 እና ከባል 2 በድምሩ 4 ምስክሮች በታደሰ መታወቂያ ወይም ፓስፖርት በአካል መቅረብ አለባቸው።</li>
+
+</ul>
+
+<h3 id="noteTitle">ማሳሰቢያ</h3>
+
+<ul>
+
+<li id="note1">
+  ከዚህ በፊት የወጣ ያላገባ/ች ሰርተፍኬት ካለ በጋብቻው ቀን ይመለሳል።</li>
+
+<li id="note2">
+  የፍቺ ሰርተፍኬት ካለ በጋብቻው ቀን ይመለሳል።</li>
+
+<li id="note3">
+  አንዲት ሴት ፍቺ ከፈጸመች ከ6 ወር በፊት ከሌላ ሰው ጋር ጋብቻ መፈጸም አትችልም።</li>
+
+<li id="note4">
+  የአዲስ አበባ ነዋሪ የሆኑ ምስክሮች መታወቂያቸው ከፋይዳ ጋር የተሳሰረ መሆን አለበት።</li>
+
+<li id="note5">
+ይህ መመሪያ የባህል ወይም የኃይማኖት ጋብቻን አይመለከትም።</li>
+
+</ul>
+
+<h3 id="traditionalTitle">2. ባህላዊ /ኃይማኖታዊ ጋብቻ</h3>
+
+<ul>
+
+<li id="tradReq1">
+  ከሁለቱ አንዳቸው የእኛ ወረዳ ነዋሪ መሆን አለባቸው።</li>
+
+<li id="tradReq2">
+  የባህል ወይም የኃይማኖት ጋብቻ ዋና ማስረጃ ማቅረብ አለበት።</li>
+
+<li id="tradReq3">
+  ዋናው ከጠፋ የፖሊስ ማስረጃ እና የተጋቡበትን ዓመት የሚገልጽ ማስረጃ ማቅረብ አለበት።</li>
+
+<li id="tradReq4">
+  የባልና ሚስት የታደሰ መታወቂያ ወይም ፓስፖርት (ዋናና ኮፒ) ማቅረብ አለባቸው።</li>
+  
+<li id="tradReq5">
+የባልና ሚስት 2 ጉርድ 3×4 ፎቶግራፍ ማቅረብ አለባቸው።</li>
+
+<li id="tradReq6">
+  4 ምስክሮች በታደሰ መታወቂያ ወይም ፓስፖርት በአካል መቅረብ አለባቸው።</li>
+  
+<li id="tradReq7">
+  የተጋቢዎች ልጆች ምስክር መሆን አይችሉም።</li>
+
+<li id="tradReq8">
+  መታወቂያ ከፋይዳ ጋር የተሳሰረ መሆን አለበት፤ ከአዲስ አበባ ውጭ የሆኑ ፋይዳ ማቅረብ አለባቸው።</li>
+
+</ul>
+
+<div class="back">
+
+<button onclick="location.href='vital-events.html'">
+⬅ Back to Vital Events
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 CRRSA Gulele Woreda 03. All Rights Reserved.<br>
+Created by Fentaneh.D
+
+</footer>
+
+</body>
+</html>
