@@ -1,1 +1,266 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
 
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birth Registration</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f5f5f5;
+}
+
+header{
+background:#004d99;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+header img{
+width:90px;
+}
+
+.container{
+width:90%;
+max-width:950px;
+margin:30px auto;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+h2,h3{
+color:#004d99;
+}
+
+ul{
+line-height:2;
+}
+
+button{
+background:#004d99;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0066cc;
+}
+
+.back{
+text-align:center;
+margin-top:30px;
+}
+
+footer{
+background:#004d99;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="language-box">
+
+<label><strong>🌐 Language:</strong></label>
+
+<select id="language" onchange="changeLanguage()">
+
+<option value="en">English</option>
+
+<option value="am">አማርኛ</option>
+
+<option value="om">Afaan Oromoo</option>
+
+</select>
+
+</div>
+
+<img src="logo.png">
+
+<h1 id="officeTitle">
+AACRRSA Woreda 03
+</h1>
+
+<p id="pageTitle">
+Birth Registration Service
+</p>
+
+</header>
+
+<div class="container">
+
+<h2 id="serviceTitle">
+የልደት ምዝገባ
+</h2>
+  <h2 id="serviceTitle">የልደት ምዝገባ</h2>
+
+<h3 id="under18Title">እድሜያቸው ከ18 ዓመት በታች</h3>
+
+<ul>
+
+<li id="u18Req1">በመጀመሪያ እናት ወይም አባት ከሁለቱ አንዱ የእኛ ወረዳ ነዋሪ መሆን አለበት።</li>
+
+<li id="u18Req2">መታወቂያው ከፋይዳ ጋር የተሳሰረ መሆን አለበት።</li>
+
+<li id="u18Req3">እናትና አባት በአካል ቀርበው የታደሰ መታወቂያ ወይም ፓስፖርት (ዋናና ኮፒ) ማቅረብ አለባቸው።</li>
+
+<li id="u18Req4">አንዱ ወላጅ መቅረብ ካልቻለ ልዩ የልደት ውክልና ማቅረብ አለበት።</li>
+
+<li id="u18Req5">አንዱ ወላጅ በሕይወት ከሌለ የሞት ማስረጃ ማቅረብ አለበት።</li>
+
+<li id="u18Req6">ሁለቱም ወላጆች ከሌሉ የሞግዚትነት የፍርድ ቤት ማስረጃ እና የሞግዚቱ መታወቂያ ማቅረብ አለበት።</li>
+
+<li id="u18Req7">ከ1 ዓመት በታች ለሆነ ሕፃን ከጤና ተቋም የተሰጠ የልደት ማሳወቂያ ማቅረብ አለበት።</li>
+
+<li id="u18Req8">1 ዓመት እና ከዚያ በላይ ከሆነ የክትባት ካርድ (ዋናና ኮፒ) ማቅረብ አለበት።</li>
+
+<li id="u18Req9">1 የሕፃኑ ጉርድ ፎቶ ማቅረብ።</li>
+
+</ul>
+
+<h3 id="adultTitle">እድሜያቸው 18 ዓመት እና ከዚያ በላይ</h3>
+
+<ul>
+
+<li id="adultReq1">መታወቂያው የታደሰ እና ከፋይዳ ጋር የተሳሰረ መሆን አለበት።</li>
+
+<li id="adultReq2">በኦንላይን ወይም በአካል የታደሰ መታወቂያ ወይም ፓስፖርት (ዋናና ኮፒ) ማቅረብ አለበት።</li>
+
+<li id="adultReq3">በውክልና ከሆነ ልዩ የልደት ውክልና እና የወካይ/ተወካይ መታወቂያ ወይም ፓስፖርት ማቅረብ አለበት።</li>
+
+<li id="adultReq4">የስም ወይም የዕድሜ ማስተካከያ በፍርድ ቤት ማስረጃ ይፈጸማል።</li>
+
+<li id="adultReq5">የጠፋ የልደት ማስረጃ ከሆነ የፖሊስ ማስረጃ በማቅረብ አዲስ ማግኘት ይቻላል።</li>
+
+</ul>
+  <div class="back">
+
+<button id="backButton" onclick="location.href='index.html'">
+⬅ Back to Home Page
+</button>
+
+</div>
+
+<footer>
+© 2026 CRRSA Gulele Woreda 03. All Rights Reserved.  Crated by Fentaneh.D
+</footer>
+<script>
+  function changeLanguage() {
+
+let lang = document.getElementById("language").value;
+
+if(lang=="am"){
+
+document.title="የልደት ምዝገባ";
+
+document.getElementById("officeTitle").innerHTML="AACRRSA ወረዳ 03";
+document.getElementById("pageTitle").innerHTML="የልደት ምዝገባ አገልግሎት";
+document.getElementById("serviceTitle").innerHTML="የልደት ምዝገባ";
+
+document.getElementById("under18Title").innerHTML="እድሜያቸው ከ18 ዓመት በታች";
+
+document.getElementById("u18Req1").innerHTML="በመጀመሪያ እናት ወይም አባት ከሁለቱ አንዱ የእኛ ወረዳ ነዋሪ መሆን አለበት።";
+document.getElementById("u18Req2").innerHTML="መታወቂያው ከፋይዳ ጋር የተሳሰረ መሆን አለበት።";
+document.getElementById("u18Req3").innerHTML="እናትና አባት በአካል ቀርበው የታደሰ መታወቂያ ወይም ፓስፖርት (ዋናና ኮፒ) ማቅረብ አለባቸው።";
+document.getElementById("u18Req4").innerHTML="አንዱ ወላጅ መቅረብ ካልቻለ ልዩ የልደት ውክልና ማቅረብ አለበት።";
+document.getElementById("u18Req5").innerHTML="አንዱ ወላጅ በሕይወት ከሌለ የሞት ማስረጃ ማቅረብ አለበት።";
+document.getElementById("u18Req6").innerHTML="ሁለቱም ወላጆች ከሌሉ የሞግዚትነት የፍርድ ቤት ማስረጃ እና የሞግዚቱ መታወቂያ ማቅረብ አለበት።";
+document.getElementById("u18Req7").innerHTML="ከ1 ዓመት በታች ለሆነ ሕፃን ከጤና ተቋም የተሰጠ የልደት ማሳወቂያ ማቅረብ አለበት።";
+document.getElementById("u18Req8").innerHTML="1 ዓመት እና ከዚያ በላይ ከሆነ የክትባት ካርድ (ዋናና ኮፒ) ማቅረብ አለበት።";
+document.getElementById("u18Req9").innerHTML="1 የሕፃኑ ጉርድ ፎቶ ማቅረብ።";
+
+document.getElementById("adultTitle").innerHTML="እድሜያቸው 18 ዓመት እና ከዚያ በላይ";
+
+document.getElementById("adultReq1").innerHTML="መታወቂያው የታደሰ እና ከፋይዳ ጋር የተሳሰረ መሆን አለበት።";
+document.getElementById("adultReq2").innerHTML="በኦንላይን ወይም በአካል የታደሰ መታወቂያ ወይም ፓስፖርት (ዋናና ኮፒ) ማቅረብ አለበት።";
+document.getElementById("adultReq3").innerHTML="በውክልና ከሆነ ልዩ የልደት ውክልና እና የወካይ/ተወካይ መታወቂያ ወይም ፓስፖርት ማቅረብ አለበት።";
+document.getElementById("adultReq4").innerHTML="የስም ወይም የዕድሜ ማስተካከያ በፍርድ ቤት ማስረጃ ይፈጸማል።";
+document.getElementById("adultReq5").innerHTML="የጠፋ የልደት ማስረጃ ከሆነ የፖሊስ ማስረጃ በማቅረብ አዲስ ማግኘት ይቻላል።";
+
+}
+
+else if(lang=="om"){
+
+document.title="Galmee Dhalootaa";
+
+document.getElementById("officeTitle").innerHTML="AACRRSA Aanaa 03";
+document.getElementById("pageTitle").innerHTML="Tajaajila Galmee Dhalootaa";
+document.getElementById("serviceTitle").innerHTML="Galmee Dhalootaa";
+
+document.getElementById("under18Title").innerHTML="Ijoollee Umuriin Waggaa 18 Gad Ta'an";
+
+document.getElementById("u18Req1").innerHTML="Haati yookaan abbaan keessaa tokko jiraataa aanaa keenya ta'uu qaba.";
+document.getElementById("u18Req2").innerHTML="Eenyummaan Faayidaa wajjin walqabatee ta'uu qaba.";
+document.getElementById("u18Req3").innerHTML="Haati fi abbaan qaamaan dhiyaatanii eenyummaa yookaan paaspoortii haaromfame (original fi copy) dhiyeessuu qabu.";
+document.getElementById("u18Req4").innerHTML="Yoo keessaa tokko qaamaan dhiyaachuu hin dandeenye, mootummaa irraa waraqaa bakka-bu'umsaa addaa dhiyeessuu qaba.";
+document.getElementById("u18Req5").innerHTML="Yoo keessaa tokko du'e ragaan du'aa seera qabeessa ta'e dhiyaachuu qaba.";
+document.getElementById("u18Req6").innerHTML="Yoo lamaan isaanii lubbuun hin jirre, ragaa mootummaa irraa kennamee fi ragaa guddisaa dhiyaachuu qaba.";
+document.getElementById("u18Req7").innerHTML="Daa'ima waggaa 1 gadiif ragaa dhalootaa dhaabbata fayyaa irraa kenname dhiyeessuu qaba.";
+document.getElementById("u18Req8").innerHTML="Daa'ima waggaa 1 fi isaa ol ta'eef kaardii talaallii (original fi copy) dhiyeessuu qaba.";
+document.getElementById("u18Req9").innerHTML="Suuraa daa'imaa tokko dhiyeessuu qaba.";
+
+document.getElementById("adultTitle").innerHTML="Namoota Umuriin Waggaa 18 fi Sana Ol Ta'an";
+
+document.getElementById("adultReq1").innerHTML="Eenyummaan haaromfamee Faayidaa wajjin walqabatee ta'uu qaba.";
+document.getElementById("adultReq2").innerHTML="Qaamaan yookaan online'n eenyummaa yookaan paaspoortii haaromfame (original fi copy) dhiyeessuu qaba.";
+document.getElementById("adultReq3").innerHTML="Yoo bakka-bu'iinsaan ta'e, mootummaa irraa hayyama addaa fi eenyummaa bakka-bu'aa dhiyeessuu qaba.";
+document.getElementById("adultReq4").innerHTML="Sirreeffamni maqaa yookaan umurii murtii mana murtii irratti hundaa'a.";
+document.getElementById("adultReq5").innerHTML="Ragaan dhalootaa yoo bade ragaa poolisii dhiyeessuun haaromsuun ni danda'ama.";
+
+}
+
+else{
+
+document.title="Birth Registration";
+
+document.getElementById("officeTitle").innerHTML="AACRRSA Woreda 03";
+document.getElementById("pageTitle").innerHTML="Birth Registration Service";
+document.getElementById("serviceTitle").innerHTML="Birth Registration";
+
+document.getElementById("under18Title").innerHTML="Applicants Under 18 Years of Age";
+
+document.getElementById("u18Req1").innerHTML="At least one parent must be a resident of our Woreda.";
+document.getElementById("u18Req2").innerHTML="The Resident ID must be linked with Fayda.";
+document.getElementById("u18Req3").innerHTML="Both parents must appear in person with renewed Resident IDs or Passports (original and copy).";
+document.getElementById("u18Req4").innerHTML="If one parent cannot appear, a special legal birth authorization letter must be presented.";
+document.getElementById("u18Req5").innerHTML="If one parent is deceased, an official death certificate must be submitted.";
+document.getElementById("u18Req6").innerHTML="If both parents are deceased, a court guardianship certificate and guardian's ID must be submitted.";
+document.getElementById("u18Req7").innerHTML="For children under one year, a birth notification from a health institution is required.";
+document.getElementById("u18Req8").innerHTML="For children aged one year or older, an immunization card (original and copy) is required.";
+document.getElementById("u18Req9").innerHTML="One passport-size photograph of the child is required.";
+
+document.getElementById("adultTitle").innerHTML="Applicants 18 Years of Age and Above";
+
+document.getElementById("adultReq1").innerHTML="The Resident ID must be renewed and linked with Fayda.";
+document.getElementById("adultReq2").innerHTML="Submit a renewed Resident ID or Passport (original and copy) in person or online.";
+document.getElementById("adultReq3").innerHTML="If represented by another person, a special birth authorization letter and identification documents of both parties are required.";
+document.getElementById("adultReq4").innerHTML="Corrections of name or age require a court decision.";
+document.getElementById("adultReq5").innerHTML="If the birth certificate is lost, a replacement can be obtained by presenting a police report.";
+
+}
+
+}
+  </script>
+</body>
+</html>
