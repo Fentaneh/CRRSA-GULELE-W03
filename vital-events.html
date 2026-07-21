@@ -58,29 +58,54 @@ footer p {
 <body>
 
 <header>
-<img src="logo.png">
-<h1>AACRRSA Woreda 03</h1>
-<p>Vital Events Service</p>
-</header>
 
+<div class="language-box">
+<label for="language"><strong>🌐 Language:</strong></label>
+
+<select id="language" onchange="changeLanguage()">
+    <option value="en">English</option>
+    <option value="am">አማርኛ</option>
+    <option value="om">Afaan Oromoo</option>
+</select>
+</div>
+
+<img src="logo.png">
+
+<h1 id="officeTitle">AACRRSA Woreda 03</h1>
+
+<p id="serviceTitle">Vital Events Service</p>
+
+</header>
 
 <div class="box">
 
-<h2>የወሳኝ ኩነት ምዝገባ</h2>
+<h2 id="heading">የወሳኝ ኩነት ምዝገባ</h2>
 
-<button>Birth Registration(የልደት)</button>
+<button id="birthBtn" onclick="location.href='birth-registration.html'">
+Birth Registration (የልደት)
+</button>
 
-<button>Marriage Registration(የጋብቻ )</button>
-    
-<button>Divorce Registration(የፍቺ ) </button>
+<button id="marriageBtn" onclick="location.href='marriage-registration.html'">
+Marriage Registration (የጋብቻ)
+</button>
 
- <button>Adoption Registration(የጉድፈቻ )</button>
-    
-<button>Death Registration(የሞት )</button>
-    
-<button>Embassy</button>
+<button id="divorceBtn" onclick="location.href='divorce-registration.html'">
+Divorce Registration (የፍቺ)
+</button>
+
+<button id="adoptionBtn" onclick="location.href='adoption-registration.html'">
+Adoption Registration (የጉድፈቻ)
+</button>
+
+<button id="deathBtn" onclick="location.href='death-registration.html'">
+Death Registration (የሞት)
+</button>
+
+<button id="embassyBtn" onclick="location.href='embassy.html'">
+Embassy
+</button>
+
 </div>
-
 <footer>
     <p>© 2026 CRRSA Gulele Woreda 03. All Rights Reserved.</p>
 
@@ -88,6 +113,111 @@ footer p {
 
     <p>Addis Ababa, Ethiopia</p>
 </footer>
+<script>
+function changeLanguage() {
 
+let lang = document.getElementById("language").value;
+
+if (lang == "am") {
+
+document.title = "የወሳኝ ኩነት አገልግሎት";
+
+document.getElementById("officeTitle").innerHTML =
+"AACRRSA ጉለሌ ወረዳ 03";
+
+document.getElementById("serviceTitle").innerHTML =
+"የወሳኝ ኩነት አገልግሎት";
+
+document.getElementById("heading").innerHTML =
+"የወሳኝ ኩነት ምዝገባ";
+
+document.getElementById("birthBtn").innerHTML =
+"የልደት ምዝገባ";
+
+document.getElementById("marriageBtn").innerHTML =
+"የጋብቻ ምዝገባ";
+
+document.getElementById("divorceBtn").innerHTML =
+"የፍቺ ምዝገባ";
+
+document.getElementById("adoptionBtn").innerHTML =
+"የጉድፈቻ ምዝገባ";
+
+document.getElementById("deathBtn").innerHTML =
+"የሞት ምዝገባ";
+
+document.getElementById("embassyBtn").innerHTML =
+"ኤምባሲ";
+
+}
+
+else if (lang == "om") {
+
+document.title = "Tajaajila Galmee Haala Siviilii";
+
+document.getElementById("officeTitle").innerHTML =
+"AACRRSA Aanaa Gulleellee 03";
+
+document.getElementById("serviceTitle").innerHTML =
+"Tajaajila Galmee Haala Siviilii";
+
+document.getElementById("heading").innerHTML =
+"Galmee Haala Siviilii";
+
+document.getElementById("birthBtn").innerHTML =
+"Galmee Dhalootaa";
+
+document.getElementById("marriageBtn").innerHTML =
+"Galmee Fuudhaa fi Heerumaa";
+
+document.getElementById("divorceBtn").innerHTML =
+"Galmee Hiikkaa Gaa'elaa";
+
+document.getElementById("adoptionBtn").innerHTML =
+"Galmee Guddifachaa";
+
+document.getElementById("deathBtn").innerHTML =
+"Galmee Du'aa";
+
+document.getElementById("embassyBtn").innerHTML =
+"Imbaasii";
+
+}
+
+else {
+
+document.title = "Vital Events Service";
+
+document.getElementById("officeTitle").innerHTML =
+"AACRRSA Woreda 03";
+
+document.getElementById("serviceTitle").innerHTML =
+"Vital Events Service";
+
+document.getElementById("heading").innerHTML =
+"Vital Events Registration";
+
+document.getElementById("birthBtn").innerHTML =
+"Birth Registration";
+
+document.getElementById("marriageBtn").innerHTML =
+"Marriage Registration";
+
+document.getElementById("divorceBtn").innerHTML =
+"Divorce Registration";
+
+document.getElementById("adoptionBtn").innerHTML =
+"Adoption Registration";
+
+document.getElementById("deathBtn").innerHTML =
+"Death Registration";
+
+document.getElementById("embassyBtn").innerHTML =
+"Embassy";
+
+}
+
+}
+</script>     
 </body>
 </html>
