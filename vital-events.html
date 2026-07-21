@@ -51,6 +51,78 @@ footer p {
     margin: 8px;
     font-size: 15px;
 }
+    .notice-box{
+
+width:90%;
+max-width:1000px;
+margin:25px auto;
+
+background:linear-gradient(135deg,#004d99,#0066cc);
+
+color:white;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+font-size:18px;
+
+line-height:1.8;
+
+animation:showNotice 1s ease;
+
+}
+
+
+.notice-box h2{
+
+text-align:center;
+
+font-size:28px;
+
+margin-bottom:20px;
+
+}
+
+
+.notice-box p{
+
+background:white;
+
+color:#004d99;
+
+padding:12px;
+
+border-radius:8px;
+
+margin:12px 0;
+
+font-weight:500;
+
+}
+
+
+@keyframes showNotice{
+
+from{
+
+opacity:0;
+
+transform:translateY(-30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
 </style>
 
 </head>
@@ -76,7 +148,28 @@ footer p {
 <p id="serviceTitle">Vital Events Service</p>
 
 </header>
+<div class="notice-box">
 
+<h2 id="noticeTitle">
+📢 ማስታወቂያ
+</h2>
+
+<p id="notice1">
+ የልደት ምዝገባ ከተከሰተ በ90 ቀናት ውስጥ መመዝገብ አለበት።
+</p>
+
+
+<p id="notice2">
+ የጋብቻ፣ ፍቺ እና ሞት ኩነቶች በወቅቱ መመዝገብ አለባቸው።
+</p>
+
+
+<p id="notice3">
+ የኩነት አገልግሎቶችን በወቅቱ ማስመዝገብ ባህላችን እናድርግ።
+</p>
+
+
+</div>
 <div class="box">
 
 <h2 id="heading">የወሳኝ ኩነት ምዝገባ</h2>
