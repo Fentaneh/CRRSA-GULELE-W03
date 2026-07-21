@@ -179,6 +179,9 @@ Divorce Registration Service
 </footer>
 
 <script >
+  function changeLanguage() {
+
+let lang = document.getElementById("language").value;
   
 if(lang=="am"){
 
@@ -228,8 +231,110 @@ document.getElementById("backButton").innerHTML=
 "⬅ ወደ ወሳኝ ኩነት ተመለስ";
 
 }  
-</script>
 
+    else if(lang=="om"){
+
+document.title="Galmee Hiikaa Gaa'elaa";
+
+
+document.getElementById("officeTitle").innerHTML=
+"CRRSA Aanaa Gulleellee 03";
+
+
+document.getElementById("pageTitle").innerHTML=
+"Tajaajila Galmee Hiikaa Gaa'elaa";
+
+
+document.getElementById("serviceTitle").innerHTML=
+"Galmee Hiikaa Gaa'elaa";
+
+
+document.getElementById("reqTitle").innerHTML=
+"Ulaagaalee Ragaa Hiikaa Gaa'elaa Baasuu / Galmeessuuf Barbaachisan";
+
+
+document.getElementById("req1").innerHTML=
+"Namni hiikaa gaa'elaa gaafatu jiraataa Aanaa kanaa ta'uu qaba.";
+
+
+document.getElementById("req2").innerHTML=
+"Murtee mana murtii aangoo qabuun hiikni gaa'elaa raawwatamuu isaa kan ibsu ragaan mana murtii dhiyaachuu qaba.";
+
+
+document.getElementById("req3").innerHTML=
+"Yoo gaa'elli diigame Aanaa kana keessatti raawwatame, ragaan waraqaa gaa'elaa duraan kenname deebifamuu qaba. Yoo bade ragaan poolisii dhiyaachuu qaba.";
+
+
+document.getElementById("req4").innerHTML=
+"Yoo gaa'elli diigame gaa'ela aadaa ykn amantii ta'e, ragaan isaa yoo jiraate dhiyaachuu qaba.";
+
+
+document.getElementById("req5").innerHTML=
+"Yoo gaa'elli diigame Bulchiinsa Magaalaa ykn Kutaa Magaalaa kana keessatti raawwatame, waraqaan gaa'elaa deebifamee ragaan ergame dhiyaachuun hiikni galmaa'uu danda'a.";
+
+
+document.getElementById("req6").innerHTML=
+"Yoo gaa'elli diigame Aanaa biraa, Kutaa Magaalaa biraa ykn Naannoo biraa keessatti raawwatame, hiikni isaa bakka gaa'elli itti raawwatameetti galmaa'a.";
+
+
+document.getElementById("backButton").innerHTML=
+"⬅ Gara Tajaajila Haala Dhimmoota Murteessoo Deebi'i";
+
+}
+
+ else if(lang=="en"){
+
+document.title="Divorce Registration";
+
+
+document.getElementById("officeTitle").innerHTML=
+"CRRSA Gulele Woreda 03";
+
+
+document.getElementById("pageTitle").innerHTML=
+"Divorce Registration Service";
+
+
+document.getElementById("serviceTitle").innerHTML=
+"Divorce Registration";
+
+
+document.getElementById("reqTitle").innerHTML=
+"Requirements for Issuing / Registering Divorce Certificate";
+
+
+document.getElementById("req1").innerHTML=
+"The divorced person must be a resident of this Woreda.";
+
+
+document.getElementById("req2").innerHTML=
+"A court decision showing that the divorce was conducted by an authorized court must be submitted.";
+
+
+document.getElementById("req3").innerHTML=
+"If the marriage was conducted in this Woreda, the previously issued marriage certificate must be returned. If the certificate is lost, a police report confirming the loss must be submitted.";
+
+
+document.getElementById("req4").innerHTML=
+"If the dissolved marriage was conducted through traditional or religious procedures, supporting evidence must be submitted if available.";
+
+
+document.getElementById("req5").innerHTML=
+"If the dissolved marriage was registered in this Sub-City/City Administration, the marriage certificate must be returned there and the evidence sent to our office should be presented to register the divorce.";
+
+
+document.getElementById("req6").innerHTML=
+"If the marriage was conducted in another Woreda, Sub-City, or Region, the divorce must be registered at the office where the marriage was originally registered.";
+
+
+document.getElementById("backButton").innerHTML=
+"⬅ Back to Vital Events";
+
+}
+
+}  
+  
+</script>
 
 </body>
 
