@@ -167,11 +167,9 @@ result.innerHTML += `
 
 <p>${service.om}</p>
 
-<button onclick="location.href='${service.file}'">
+<button onclick="openService('${service.file || ""}','${service.url || ""}')">
 Open / ክፈት / Bani
-
 </button>
-
 
 </div>
 
