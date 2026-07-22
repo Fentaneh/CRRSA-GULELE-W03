@@ -153,6 +153,7 @@ result.innerHTML += `
 Open / ክፈት / Bani
 </button>
 console.log(service.url);
+console.log(service.file);
 
 </div>
 
