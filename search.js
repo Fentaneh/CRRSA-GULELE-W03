@@ -149,11 +149,12 @@ result.innerHTML += `
 
 <p>${service.om}</p>
 
+console.log(service.file);
+console.log(service.url);
+
 <button onclick="openService('${service.file || ""}','${service.url || ""}')">
 Open / ክፈት / Bani
 </button>
-console.log(service.url);
-console.log(service.file);
 
 </div>
 
