@@ -86,51 +86,84 @@ file:"resident-verification.html"
 
 ];
 
-function openService(file,url){
 
-    if(url){
-        window.location.href = url;
-    }
-    else if(file){
-        window.location.href = file;
-    }
+// Search Function
+
+function searchWebsite(){
+
+let text =
+document.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
+
+
+let result =
+document.getElementById("searchResult");
+
+result.innerHTML="";
+
+
+if(text==""){
+
+result.innerHTML =
+"Please type search word / የሚፈልጉትን ይጻፉ / Maal barbaaddu barreessi";
+
+return;
 
 }
 
+
+let found=false;
+
+
 services.forEach(function(service){
 
-    console.log("FILE:", service.file);
-    console.log("URL:", service.url);
+
+let am =
+service.am.toLowerCase();
+
+let en =
+service.en.toLowerCase();
+
+let om =
+service.om.toLowerCase();
 
 
-    if(
-        service.am.toLowerCase().includes(text) ||
-        service.en.toLowerCase().includes(text) ||
-        service.om.toLowerCase().includes(text)
-    ){
+if(
+am.includes(text) ||
+en.includes(text) ||
+om.includes(text)
+){
 
-        result.innerHTML += `
 
-        <div class="search-card">
+found=true;
+  
+result.innerHTML += `
 
-        <h3>${service.en}</h3>
+<div class="search-card">
 
-        <p>${service.am}</p>
+<h3>${service.en}</h3>
 
-        <p>${service.om}</p>
+<p>${service.am}</p>
 
-        <button onclick="openService('${service.file || ""}','${service.url || ""}')">
-        Open / ክፈት / Bani
-        </button>
+<p>${service.om}</p>
 
-        </div>
+<button onclick="openService('${service.file || ""}','${service.url || ""}')">
+Open / ክፈት / Bani
+</button>
 
-        `;
+console.log(service.file);
+console.log(service.url);
 
-    }
+</div>
+
+`;
+
+}
+
 
 });
-
 
 if(found==false){
 
