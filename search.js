@@ -161,7 +161,6 @@ Open / ክፈት / Bani
 
 }
 
-
 });
 
 if(found==false){
