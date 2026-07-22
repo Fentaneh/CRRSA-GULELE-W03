@@ -154,7 +154,7 @@ om.includes(text)
 
 
 found=true;
-
+  
 result.innerHTML += `
 
 <div class="search-card">
@@ -165,8 +165,6 @@ result.innerHTML += `
 
 <p>${service.om}</p>
 
-console.log(service.url);
-
 let am =
 service.am.toLowerCase();
 
@@ -176,12 +174,13 @@ service.en.toLowerCase();
 let om =
 service.om.toLowerCase();
 
-
 if(
 am.includes(text) ||
 en.includes(text) ||
 om.includes(text)
 )
+
+console.log(service.url);
 
 <button onclick="openService('${service.file || ""}','${service.url || ""}')">
 Open / ክፈት / Bani
