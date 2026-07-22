@@ -744,5 +744,190 @@ changeLanguage();
 
 }
 </script>
+// =====================================
+// CRRSA Search System
+// 3 Language Search
+// Amharic / English / Afaan Oromoo
+// =====================================
+
+<script>
+function searchService(){
+
+
+let searchText = document
+.getElementById("searchInput")
+.value
+.toLowerCase();
+
+
+let lang = localStorage.getItem("language") || "am";
+
+
+
+// =================
+// AMHARIC
+// =================
+
+if(lang=="am"){
+
+
+if(searchText.includes("ልደት")){
+
+window.location="birth.html";
+
+}
+
+else if(searchText.includes("ጋብቻ")){
+
+window.location="marriage-registration.html";
+
+}
+
+else if(searchText.includes("ፍቺ")){
+
+window.location="divorce-registration.html";
+
+}
+
+else if(searchText.includes("ሞት")){
+
+window.location="death-registration.html";
+
+}
+
+else if(searchText.includes("ጉዲፈቻ")){
+
+window.location="adoption-registration.html";
+
+}
+
+else if(searchText.includes("መሸኛ")){
+
+window.location="transfer-letter.html";
+
+}
+
+else{
+
+alert("አገልግሎት አልተገኘም");
+
+}
+
+}
+
+
+
+
+// =================
+// ENGLISH
+// =================
+
+else if(lang=="en"){
+
+
+if(searchText.includes("birth")){
+
+window.location="birth.html";
+
+}
+
+else if(searchText.includes("marriage")){
+
+window.location="marriage-registration.html";
+
+}
+
+else if(searchText.includes("divorce")){
+
+window.location="divorce-registration.html";
+
+}
+
+else if(searchText.includes("death")){
+
+window.location="death-registration.html";
+
+}
+
+else if(searchText.includes("adoption")){
+
+window.location="adoption-registration.html";
+
+}
+
+else if(searchText.includes("transfer")){
+
+window.location="transfer-letter.html";
+
+}
+
+else{
+
+alert("Service not found");
+
+}
+
+}
+
+
+
+
+
+// =================
+// AFAAN OROMOO
+// =================
+
+else if(lang=="om"){
+
+
+if(searchText.includes("dhaloota")){
+
+window.location="birth.html";
+
+}
+
+else if(searchText.includes("gaa'ela")){
+
+window.location="marriage-registration.html";
+
+}
+
+else if(searchText.includes("hiikkaa")){
+
+window.location="divorce-registration.html";
+
+}
+
+else if(searchText.includes("du'aa")){
+
+window.location="death-registration.html";
+
+}
+
+else if(searchText.includes("guddifachaa")){
+
+window.location="adoption-registration.html";
+
+}
+
+else if(searchText.includes("ce'umsaa")){
+
+window.location="transfer-letter.html";
+
+}
+
+else{
+
+alert("Tajaajilli hin argamne");
+
+}
+
+
+}
+
+
+}
+ </script>
+
 </body>
 </html>
