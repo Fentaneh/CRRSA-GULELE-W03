@@ -74,7 +74,7 @@ file:"proof-of-life.html"
 am:"የነዋሪነት ማረጋገጫ",
 en:"Resident Verification",
 om:"Mirkaneessa Jiraataa",
-file:"resident-verification.html"
+file:"resident-service.html"
 }
 
 ];
