@@ -15,6 +15,13 @@ file:"birth.html"
 },
 
 {
+am:"የመስመር ላይ መታወቂያ",
+en:"Online ID Open Portal",
+om:"ID Karaa Interneetii",
+file:"online-id.html"
+},
+  
+{
 am:"የጋብቻ ምዝገባ",
 en:"Marriage Registration",
 om:"Galmee Gaa'elaa",
