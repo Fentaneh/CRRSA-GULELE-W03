@@ -160,21 +160,6 @@ result.innerHTML += `
 
 console.log(service.url);
 
-let am =
-service.am.toLowerCase();
-
-let en =
-service.en.toLowerCase();
-
-let om =
-service.om.toLowerCase();
-
-if(
-am.includes(text) ||
-en.includes(text) ||
-om.includes(text)
-)
-
 <button onclick="openService('${service.file || ""}','${service.url || ""}')">
 Open / ክፈት / Bani
 </button>
