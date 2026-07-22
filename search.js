@@ -155,8 +155,6 @@ om.includes(text)
 
 found=true;
 
-
-
 result.innerHTML += `
 
 <div class="search-card">
@@ -166,6 +164,8 @@ result.innerHTML += `
 <p>${service.am}</p>
 
 <p>${service.om}</p>
+
+console.log(service.url);
 
 <button onclick="openService('${service.file || ""}','${service.url || ""}')">
 Open / ክፈት / Bani
