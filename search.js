@@ -100,7 +100,6 @@ function openService(file,url){
 
 function searchWebsite(){
 
-
 let text =
 document.getElementById("searchInput")
 .value
@@ -108,13 +107,10 @@ document.getElementById("searchInput")
 .trim();
 
 
-
 let result =
 document.getElementById("searchResult");
 
-
 result.innerHTML="";
-
 
 
 if(text==""){
@@ -127,13 +123,10 @@ return;
 }
 
 
-
 let found=false;
 
 
-
 services.forEach(function(service){
-
 
 
 let am =
@@ -165,6 +158,8 @@ result.innerHTML += `
 
 <p>${service.om}</p>
 
+console.log(service.url);
+
 let am =
 service.am.toLowerCase();
 
@@ -179,8 +174,6 @@ am.includes(text) ||
 en.includes(text) ||
 om.includes(text)
 )
-
-console.log(service.url);
 
 <button onclick="openService('${service.file || ""}','${service.url || ""}')">
 Open / ክፈት / Bani
