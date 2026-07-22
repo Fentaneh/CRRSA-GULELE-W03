@@ -88,6 +88,20 @@ file:"resident-verification.html"
 
 
 // Search Function
+function openService(file,url){
+
+    if(url){
+
+        window.location.href = url;
+
+    }
+    else if(file){
+
+        window.location.href = file;
+
+    }
+
+}
 
 function searchWebsite(){
 
