@@ -1,1 +1,272 @@
+<!DOCTYPE html>
+<html lang="am">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Death Registration</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f5f5f5;
+}
+
+header{
+background:#004d99;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+header img{
+width:90px;
+}
+
+.language-box{
+margin-bottom:15px;
+}
+
+.container{
+width:90%;
+max-width:950px;
+margin:30px auto;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+h2{
+color:#004d99;
+}
+
+p{
+font-weight:bold;
+color:#004d99;
+}
+
+ul{
+line-height:2;
+}
+
+button{
+background:#004d99;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#0066cc;
+}
+
+.back{
+text-align:center;
+margin-top:30px;
+}
+
+footer{
+background:#004d99;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="language-box">
+
+<label><strong>🌐 Language:</strong></label>
+
+<select id="language" onchange="changeLanguage()">
+
+<option value="en">English</option>
+
+<option value="am" selected>አማርኛ</option>
+
+<option value="om">Afaan Oromoo</option>
+
+</select>
+
+</div>
+
+<img src="logo.png">
+
+<h1 id="officeTitle">
+AACRRSA Woreda 03
+</h1>
+
+<p id="pageTitle">
+Death Registration Service
+</p>
+
+</header>
+
+<div class="container">
+
+<h2 id="serviceTitle">
+የሞት ምዝገባ
+</h2>
+
+<p id="reqTitle">
+የሞት ሰርተፍኬት ለማውጣት የሚያስፈልጉ ቅድመ ሁኔታዎች
+</p>
+
+<ul>
+
+<li id="req1">
+በመጀመሪያ ሟች የወረዳችን ነዋሪ ወይም በነዋሪዎች መዝገብ ላይ የተመዘገበ መሆን አለበት።
+</li>
+
+<li id="req2">
+የሟች መታወቂያ፣ ፓስፖርት ወይም ማንነቱን የሚያረጋግጥ ማስረጃ ካለ መቅረብ አለበት።
+</li>
+
+<li id="req3">
+መሞቱን የሚያረጋግጥ ማስረጃ ማለትም ከሃይማኖት ተቋም፣ ከእድር፣ ከጤና ተቋም ወይም ከፍርድ ቤት የተሰጠ ማስረጃ መቅረብ አለበት።
+</li>
+
+<li id="req4">
+የሞቱበትን ቀን እና የተቀበሩበትን ቀን የሚገልጽ ማስረጃ መቅረብ አለበት።
+</li>
+
+<li id="req5">
+ሟቹን ማስመዝገብ የሚችሉት ባል/ሚስት፣ ልጅ፣ እናት/አባት፣ እህት/ወንድም፣ የልጅ ልጅ፣ አያት፣ አክስት ወይም አጎት ናቸው።
+</li>
+
+<li id="req6">
+የአስመዝጋቢው የታደሰ እና የአገልግሎት ጊዜው ያላለፈበት መታወቂያ ማቅረብ አለበት።
+</li>
+
+</ul>
+
+<div class="back">
+
+<button id="backButton" onclick="location.href='vital-events.html'">
+⬅ Back to Vital Events
+</button>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 CRRSA Gulele Woreda 03. All Rights Reserved. Created by Fentaneh.D
+</footer>
+<script>
+function changeLanguage() {
+
+    const lang = document.getElementById("language").value;
+
+    if (lang === "am") {
+
+        document.documentElement.lang = "am";
+
+        document.getElementById("officeTitle").innerHTML = "AACRRSA ወረዳ 03";
+        document.getElementById("pageTitle").innerHTML = "የሞት ምዝገባ አገልግሎት";
+        document.getElementById("serviceTitle").innerHTML = "የሞት ምዝገባ";
+
+        document.getElementById("req1").innerHTML =
+        "ሟቹ የወረዳችን ነዋሪ ወይም በነዋሪዎች መዝገብ ላይ የተመዘገበ መሆን አለበት።";
+
+        document.getElementById("req2").innerHTML =
+        "የሟቹ መታወቂያ፣ ፓስፖርት ወይም ማንነቱን የሚያረጋግጥ ሰነድ ካለ ማቅረብ አለበት።";
+
+        document.getElementById("req3").innerHTML =
+        "ከሃይማኖት ተቋም፣ ከጤና ተቋም፣ ከእድር ወይም ከፍርድ ቤት የተሰጠ የሞት ማስረጃ የሞቱበትንና የተቀበሩበትን ቀን የሚያሳይ መሆን አለበት።";
+
+        document.getElementById("registrantTitle").innerHTML =
+        "ማስመዝጋቢውን በተመለከተ";
+
+        document.getElementById("req4").innerHTML =
+        "የሟቹ ባል/ሚስት፣ ልጅ፣ እናት/አባት፣ እህት/ወንድም፣ የልጅ ልጅ፣ አያት፣ አክስት ወይም አጎት ማስመዝገብ ይችላሉ።";
+
+        document.getElementById("req5").innerHTML =
+        "የአስመዝጋቢው የታደሰ መታወቂያ (የአገልግሎት ጊዜው ያላለፈ) ማቅረብ አለበት።";
+
+        document.getElementById("backButton").innerHTML =
+        "⬅ ወደ ወሳኝ ኩነት ተመለስ";
+    }
+
+    else if (lang === "om") {
+
+        document.documentElement.lang = "om";
+
+        document.getElementById("officeTitle").innerHTML = "AACRRSA Aanaa 03";
+        document.getElementById("pageTitle").innerHTML = "Tajaajila Galmee Du'aa";
+        document.getElementById("serviceTitle").innerHTML = "Galmee Du'aa";
+
+        document.getElementById("req1").innerHTML =
+        "Namni du'e jiraataa aanaa keenyaa yookaan galmee jiraattotaa keessatti galmaa'ee ta'uu qaba.";
+
+        document.getElementById("req2").innerHTML =
+        "Yoo jiraate, eenyummaa, paaspoortii ykn ragaa mootummaa eenyummaa nama du'e ibsu dhiyeessuun barbaachisaadha.";
+
+        document.getElementById("req3").innerHTML =
+        "Ragaan du'aa dhaabbata amantii, dhaabbata fayyaa, mootummaa naannoo yookaan mana murtii irraa kenname; guyyaa du'aa fi awwaalchaa ibsu dhiyaachuu qaba.";
+
+        document.getElementById("registrantTitle").innerHTML =
+        "Nama Galmeessu Ilaalchisee";
+
+        document.getElementById("req4").innerHTML =
+        "Haadha manaa/abbaa manaa, ijoollee, haadha, abbaa, obboleessa, obboleettii, akaakayyuu, akaakilee, eessoo ykn adeera nama du'ee ta'e galmeessuu danda'u.";
+
+        document.getElementById("req5").innerHTML =
+        "Namni galmeessu eenyummaa haaromfame (yeroon isaa hin xumuramin) dhiyeessuu qaba.";
+
+        document.getElementById("backButton").innerHTML =
+        "⬅ Gara Tajaajila Kuunee Deebi'i";
+    }
+
+    else {
+
+        document.documentElement.lang = "en";
+
+        document.getElementById("officeTitle").innerHTML = "AACRRSA Woreda 03";
+        document.getElementById("pageTitle").innerHTML = "Death Registration Service";
+        document.getElementById("serviceTitle").innerHTML = "Death Registration";
+
+        document.getElementById("req1").innerHTML =
+        "The deceased must be a resident of this Woreda or registered in the residents' register.";
+
+        document.getElementById("req2").innerHTML =
+        "If available, the deceased's ID card, passport, or other identity document must be presented.";
+
+        document.getElementById("req3").innerHTML =
+        "A death certificate issued by a religious institution, health institution, local association, or court showing the date of death and burial must be submitted.";
+
+        document.getElementById("registrantTitle").innerHTML =
+        "Regarding the Registrar";
+
+        document.getElementById("req4").innerHTML =
+        "The deceased's spouse, child, parent, brother, sister, grandchild, grandparent, aunt, or uncle may register the death.";
+
+        document.getElementById("req5").innerHTML =
+        "The registrar must present a valid renewed ID card.";
+
+        document.getElementById("backButton").innerHTML =
+        "⬅ Back to Vital Events";
+    }
+}  
+</script>
+
+</body>
+
+</html>
