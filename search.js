@@ -172,7 +172,6 @@ result.innerHTML += `
 
 <p>${service.om}</p>
 
-url:"https://portal.aacrrsa.gov.et"
 
 <button onclick="location.href='${service.file}'">
 
