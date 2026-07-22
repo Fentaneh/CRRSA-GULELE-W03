@@ -1,0 +1,171 @@
+// ======================================
+// CRRSA Gulele Woreda 03
+// Full Website Search System
+// Amharic / English / Afaan Oromoo
+// ======================================
+
+
+const services = [
+
+{
+am:"የልደት ምዝገባ",
+en:"Birth Registration",
+om:"Galmee Dhalootaa",
+file:"birth.html"
+},
+
+{
+am:"የጋብቻ ምዝገባ",
+en:"Marriage Registration",
+om:"Galmee Gaa'elaa",
+file:"marriage-registration.html"
+},
+
+{
+am:"የፍቺ ምዝገባ",
+en:"Divorce Registration",
+om:"Galmee Hiikkaa",
+file:"divorce-registration.html"
+},
+
+{
+am:"የሞት ምዝገባ",
+en:"Death Registration",
+om:"Galmee Du'aa",
+file:"death-registration.html"
+},
+
+{
+am:"የጉዲፈቻ ምዝገባ",
+en:"Adoption Registration",
+om:"Galmee Guddifachaa",
+file:"adoption-registration.html"
+},
+
+{
+am:"መሸኛ አገልግሎት",
+en:"Transfer Letter Service",
+om:"Tajaajila Xalayaa Ce'umsaa",
+file:"transfer-letter.html"
+},
+
+{
+am:"ነዋሪ አገልግሎት",
+en:"Resident Service",
+om:"Tajaajila Jiraataa",
+file:"resident.html"
+}
+
+];
+
+
+
+
+// Search Function
+
+function searchWebsite(){
+
+
+let text =
+document.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
+
+
+
+let result =
+document.getElementById("searchResult");
+
+
+result.innerHTML="";
+
+
+
+if(text==""){
+
+result.innerHTML =
+"Please type search word / የሚፈልጉትን ይጻፉ / Maal barbaaddu barreessi";
+
+return;
+
+}
+
+
+
+let found=false;
+
+
+
+services.forEach(function(service){
+
+
+
+let am =
+service.am.toLowerCase();
+
+let en =
+service.en.toLowerCase();
+
+let om =
+service.om.toLowerCase();
+
+
+
+if(
+am.includes(text) ||
+en.includes(text) ||
+om.includes(text)
+){
+
+
+found=true;
+
+
+
+result.innerHTML += `
+
+<div class="search-card">
+
+<h3>${service.en}</h3>
+
+<p>${service.am}</p>
+
+<p>${service.om}</p>
+
+
+<button onclick="location.href='${service.file}'">
+
+Open / ክፈት / Bani
+
+</button>
+
+
+</div>
+
+`;
+
+}
+
+
+});
+
+
+
+if(found==false){
+
+
+result.innerHTML=
+
+`
+<p>
+Service not found<br>
+አገልግሎት አልተገኘም<br>
+Tajaajilli hin argamne
+</p>
+`;
+
+}
+
+
+}
