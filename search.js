@@ -96,84 +96,40 @@ function openService(file,url){
     }
 
 }
-// Search Function
-
-function searchWebsite(){
-
-let text =
-document.getElementById("searchInput")
-.value
-.toLowerCase()
-.trim();
-
-
-let result =
-document.getElementById("searchResult");
-
-result.innerHTML="";
-
-
-if(text==""){
-
-result.innerHTML =
-"Please type search word / የሚፈልጉትን ይጻፉ / Maal barbaaddu barreessi";
-
-return;
-
-}
-
-
-let found=false;
-
 
 services.forEach(function(service){
 
-
-let am =
-service.am.toLowerCase();
-
-let en =
-service.en.toLowerCase();
-
-let om =
-service.om.toLowerCase();
+    console.log("FILE:", service.file);
+    console.log("URL:", service.url);
 
 
-if(
-am.includes(text) ||
-en.includes(text) ||
-om.includes(text)
-){
+    if(
+        service.am.toLowerCase().includes(text) ||
+        service.en.toLowerCase().includes(text) ||
+        service.om.toLowerCase().includes(text)
+    ){
 
+        result.innerHTML += `
 
-found=true;
-  
-result.innerHTML += `
+        <div class="search-card">
 
-<div class="search-card">
+        <h3>${service.en}</h3>
 
-<h3>${service.en}</h3>
+        <p>${service.am}</p>
 
-<p>${service.am}</p>
+        <p>${service.om}</p>
 
-<p>${service.om}</p>
+        <button onclick="openService('${service.file || ""}','${service.url || ""}')">
+        Open / ክፈት / Bani
+        </button>
 
-<button onclick="openService('${service.file || ""}','${service.url || ""}')">
-Open / ክፈት / Bani
-</button>
+        </div>
 
-console.log(service.file);
-console.log(service.url);
+        `;
 
-</div>
-
-`;
-
-}
-
+    }
 
 });
-
 
 
 if(found==false){
