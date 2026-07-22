@@ -152,8 +152,6 @@ result.innerHTML += `
 <button onclick="openService('${service.file || ""}','${service.url || ""}')">
 Open / ክፈት / Bani
 </button>
-
-console.log(service.file);
 console.log(service.url);
 
 </div>
