@@ -22,29 +22,29 @@ url:"https://portal.aacrrsa.gov.et"
 },
   
 {
-am:"የጋብቻ ምዝገባ ጋብቻ",
-en:"Marriage Registration Marriage",
+am:"የጋብቻ ምዝገባ ",
+en:"Marriage Registration",
 om:"Galmee Gaa'elaa",
 file:"marriage.html"
 },
 
 {
-am:"የፍቺ ምዝገባ ፍቺ",
-en:"Divorce Registration Divorce",
+am:"የፍቺ ምዝገባ ",
+en:"Divorce Registration",
 om:"Galmee Hiikkaa",
 file:"divorce.html"
 },
 
 {
-am:"የሞት ምዝገባ ሞት",
-en:"Death Registration Death",
+am:"የሞት ምዝገባ ",
+en:"Death Registration",
 om:"Galmee Du'aa",
 file:"death.html"
 },
 
 {
-am:"የጉዲፈቻ ምዝገባ ጉዲፈቻ",
-en:"Adoption Registration Adoption",
+am:"የጉዲፈቻ ምዝገባ ",
+en:"Adoption Registration",
 om:"Galmee Guddifachaa",
 file:"adoption.html"
 },
