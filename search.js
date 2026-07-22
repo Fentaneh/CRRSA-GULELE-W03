@@ -16,9 +16,9 @@ file:"birth.html"
 
 {
 am:"የመስመር ላይ መታወቂያ",
-en:"Online ID Open Portal",
+en:"Online ID",
 om:"ID Karaa Interneetii",
-file:"online-id.html"
+url:"https://portal.aacrrsa.gov.et"
 },
   
 {
