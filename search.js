@@ -173,9 +173,6 @@ result.innerHTML += `
 <p>${service.om}</p>
 
 <button onclick="location.href='${service.file}'">
-
-openService('${service.file || ""}','${service.url || ""}')
-
 Open / ክፈት / Bani
 
 </button>
