@@ -158,6 +158,7 @@ result.innerHTML += `
 
 <p>${service.om}</p>
 
+console.log(service.file);
 console.log(service.url);
 
 <button onclick="openService('${service.file || ""}','${service.url || ""}')">
