@@ -20,42 +20,35 @@ en:"Online ID",
 om:"ID Karaa Interneetii",
 url:"https://portal.aacrrsa.gov.et"
 },
-  
+
 {
-am:"የጋብቻ ምዝገባ ",
+am:"የጋብቻ ምዝገባ",
 en:"Marriage Registration",
 om:"Galmee Gaa'elaa",
 file:"marriage.html"
 },
 
 {
-am:"የፍቺ ምዝገባ ",
+am:"የፍቺ ምዝገባ",
 en:"Divorce Registration",
 om:"Galmee Hiikkaa",
 file:"divorce.html"
 },
 
 {
-am:"የሞት ምዝገባ ",
+am:"የሞት ምዝገባ",
 en:"Death Registration",
 om:"Galmee Du'aa",
 file:"death.html"
 },
 
 {
-am:"የጉዲፈቻ ምዝገባ ",
+am:"የጉዲፈቻ ምዝገባ",
 en:"Adoption Registration",
 om:"Galmee Guddifachaa",
 file:"adoption.html"
 },
 
-{
-am:"መሸኛ አገልግሎት",
-en:"Transfer Letter Service",
-om:"Tajaajila Xalayaa Ce'umsaa",
-file:"transfer-letter.html"
-},
-  
 {
 am:"ነዋሪ አገልግሎት",
 en:"Resident Service",
@@ -87,9 +80,38 @@ file:"resident-verification.html"
 ];
 
 
-// Search Function
+
+// OPEN PAGE FUNCTION
+
+function openService(file,url){
+
+    if(url){
+
+        window.open(url,"_blank");
+
+    }
+
+    else if(file){
+
+        window.location.href=file;
+
+    }
+
+    else{
+
+        alert("Page not found");
+
+    }
+
+}
+
+
+
+
+// SEARCH FUNCTION
 
 function searchWebsite(){
+
 
 let text =
 document.getElementById("searchInput")
@@ -100,6 +122,7 @@ document.getElementById("searchInput")
 
 let result =
 document.getElementById("searchResult");
+
 
 result.innerHTML="";
 
@@ -117,17 +140,16 @@ return;
 let found=false;
 
 
+
 services.forEach(function(service){
 
 
-let am =
-service.am.toLowerCase();
+let am = service.am.toLowerCase();
 
-let en =
-service.en.toLowerCase();
+let en = service.en.toLowerCase();
 
-let om =
-service.om.toLowerCase();
+let om = service.om.toLowerCase();
+
 
 
 if(
@@ -138,23 +160,36 @@ om.includes(text)
 
 
 found=true;
-  
+
+
+
+console.log("FILE:",service.file);
+
+console.log("URL:",service.url);
+
+
+
 result.innerHTML += `
 
 <div class="search-card">
 
+
 <h3>${service.en}</h3>
+
 
 <p>${service.am}</p>
 
+
 <p>${service.om}</p>
 
-console.log(service.file);
-console.log(service.url);
+
 
 <button onclick="openService('${service.file || ""}','${service.url || ""}')">
+
 Open / ክፈት / Bani
+
 </button>
+
 
 </div>
 
@@ -162,18 +197,26 @@ Open / ክፈት / Bani
 
 }
 
+
 });
+
+
 
 if(found==false){
 
-result.innerHTML=
+
+result.innerHTML=`
 
 <p>
+
 Service not found<br>
+
 አገልግሎት አልተገኘም<br>
+
 Tajaajilli hin argamne
+
 </p>
-  
+
 `;
 
 }
