@@ -22,29 +22,29 @@ url:"https://portal.aacrrsa.gov.et"
 },
   
 {
-am:"የጋብቻ ምዝገባ",
-en:"Marriage Registration",
+am:"የጋብቻ ምዝገባ ጋብቻ",
+en:"Marriage Registration Marriage",
 om:"Galmee Gaa'elaa",
 file:"marriage-registration.html"
 },
 
 {
-am:"የፍቺ ምዝገባ",
-en:"Divorce Registration",
+am:"የፍቺ ምዝገባ ፍቺ",
+en:"Divorce Registration Divorce",
 om:"Galmee Hiikkaa",
 file:"divorce-registration.html"
 },
 
 {
-am:"የሞት ምዝገባ",
-en:"Death Registration",
+am:"የሞት ምዝገባ ሞት",
+en:"Death Registration Death",
 om:"Galmee Du'aa",
 file:"death-registration.html"
 },
 
 {
-am:"የጉዲፈቻ ምዝገባ",
-en:"Adoption Registration",
+am:"የጉዲፈቻ ምዝገባ ጉዲፈቻ",
+en:"Adoption Registration Adoption",
 om:"Galmee Guddifachaa",
 file:"adoption-registration.html"
 },
@@ -164,6 +164,22 @@ result.innerHTML += `
 <p>${service.am}</p>
 
 <p>${service.om}</p>
+
+let am =
+service.am.toLowerCase();
+
+let en =
+service.en.toLowerCase();
+
+let om =
+service.om.toLowerCase();
+
+
+if(
+am.includes(text) ||
+en.includes(text) ||
+om.includes(text)
+)
 
 console.log(service.url);
 
