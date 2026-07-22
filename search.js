@@ -137,7 +137,6 @@ let om =
 service.om.toLowerCase();
 
 
-
 if(
 am.includes(text) ||
 en.includes(text) ||
@@ -159,6 +158,7 @@ result.innerHTML += `
 
 <p>${service.om}</p>
 
+url:"https://portal.aacrrsa.gov.et"
 
 <button onclick="location.href='${service.file}'">
 
