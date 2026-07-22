@@ -48,17 +48,36 @@ en:"Transfer Letter Service",
 om:"Tajaajila Xalayaa Ce'umsaa",
 file:"transfer-letter.html"
 },
-
+  
 {
 am:"ነዋሪ አገልግሎት",
 en:"Resident Service",
 om:"Tajaajila Jiraataa",
 file:"resident.html"
+},
+
+{
+am:"ያላገባ ማስረጃ",
+en:"Single Status Certificate",
+om:"Ragaa Haala Qeenxee",
+file:"single-status.html"
+},
+
+{
+am:"የሕይወት ማረጋገጫ",
+en:"Proof of Life Certificate",
+om:"Ragaa Jiraachuu",
+file:"proof-of-life.html"
+},
+
+{
+am:"የነዋሪነት ማረጋገጫ",
+en:"Resident Verification",
+om:"Mirkaneessa Jiraataa",
+file:"resident-verification.html"
 }
 
 ];
-
-
 
 
 // Search Function
