@@ -1,11 +1,10 @@
-// ===============================
+// ======================================
 // CRRSA Gulele Woreda 03
-// 3 Language System
+// Global 3 Language System
 // Amharic / English / Afaan Oromoo
-// ===============================
+// ======================================
 
 
-// Change language from dropdown
 function changeLanguage(){
 
     let lang = document.getElementById("language").value;
@@ -18,72 +17,95 @@ function changeLanguage(){
 
 
 
-// Load saved language
-function translatePage(){
+// Safe Text Change Function
 
-    let lang = localStorage.getItem("language") || "am";
+function setText(id,text){
 
+    let element = document.getElementById(id);
 
-    // Keep dropdown selected
-    let selector = document.getElementById("language");
+    if(element){
 
-    if(selector){
-        selector.value = lang;
+        element.innerHTML = text;
+
     }
 
+}
 
 
-// =====================
-// HOME / ALL PAGES
-// =====================
 
-let officeTitle = document.getElementById("officeTitle");
-let pageTitle = document.getElementById("pageTitle");
+// Translate All Pages
 
+function translatePage(){
+
+
+let lang = localStorage.getItem("language") || "am";
+
+
+// Keep selected language
+
+let selector=document.getElementById("language");
+
+if(selector){
+
+selector.value=lang;
+
+}
+
+
+
+// ================= HEADER =================
 
 
 if(lang=="am"){
 
-// Amharic
-
-if(officeTitle)
-officeTitle.innerHTML="AACRRSA ወረዳ 03";
-
-
-if(pageTitle)
-pageTitle.innerHTML="የሲቪል ምዝገባ እና የነዋሪነት አገልግሎት";
+setText(
+"officeTitle",
+"AACRRSA ጉለሌ ወረዳ 03"
+);
 
 
-
-}
-
-
-else if(lang=="en"){
-
-// English
-
-if(officeTitle)
-officeTitle.innerHTML="AACRRSA Woreda 03";
-
-
-if(pageTitle)
-pageTitle.innerHTML="Civil Registration and Residency Service";
+setText(
+"pageTitle",
+"የሲቪል ምዝገባ እና የነዋሪነት አገልግሎት"
+);
 
 
 }
 
 
 
-else if(lang=="om"){
-
-// Afaan Oromoo
-
-if(officeTitle)
-officeTitle.innerHTML="AACRRSA Aanaa 03";
+if(lang=="en"){
 
 
-if(pageTitle)
-pageTitle.innerHTML="Tajaajila Galmee Lammummaa fi Jiraattotaa";
+setText(
+"officeTitle",
+"AACRRSA Gulele Woreda 03"
+);
+
+
+setText(
+"pageTitle",
+"Civil Registration and Residency Service"
+);
+
+
+}
+
+
+
+if(lang=="om"){
+
+
+setText(
+"officeTitle",
+"AACRRSA Aanaa Gulele 03"
+);
+
+
+setText(
+"pageTitle",
+"Tajaajila Galmee Lammummaa fi Jiraattotaa"
+);
 
 
 }
@@ -91,100 +113,45 @@ pageTitle.innerHTML="Tajaajila Galmee Lammummaa fi Jiraattotaa";
 
 
 
-// =====================
-// VITAL EVENTS BUTTONS
-// =====================
-
-
-let heading=document.getElementById("heading");
-
-if(heading){
+// ================= VITAL EVENTS =================
 
 
 if(lang=="am"){
 
-heading.innerHTML="የወሳኝ ኩነት ምዝገባ";
 
-document.getElementById("birthBtn").innerHTML=
-"የልደት ምዝገባ";
+setText("heading","የወሳኝ ኩነት ምዝገባ");
 
 
-document.getElementById("marriageBtn").innerHTML=
-"የጋብቻ ምዝገባ";
+setText("birthBtn","የልደት ምዝገባ");
 
+setText("marriageBtn","የጋብቻ ምዝገባ");
 
-document.getElementById("divorceBtn").innerHTML=
-"የፍቺ ምዝገባ";
+setText("divorceBtn","የፍቺ ምዝገባ");
 
+setText("deathBtn","የሞት ምዝገባ");
 
-document.getElementById("adoptionBtn").innerHTML=
-"የጉዲፈቻ ምዝገባ";
-
-
-document.getElementById("deathBtn").innerHTML=
-"የሞት ምዝገባ";
-
-}
-
-
-
-else if(lang=="en"){
-
-
-heading.innerHTML="Vital Events Registration";
-
-
-document.getElementById("birthBtn").innerHTML=
-"Birth Registration";
-
-
-document.getElementById("marriageBtn").innerHTML=
-"Marriage Registration";
-
-
-document.getElementById("divorceBtn").innerHTML=
-"Divorce Registration";
-
-
-document.getElementById("adoptionBtn").innerHTML=
-"Adoption Registration";
-
-
-document.getElementById("deathBtn").innerHTML=
-"Death Registration";
+setText("adoptionBtn","የጉዲፈቻ ምዝገባ");
 
 
 }
 
 
 
-else if(lang=="om"){
+if(lang=="en"){
 
 
-heading.innerHTML="Galmee Taateewwan Murteessoo";
+setText("heading","Vital Events Registration");
 
 
-document.getElementById("birthBtn").innerHTML=
-"Galmee Dhalootaa";
+setText("birthBtn","Birth Registration");
 
+setText("marriageBtn","Marriage Registration");
 
-document.getElementById("marriageBtn").innerHTML=
-"Galmee Gaa'elaa";
+setText("divorceBtn","Divorce Registration");
 
+setText("deathBtn","Death Registration");
 
-document.getElementById("divorceBtn").innerHTML=
-"Galmee Hiikkaa";
-
-
-document.getElementById("adoptionBtn").innerHTML=
-"Galmee Guddifachaa";
-
-
-document.getElementById("deathBtn").innerHTML=
-"Galmee Du'aa";
-
-
-}
+setText("adoptionBtn","Adoption Registration");
 
 
 }
@@ -192,12 +159,83 @@ document.getElementById("deathBtn").innerHTML=
 
 
 
+if(lang=="om"){
+
+
+setText("heading","Galmee Taateewwan Murteessoo");
+
+
+setText("birthBtn","Galmee Dhalootaa");
+
+setText("marriageBtn","Galmee Gaa'elaa");
+
+setText("divorceBtn","Galmee Hiikkaa");
+
+setText("deathBtn","Galmee Du'aa");
+
+setText("adoptionBtn","Galmee Guddifachaa");
+
 
 }
 
 
 
-// Run automatically when page opens
+
+// ================= HOME SERVICES =================
+
+
+if(lang=="am"){
+
+
+setText("residentBtn","የነዋሪ አገልግሎት");
+
+setText("printingBtn","የህትመት አገልግሎት");
+
+setText("remarkBtn","ማስታወሻ አገልግሎት");
+
+setText("onlineIdBtn","የመስመር ላይ መታወቂያ");
+
+
+}
+
+
+
+if(lang=="en"){
+
+
+setText("residentBtn","Resident Service");
+
+setText("printingBtn","Printing Service");
+
+setText("remarkBtn","Remark Service");
+
+setText("onlineIdBtn","Online ID");
+
+
+}
+
+
+
+if(lang=="om"){
+
+
+setText("residentBtn","Tajaajila Jiraataa");
+
+setText("printingBtn","Tajaajila Maxxansaa");
+
+setText("remarkBtn","Tajaajila Yaada Dabalataa");
+
+setText("onlineIdBtn","ID Karaa Interneetii");
+
+
+}
+
+
+}
+
+
+
+// Run when page open
 
 window.onload=function(){
 
