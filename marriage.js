@@ -1,444 +1,259 @@
 function changeLanguage(){
 
-let lang = document.getElementById("language").value;
+let lang=document.getElementById("language").value;
+
+localStorage.setItem("language",lang);
 
 
-// ================= AMHARIC =================
-
+// TITLE
 if(lang=="am"){
 
 document.title="የጋብቻ ምዝገባ";
 
-document.getElementById("officeTitle").innerHTML=
-"CRRSA ጉለሌ ወረዳ 03";
+setText("officeTitle","CRRSA ጉለሌ ወረዳ 03");
+setText("pageTitle","የጋብቻ ምዝገባ አገልግሎት");
+setText("serviceTitle","የጋብቻ ምዝገባ");
 
-document.getElementById("pageTitle").innerHTML=
-"የጋብቻ ምዝገባ አገልግሎት";
+setText("civilTitle",
+"1. አዲስ /ብሔራዊ/ ተጋቢዎች የሚያስፈልጉ ቅድመ ሁኔታዎች");
 
-document.getElementById("serviceTitle").innerHTML=
-"የጋብቻ ምዝገባ";
 
-document.getElementById("civilTitle").innerHTML=
-"1. አዲስ /ብሔራዊ/ ተጋቢዎች የሚያስፈልጉ ቅድመ ሁኔታዎች";
+setCivilAm();
+
+setNotesAm();
+
+setTraditionalAm();
+
+setText("backButton",
+"⬅ ወደ ወሳኝ ኩነት ምዝገባ ተመለስ");
 
 }
 
 
-// ================= ENGLISH =================
 
-if(lang=="en"){
+else if(lang=="en"){
 
 document.title="Marriage Registration";
 
-document.getElementById("officeTitle").innerHTML=
-"CRRSA Gulele Woreda 03";
+setText("officeTitle","CRRSA Gulele Woreda 03");
+setText("pageTitle","Marriage Registration Service");
+setText("serviceTitle","Marriage Registration");
 
-document.getElementById("pageTitle").innerHTML=
-"Marriage Registration Service";
+setText("civilTitle",
+"1. Requirements for New (Civil/National) Marriage Registration");
 
-document.getElementById("serviceTitle").innerHTML=
-"Marriage Registration";
 
-document.getElementById("civilTitle").innerHTML=
-"1. Requirements for New (Civil/National) Marriage Registration";
+setCivilEn();
+
+setNotesEn();
+
+setTraditionalEn();
+
+
+setText("backButton",
+"⬅ Back to Vital Events");
 
 }
 
 
-// ================= AFAAN OROMOO =================
 
-if(lang=="om"){
+else if(lang=="om"){
 
 document.title="Galmee Fuudhaa fi Heerumaa";
 
-document.getElementById("officeTitle").innerHTML=
-"CRRSA Aanaa Gulleellee 03";
+setText("officeTitle",
+"CRRSA Aanaa Gulleellee 03");
 
-document.getElementById("pageTitle").innerHTML=
-"Tajaajila Galmee Fuudhaa fi Heerumaa";
+setText("pageTitle",
+"Tajaajila Galmee Fuudhaa fi Heerumaa");
 
-document.getElementById("serviceTitle").innerHTML=
-"Galmee Fuudhaa fi Heerumaa";
+setText("serviceTitle",
+"Galmee Fuudhaa fi Heerumaa");
 
-document.getElementById("civilTitle").innerHTML=
-"1. Ulaagaalee Fuudhaa fi Heeruma Haaraa";
+
+setText("civilTitle",
+"1. Ulaagaalee Fuudhaa fi Heeruma Haaraa");
+
+
+setCivilOm();
+
+setNotesOm();
+
+setTraditionalOm();
+
+
+setText("backButton",
+"⬅ Gara Galmee Taateewwan Murteessaa Deebi'i");
 
 }
-
-}
-
-// ================= CIVIL REQUIREMENTS =================
-
-
-if(lang=="am"){
-
-
-document.getElementById("civilReq1").innerHTML=
-"ከሁለቱ አንዳቸው የእኛ ወረዳ ነዋሪ መሆን አለባቸው።";
-
-
-document.getElementById("civilReq2").innerHTML=
-"መታወቂያ ከፋይዳ ጋር የተሳሰረ መሆን አለበት።";
-
-
-document.getElementById("civilReq3").innerHTML=
-"ከአዲስ አበባ ውጭ የሆኑ የታደሰ መታወቂያ እና ፋይዳ ማቅረብ አለባቸው።";
-
-
-document.getElementById("civilReq4").innerHTML=
-"ሁለቱም ተጋቢዎች የታደሰ መታወቂያ ወይም ፓስፖርት (ዋናና ኮፒ) ይዘው በአካል መቅረብ አለባቸው።";
-
-
-document.getElementById("civilReq5").innerHTML=
-"ከማመልከቻው ቀጥሎ ለ15 ቀናት የጋብቻ ማስታወቂያ (Online) ይለጠፋል።";
-
-
-document.getElementById("civilReq6").innerHTML=
-"በጋብቻ ቀን ሁለቱም ተጋቢዎች የታደሰ መታወቂያ ወይም ፓስፖርት ዋና ማቅረብ አለባቸው።";
-
-
-document.getElementById("civilReq7").innerHTML=
-"4 ምስክሮች (2 ከሚስት ወገን እና 2 ከባል ወገን) በታደሰ መታወቂያ ወይም ፓስፖርት በአካል መቅረብ አለባቸውፓ";
 
 
 }
 
 
 
-// ================= ENGLISH =================
+// SAFE TEXT FUNCTION
 
+function setText(id,text){
 
-if(lang=="en"){
+let e=document.getElementById(id);
 
-
-document.getElementById("civilReq1").innerHTML=
-"At least one of the applicants must be a resident of our Woreda.";
-
-
-document.getElementById("civilReq2").innerHTML=
-"The ID card must be linked with Fayda.";
-
-
-document.getElementById("civilReq3").innerHTML=
-"Applicants from outside Addis Ababa must present a renewed ID card and Fayda.";
-
-
-document.getElementById("civilReq4").innerHTML=
-"Both applicants must appear in person with renewed ID cards or passports (original and copy).";
-
-
-document.getElementById("civilReq5").innerHTML=
-"A marriage notice will be posted online for 15 days after application submission.";
-
-
-document.getElementById("civilReq6").innerHTML=
-"On the marriage day, both applicants must present their original valid ID cards or passports.";
-
-
-document.getElementById("civilReq7").innerHTML=
-"Four witnesses (2 from the bride side and 2 from the groom side) must appear with valid ID cards or passports.";
-
+if(e){
+e.innerHTML=text;
+}
 
 }
 
 
 
-// ================= AFAAN OROMOO =================
+// ================= CIVIL AM =================
 
+function setCivilAm(){
 
-if(lang=="om"){
+setText("civilReq1",
+"Namoota lamaan keessaa tokko jiraataa Aanaa keenya ta'uu qaba.");
 
+setText("civilReq2",
+"ከሁለቱ አንዳቸው የእኛ ወረዳ ነዋሪ መሆን አለባቸው።");
 
-document.getElementById("civilReq1").innerHTML=
-"Namoota lamaan keessaa tokko jiraataa Aanaa keenya ta'uu qaba.";
+setText("civilReq3",
+"ከአዲስ አበባ ውጭ የሆኑ የታደሰ መታወቂያ እና ፋይዳ ማቅረብ አለባቸው።");
 
+setText("civilReq4",
+"ሁለቱም ተጋቢዎች የታደሰ መታወቂያ ወይም ፓስፖርት በአካል መቅረብ አለባቸው።");
 
-document.getElementById("civilReq2").innerHTML=
-"Waraqaan eenyummaa Faayidaa waliin walqabatee ta'uu qaba.";
+setText("civilReq5",
+"የጋብቻ ማስታወቂያ ለ15 ቀናት Online ይለጠፋል።");
 
+setText("civilReq6",
+"በጋብቻ ቀን ዋና መታወቂያ ወይም ፓስፖርት ማቅረብ አለባቸው።");
 
-document.getElementById("civilReq3").innerHTML=
-"Namoonni Finfinnee ala jiraatan eenyummaa haarawaa fi Faayidaa dhiyeessuu qabu.";
-
-
-document.getElementById("civilReq4").innerHTML=
-"Namoonni lamaan eenyummaa ykn paaspoortii haarawaa (isa jalqabaa fi kooppii) qabatanii qaamaan dhiyaachuu qabu.";
-
-
-document.getElementById("civilReq5").innerHTML=
-"Beeksisni fuudhaa fi heerumaa guyyaa 15f online irratti maxxanfama.";
-
-
-document.getElementById("civilReq6").innerHTML=
-"Guyyaa fuudhaa fi heerumaa eenyummaa ykn paaspoortii isaanii isa jalqabaa dhiyeessuu qabu.";
-
-
-document.getElementById("civilReq7").innerHTML=
-"Ragaa baatota afur (lama gama dhiiraa fi lama gama dubartii) eenyummaa ykn paaspoortii qabanii dhiyaachuu qabu.";
-
-
-}
-// ================= NOTES =================
-
-
-if(lang=="am"){
-
-
-document.getElementById("noteTitle").innerHTML=
-"ማሳሰቢያ";
-
-
-document.getElementById("note1").innerHTML=
-"ከዚህ በፊት የወጣ ያላገባ/ች ሰርተፍኬት ካለ በጋብቻው ቀን ይመለሳል።";
-
-
-document.getElementById("note2").innerHTML=
-"የፍቺ ሰርተፍኬት ካለ በጋብቻው ቀን ይመለሳል።";
-
-
-document.getElementById("note3").innerHTML=
-"አንዲት ሴት ፍቺ ከፈጸመች ከ6 ወር በፊት ከሌላ ሰው ጋር ጋብቻ መፈጸም አትችልም።";
-
-
-document.getElementById("note4").innerHTML=
-"የአዲስ አበባ ነዋሪ የሆኑ ምስክሮች መታወቂያቸው ከፋይዳ ጋር የተሳሰረ መሆን አለበት።";
-
-
-document.getElementById("note5").innerHTML=
-"ይህ መመሪያ የባህል ወይም የኃይማኖት ጋብቻን አይመለከትም።";
-
+setText("civilReq7",
+"4 ምስክሮች በአካል መቅረብ አለባቸው።");
 
 }
 
 
 
-// ================= ENGLISH NOTES =================
+// ================= EN =================
 
+function setCivilEn(){
 
-if(lang=="en"){
+setText("civilReq1",
+"At least one applicant must be a resident of our Woreda.");
 
+setText("civilReq2",
+"The ID card must be linked with Fayda.");
 
-document.getElementById("noteTitle").innerHTML=
-"Notes";
+setText("civilReq3",
+"Applicants outside Addis Ababa must present renewed ID and Fayda.");
 
+setText("civilReq4",
+"Both applicants must appear with renewed ID card or passport.");
 
-document.getElementById("note1").innerHTML=
-"If a previous Single Status Certificate was issued, it must be returned on the marriage registration day.";
+setText("civilReq5",
+"Marriage notice will be posted online for 15 days.");
 
+setText("civilReq6",
+"Both applicants must present original ID or passport on marriage day.");
 
-document.getElementById("note2").innerHTML=
-"If a Divorce Certificate exists, it must be returned on the marriage registration day.";
-
-
-document.getElementById("note3").innerHTML=
-"A divorced woman cannot marry another person before six months have passed after divorce.";
-
-
-document.getElementById("note4").innerHTML=
-"Witnesses who are Addis Ababa residents must have ID cards linked with Fayda.";
-
-
-document.getElementById("note5").innerHTML=
-"These requirements do not apply to religious or customary marriages.";
-
+setText("civilReq7",
+"Four witnesses must appear with valid ID cards or passports.");
 
 }
 
 
 
-// ================= AFAAN OROMOO NOTES =================
+// ================= OROMO =================
 
+function setCivilOm(){
 
-if(lang=="om"){
+setText("civilReq1",
+"Namoota lamaan keessaa tokko jiraataa Aanaa keenya ta'uu qaba.");
 
+setText("civilReq2",
+"Waraqaan eenyummaa Faayidaa waliin walqabatee ta'uu qaba.");
 
-document.getElementById("noteTitle").innerHTML=
-"Hubachiisa";
+setText("civilReq3",
+"Namoonni Finfinnee ala jiraatan eenyummaa haarawaa fi Faayidaa dhiyeessuu qabu.");
 
+setText("civilReq4",
+"Namoonni lamaan eenyummaa ykn paaspoortii qabatanii qaamaan dhiyaachuu qabu.");
 
-document.getElementById("note1").innerHTML=
-"Ragaan nama hin fuune/hin heerumne duraan kenname yoo jiraate guyyaa galmee gaa'elaa irratti deebi'a.";
+setText("civilReq5",
+"Beeksisni fuudhaa fi heerumaa guyyaa 15f online irratti maxxanfama.");
 
+setText("civilReq6",
+"Guyyaa fuudhaa fi heerumaa eenyummaa isaanii dhiyeessuu qabu.");
 
-document.getElementById("note2").innerHTML=
-"Ragaan hiikkaa gaa'elaa yoo jiraate guyyaa galmee gaa'elaa irratti deebi'a.";
-
-
-document.getElementById("note3").innerHTML=
-"Dubartiin hiikkaa booda ji'a jaha dura nama biraa waliin heerumuu hin dandeessu.";
-
-
-document.getElementById("note4").innerHTML=
-"Ragaa baatonni Finfinnee jiraatan eenyummaan isaanii Faayidaa waliin walqabatee ta'uu qaba.";
-
-
-document.getElementById("note5").innerHTML=
-"Qajeelfamni kun gaa'ela aadaa ykn amantii irratti hin hojii irra oolu.";
-
-
-}
-// ================= TRADITIONAL / RELIGIOUS MARRIAGE =================
-
-
-// ============ AMHARIC ============
-
-if(lang=="am"){
-
-
-document.getElementById("traditionalTitle").innerHTML=
-"2. ባህላዊ /ኃይማኖታዊ ጋብቻ ምዝገባ የሚያስፈልጉ ቅድመ ሁኔታዎች";
-
-
-document.getElementById("tradReq1").innerHTML=
-"ከሁለቱ አንዳቸው የእኛ ወረዳ ነዋሪ መሆን አለባቸው።";
-
-
-document.getElementById("tradReq2").innerHTML=
-"የባህል ወይም የኃይማኖት ጋብቻ ዋና ማስረጃ ማቅረብ አለበት።";
-
-
-document.getElementById("tradReq3").innerHTML=
-"ዋናው ማስረጃ ከጠፋ የፖሊስ ማስረጃ እና የተጋቡበትን ዓመት የሚገልጽ ማስረጃ ማቅረብ አለበት።";
-
-
-document.getElementById("tradReq4").innerHTML=
-"የባልና ሚስት የታደሰ መታወቂያ ወይም ፓስፖርት (ዋናና ኮፒ) ማቅረብ አለባቸው።";
-
-
-document.getElementById("tradReq5").innerHTML=
-"የባልና ሚስት 2 ጉርድ 3×4 ፎቶግራፍ ማቅረብ አለባቸው።";
-
-
-document.getElementById("tradReq6").innerHTML=
-"4 ምስክሮች በታደሰ መታወቂያ ወይም ፓስፖርት በአካል መቅረብ አለባቸው።";
-
-
-document.getElementById("tradReq7").innerHTML=
-"የተጋቢዎች ልጆች ምስክር መሆን አይችሉም።";
-
-
-document.getElementById("tradReq8").innerHTML=
-"መታወቂያ ከፋይዳ ጋር የተሳሰረ መሆን አለበት፤ ከአዲስ አበባ ውጭ የሆኑ ፋይዳ ማቅረብ አለባቸው።";
-
+setText("civilReq7",
+"Ragaa baatota afur dhiyeessuu qabu.");
 
 }
 
 
 
-// ============ ENGLISH ============
+// NOTES
 
+function setNotesAm(){
 
-if(lang=="en"){
-
-
-document.getElementById("traditionalTitle").innerHTML=
-"2. Requirements for Customary / Religious Marriage Registration";
-
-
-document.getElementById("tradReq1").innerHTML=
-"At least one of the applicants must be a resident of our Woreda.";
-
-
-document.getElementById("tradReq2").innerHTML=
-"The original customary or religious marriage certificate must be presented.";
-
-
-document.getElementById("tradReq3").innerHTML=
-"If the original certificate is lost, a police report and evidence showing the marriage year must be presented.";
-
-
-document.getElementById("tradReq4").innerHTML=
-"The husband and wife must provide renewed ID cards or passports (original and copy).";
-
-
-document.getElementById("tradReq5").innerHTML=
-"The husband and wife must provide two 3×4 passport-size photographs each.";
-
-
-document.getElementById("tradReq6").innerHTML=
-"Four witnesses with valid ID cards or passports must appear in person.";
-
-
-document.getElementById("tradReq7").innerHTML=
-"The couple's children cannot be witnesses.";
-
-
-document.getElementById("tradReq8").innerHTML=
-"ID cards must be linked with Fayda. Applicants outside Addis Ababa must provide Fayda.";
-
-
-}
-// ============ AFAAN OROMOO TRADITIONAL ============
-
-if(lang=="om"){
-
-
-document.getElementById("traditionalTitle").innerHTML=
-"2. Ulaagaalee Galmee Fuudhaa fi Heerumaa Aadaa / Amantii";
-
-
-document.getElementById("tradReq1").innerHTML=
-"Namoota lamaan keessaa tokko jiraataa Aanaa keenya ta'uu qaba.";
-
-
-document.getElementById("tradReq2").innerHTML=
-"Ragaa fuudhaa fi heeruma aadaa ykn amantii isa jalqabaa dhiyeessuu qabu.";
-
-
-document.getElementById("tradReq3").innerHTML=
-"Ragaan jalqabaa yoo bade, ragaa poolisii fi ragaa waggaa fuudhaa fi heerumaa ibsu dhiyeessuu qabu.";
-
-
-document.getElementById("tradReq4").innerHTML=
-"Abbaa manaa fi haati manaa eenyummaa ykn paaspoortii haarawaa (isa jalqabaa fi kooppii) dhiyeessuu qabu.";
-
-
-document.getElementById("tradReq5").innerHTML=
-"Abbaa manaa fi haati manaa tokkoon tokkoon isaanii suuraa 3×4 lama dhiyeessuu qabu.";
-
-
-document.getElementById("tradReq6").innerHTML=
-"Ragaa baatota afur eenyummaa ykn paaspoortii qabanii qaamaan dhiyaachuu qabu.";
-
-
-document.getElementById("tradReq7").innerHTML=
-"Ijoolleen isaanii ragaa baatuu ta'uu hin danda'an.";
-
-
-document.getElementById("tradReq8").innerHTML=
-"Eenyummaan Faayidaa waliin walqabatee ta'uu qaba. Namoonni Finfinnee ala jiraatan Faayidaa dhiyeessuu qabu.";
-
+setText("noteTitle","ማሳሰቢያ");
 
 }
 
+function setNotesEn(){
 
-// ============ BACK BUTTON ============
+setText("noteTitle","Notes");
 
+}
 
-if(lang=="am"){
+function setNotesOm(){
 
-document.getElementById("backButton").innerHTML=
-"⬅ ወደ ወሳኝ ኩነት ምዝገባ ተመለስ";
+setText("noteTitle","Hubachiisa");
 
 }
 
 
 
-if(lang=="en"){
+// TRADITIONAL
 
-document.getElementById("backButton").innerHTML=
-"⬅ Back to Vital Events";
+function setTraditionalAm(){
+
+setText("traditionalTitle",
+"2. ባህላዊ /ኃይማኖታዊ ጋብቻ");
+
+}
+
+
+function setTraditionalEn(){
+
+setText("traditionalTitle",
+"2. Requirements for Customary / Religious Marriage");
+
+}
+
+
+function setTraditionalOm(){
+
+setText("traditionalTitle",
+"2. Ulaagaalee Fuudhaa fi Heeruma Aadaa / Amantii");
 
 }
 
 
 
-if(lang=="om"){
+// LOAD SAVED LANGUAGE
 
-document.getElementById("backButton").innerHTML=
-"⬅ Gara Galmee Taateewwan Murteessaa Deebi'i";
+window.onload=function(){
+
+let lang=localStorage.getItem("language");
+
+if(lang){
+
+document.getElementById("language").value=lang;
+
+changeLanguage();
 
 }
 
-
-}
+};
