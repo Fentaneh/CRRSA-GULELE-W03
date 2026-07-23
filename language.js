@@ -233,12 +233,26 @@ setText("onlineIdBtn","ID Karaa Interneetii");
 
 }
 
-
-
-// Run when page open
-
 window.onload=function(){
+
+let savedLanguage = localStorage.getItem("language");
+
+
+if(savedLanguage){
+
+document.getElementById("language").value = savedLanguage;
+
+}
+else{
+
+localStorage.setItem("language","am");
+
+document.getElementById("language").value="am";
+
+}
+
 
 translatePage();
 
 };
+
