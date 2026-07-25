@@ -1,230 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRRSA Gulele Woreda 03 - Feedback</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-family:Arial,sans-serif;
+            background:#f4f4f4;
+            margin:0;
+            padding:0;
+            text-align:center;
+        }
 
-<title>CRRSA Feedback</title>
+        .container{
+            width:90%;
+            max-width:700px;
+            margin:50px auto;
+            background:#fff;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,.2);
+        }
 
-<style>
+        h2{
+            color:#004d99;
+        }
 
-body{
-font-family:Arial,sans-serif;
-background:#f5f5f5;
-}
+        p{
+            font-size:18px;
+            color:#444;
+        }
 
-.container{
-width:90%;
-max-width:500px;
-margin:40px auto;
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 0 10px #ccc;
-}
+        .feedback-btn{
+            display:inline-block;
+            margin-top:20px;
+            padding:15px 35px;
+            background:#004d99;
+            color:#fff;
+            text-decoration:none;
+            font-size:20px;
+            border-radius:8px;
+        }
 
-h2{
-color:#004d99;
-text-align:center;
-}
-
-input, textarea, select{
-
-width:100%;
-padding:12px;
-margin:10px 0;
-border:1px solid #ccc;
-border-radius:5px;
-
-}
-
-
-button{
-
-width:100%;
-padding:12px;
-background:#004d99;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
-
-}
-
-
-button:hover{
-
-background:#0066cc;
-
-}
-
-
-#otherService{
-
-display:none;
-
-}
-
-</style>
-
+        .feedback-btn:hover{
+            background:#0066cc;
+        }
+    </style>
 </head>
-
-
 <body>
-
 
 <div class="container">
 
+<h2>CRRSA GULELE W03 Customer Feedback</h2>
 
-<h2>Customer Feedback</h2>
+<p>We value your feedback.</p>
 
+<p>አስተያየትዎን በመስጠት አገልግሎታችንን ለማሻሻል ይረዱን።</p>
 
-<form action="send_feedback.php" method="POST">
+<p>Yaada keessan nuuf kennaa.</p>
 
+<a class="feedback-btn"
+href="https://docs.google.com/forms/d/e/1FAIpQLSeX2m503_AdDI42Bw4c350LB5ptvUTVhZOXCPHUPVmIE2nRQA/viewform"
+target="_blank">
 
-<label>
-Name
-</label>
+📝 Feedback | አስተያየት | Yaada
 
-<input type="text" name="name" placeholder="Your Name" required>
-
-
-
-<label>
-Phone
-</label>
-
-<input type="text" name="phone" placeholder="Phone Number">
-
-
-
-<label>
-Service Received
-</label>
-
-
-<select name="service" id="service" onchange="checkOther()" required>
-
-
-<option value="">
-Select Service
-</option>
-
-
-<option value="Resident Service">
-Resident Service
-</option>
-
-
-<option value="Birth Registration">
-Birth Registration
-</option>
-
-
-<option value="Marriage Registration">
-Marriage Registration
-</option>
-
-
-<option value="Divorce Registration">
-Divorce Registration
-</option>
-
-
-<option value="Death Registration">
-Death Registration
-</option>
-
-
-<option value="Printing Service">
-Printing Service
-</option>
-
-
-<option value="Remark Service">
-Remark Service
-</option>
-
-
-<option value="Other">
-Other
-</option>
-
-
-</select>
-
-
-
-<input 
-type="text"
-name="otherService"
-id="otherService"
-placeholder="Write your service">
-
-
-
-<label>
-Your Feedback
-</label>
-
-
-<textarea 
-name="message"
-rows="5"
-placeholder="Write your feedback"
-required>
-</textarea>
-
-
-
-<button type="submit">
-Send Feedback
-</button>
-
-
-</form>
-
+</a>
 
 </div>
 
-
-
-<script>
-
-
-function checkOther(){
-
-
-let service=document.getElementById("service").value;
-
-let other=document.getElementById("otherService");
-
-
-if(service=="Other"){
-
-other.style.display="block";
-
-other.required=true;
-
-}
-
-else{
-
-other.style.display="none";
-
-other.required=false;
-
-}
-
-
-}
-
-
-</script>
-
-
 </body>
-
 </html>
