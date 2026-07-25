@@ -1,0 +1,7 @@
+<?php
+
+$botToken = "PASTE_YOUR_BOT_TOKEN_HERE";
+
+$chatID = "PASTE_YOUR_CHANNEL_OR_GROUP_ID_HERE";
+
+?>
