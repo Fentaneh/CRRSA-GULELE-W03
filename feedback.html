@@ -1,63 +1,230 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>CRRSA Feedback</title>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CRRSA Feedback</title>
 
 <style>
+
 body{
-font-family:Arial;
+font-family:Arial,sans-serif;
 background:#f5f5f5;
 }
 
-.box{
-width:400px;
-margin:50px auto;
+.container{
+width:90%;
+max-width:500px;
+margin:40px auto;
 background:white;
-padding:20px;
+padding:25px;
 border-radius:10px;
+box-shadow:0 0 10px #ccc;
 }
 
-input,textarea{
-width:100%;
-padding:10px;
-margin:8px 0;
+h2{
+color:#004d99;
+text-align:center;
 }
+
+input, textarea, select{
+
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+
+}
+
 
 button{
+
+width:100%;
+padding:12px;
 background:#004d99;
 color:white;
-padding:10px;
 border:none;
-width:100%;
+border-radius:5px;
+cursor:pointer;
+
+}
+
+
+button:hover{
+
+background:#0066cc;
+
+}
+
+
+#otherService{
+
+display:none;
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
-<div class="box">
+
+<div class="container">
+
 
 <h2>Customer Feedback</h2>
 
+
 <form action="send_feedback.php" method="POST">
+
+
+<label>
+Name
+</label>
 
 <input type="text" name="name" placeholder="Your Name" required>
 
+
+
+<label>
+Phone
+</label>
+
 <input type="text" name="phone" placeholder="Phone Number">
 
-<textarea name="message" placeholder="Your Feedback" required></textarea>
+
+
+<label>
+Service Received
+</label>
+
+
+<select name="service" id="service" onchange="checkOther()" required>
+
+
+<option value="">
+Select Service
+</option>
+
+
+<option value="Resident Service">
+Resident Service
+</option>
+
+
+<option value="Birth Registration">
+Birth Registration
+</option>
+
+
+<option value="Marriage Registration">
+Marriage Registration
+</option>
+
+
+<option value="Divorce Registration">
+Divorce Registration
+</option>
+
+
+<option value="Death Registration">
+Death Registration
+</option>
+
+
+<option value="Printing Service">
+Printing Service
+</option>
+
+
+<option value="Remark Service">
+Remark Service
+</option>
+
+
+<option value="Other">
+Other
+</option>
+
+
+</select>
+
+
+
+<input 
+type="text"
+name="otherService"
+id="otherService"
+placeholder="Write your service">
+
+
+
+<label>
+Your Feedback
+</label>
+
+
+<textarea 
+name="message"
+rows="5"
+placeholder="Write your feedback"
+required>
+</textarea>
+
+
 
 <button type="submit">
 Send Feedback
 </button>
 
+
 </form>
+
 
 </div>
 
+
+
+<script>
+
+
+function checkOther(){
+
+
+let service=document.getElementById("service").value;
+
+let other=document.getElementById("otherService");
+
+
+if(service=="Other"){
+
+other.style.display="block";
+
+other.required=true;
+
+}
+
+else{
+
+other.style.display="none";
+
+other.required=false;
+
+}
+
+
+}
+
+
+</script>
+
+
 </body>
+
 </html>
