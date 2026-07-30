@@ -1,5 +1,6 @@
 // ======================================
-// CRRSA Website Search System
+// CRRSA Gulele Woreda 03
+// Website Search System
 // Amharic / English / Afaan Oromoo
 // ======================================
 
@@ -42,6 +43,13 @@ file:"death.html"
 },
 
 {
+am:"የጉዲፈቻ ምዝገባ",
+en:"Adoption Registration",
+om:"Galmee Guddifachaa",
+file:"adoption.html"
+},
+
+{
 am:"ነዋሪ አገልግሎት",
 en:"Resident Service",
 om:"Tajaajila Jiraataa",
@@ -59,7 +67,8 @@ file:"single-status.html"
 
 
 
-// OPEN SERVICE
+
+// OPEN PAGE
 
 function openService(file,url){
 
@@ -68,11 +77,13 @@ function openService(file,url){
         window.open(url,"_blank");
 
     }
+
     else if(file){
 
         window.location.href=file;
 
     }
+
     else{
 
         alert("Page not found");
@@ -84,26 +95,10 @@ function openService(file,url){
 
 
 
-// SEARCH
+
+// SEARCH FUNCTION
 
 function searchWebsite(){
-
-
-// get current language every search
-
-let lang = localStorage.getItem("language") || "am";
-
-
-let buttonText={
-
-am:"ክፈት",
-
-en:"Open",
-
-om:"Bani"
-
-};
-
 
 
 let text =
@@ -124,7 +119,7 @@ result.innerHTML="";
 
 if(text==""){
 
-result.innerHTML=
+result.innerHTML =
 "Please type search word / የሚፈልጉትን ይጻፉ / Maal barbaaddu barreessi";
 
 return;
@@ -152,6 +147,7 @@ if(
 am.includes(text) ||
 en.includes(text) ||
 om.includes(text)
+
 ){
 
 
@@ -177,7 +173,7 @@ result.innerHTML += `
 
 <button onclick="openService('${service.file || ""}','${service.url || ""}')">
 
-${buttonText[lang]}
+Open / ክፈት / Bani
 
 </button>
 
@@ -195,10 +191,12 @@ ${buttonText[lang]}
 
 
 
-if(!found){
 
 
-result.innerHTML=`
+if(found==false){
+
+
+result.innerHTML = `
 
 <p>
 
