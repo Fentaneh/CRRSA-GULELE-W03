@@ -855,19 +855,21 @@ element.innerHTML = t[id];
 
 }
 
-window.onload = function(){
+window.onload=function(){
 
-let savedLanguage = localStorage.getItem("selectedLanguage");
+let savedLang = localStorage.getItem("language") || "am";
 
-if(savedLanguage){
+let selector = document.getElementById("language");
 
-document.getElementById("language").value = savedLanguage;
+if(selector){
+
+selector.value = savedLang;
+
+}
 
 changeLanguage();
 
-}
-
-}
+};
 
 </script>
  
