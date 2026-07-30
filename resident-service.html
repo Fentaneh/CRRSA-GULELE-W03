@@ -149,8 +149,9 @@ Resident Verification Service
 
 function changeLanguage(){
 
-let lang=document.getElementById("language").value;
+let lang = document.getElementById("language").value;
 
+localStorage.setItem("selectedLanguage", lang);
 
 if(lang=="am"){
 
@@ -273,7 +274,19 @@ document.getElementById("backButton").innerHTML=
 }
 
 }
+window.onload = function(){
 
+let savedLanguage = localStorage.getItem("selectedLanguage");
+
+if(savedLanguage){
+
+document.getElementById("language").value = savedLanguage;
+
+changeLanguage();
+
+}
+
+}
 </script>
   
 </body>
