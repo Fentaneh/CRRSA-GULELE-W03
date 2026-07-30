@@ -1,6 +1,5 @@
 // ======================================
-// CRRSA Gulele Woreda 03
-// Search System
+// CRRSA Website Search System
 // Amharic / English / Afaan Oromoo
 // ======================================
 
@@ -43,13 +42,6 @@ file:"death.html"
 },
 
 {
-am:"የጉዲፈቻ ምዝገባ",
-en:"Adoption Registration",
-om:"Galmee Guddifachaa",
-file:"adoption.html"
-},
-
-{
 am:"ነዋሪ አገልግሎት",
 en:"Resident Service",
 om:"Tajaajila Jiraataa",
@@ -66,29 +58,29 @@ file:"single-status.html"
 ];
 
 
-// OPEN PAGE
+
+// OPEN SERVICE
 
 function openService(file,url){
 
-if(url){
+    if(url){
 
-window.open(url,"_blank");
+        window.open(url,"_blank");
 
-}
+    }
+    else if(file){
 
-else if(file){
+        window.location.href=file;
 
-window.location.href=file;
+    }
+    else{
 
-}
+        alert("Page not found");
 
-else{
-
-alert("Page not found");
-
-}
+    }
 
 }
+
 
 
 
@@ -97,41 +89,48 @@ alert("Page not found");
 function searchWebsite(){
 
 
-let text=document
-.getElementById("searchInput")
+// get current language every search
+
+let lang = localStorage.getItem("language") || "am";
+
+
+let buttonText={
+
+am:"ክፈት",
+
+en:"Open",
+
+om:"Bani"
+
+};
+
+
+
+let text =
+document.getElementById("searchInput")
 .value
 .toLowerCase()
 .trim();
 
 
-let result=document.getElementById("searchResult");
+
+let result =
+document.getElementById("searchResult");
 
 
 result.innerHTML="";
 
 
-let lang = localStorage.getItem("language");
-
-if(!lang){
-    lang = document.getElementById("language")?.value || "am";
-}
-
-let buttonText={
-am:"ክፈት",
-en:"Open",
-om:"Bani"
-};
-
-
 
 if(text==""){
 
-result.innerHTML =
+result.innerHTML=
 "Please type search word / የሚፈልጉትን ይጻፉ / Maal barbaaddu barreessi";
 
 return;
 
 }
+
 
 
 let found=false;
@@ -141,48 +140,39 @@ let found=false;
 services.forEach(function(service){
 
 
+let am = service.am.toLowerCase();
+
+let en = service.en.toLowerCase();
+
+let om = service.om.toLowerCase();
+
+
+
 if(
-
-service.am.toLowerCase().includes(text) ||
-
-service.en.toLowerCase().includes(text) ||
-
-service.om.toLowerCase().includes(text)
-
+am.includes(text) ||
+en.includes(text) ||
+om.includes(text)
 ){
 
 
 found=true;
 
 
-let title;
-
-
-if(lang=="am"){
-
-title=service.am;
-
-}
-
-else if(lang=="om"){
-
-title=service.om;
-
-}
-
-else{
-
-title=service.en;
-
-}
-
-
 
 result.innerHTML += `
 
+
 <div class="search-card">
 
-<h3>${title}</h3>
+
+<h3>${service.en}</h3>
+
+
+<p>${service.am}</p>
+
+
+<p>${service.om}</p>
+
 
 
 <button onclick="openService('${service.file || ""}','${service.url || ""}')">
@@ -192,7 +182,9 @@ ${buttonText[lang]}
 </button>
 
 
+
 </div>
+
 
 `;
 
@@ -206,14 +198,18 @@ ${buttonText[lang]}
 if(!found){
 
 
-result.innerHTML=
+result.innerHTML=`
 
-`
 <p>
+
 Service not found<br>
+
 አገልግሎት አልተገኘም<br>
+
 Tajaajilli hin argamne
+
 </p>
+
 `;
 
 }
