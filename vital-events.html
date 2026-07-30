@@ -329,6 +329,19 @@ document.getElementById("backButton").innerHTML =
 }
 
 }
+window.onload = function(){
+
+let savedLanguage = localStorage.getItem("selectedLanguage");
+
+if(savedLanguage){
+
+document.getElementById("language").value = savedLanguage;
+
+changeLanguage();
+
+}
+
+}
 </script> 
     
 <script src="language.js"></script>
