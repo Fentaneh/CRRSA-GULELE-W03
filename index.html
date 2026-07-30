@@ -689,272 +689,105 @@ function searchService() {
 <p>© 2026 CRRSA Gulele Woreda 03. All Rights Reserved. Crated by Fentaneh D.</p>
 
 </footer>
+
 <script>
+
 function changeLanguage(){
 
-const lang = document.getElementById("language").value;
+let lang = document.getElementById("language").value;
 
-if(lang=="am"){
 
-document.getElementById("navHome").innerHTML="መነሻ";
-document.getElementById("navResident").innerHTML="የነዋሪነት";
-document.getElementById("navVital").innerHTML="የሲቪል ምዝገባ";
-document.getElementById("navPrinting").innerHTML="ህትመት";
-document.getElementById("navRemark").innerHTML="ማስተካከያ";
-document.getElementById("navContact").innerHTML="አድራሻ";
+let text = {
 
-document.getElementById("welcomeTitle").innerHTML="እንኳን ወደ ጉለሌ ወረዳ 03 የሲቪል ምዝገባ እና የነዋሪነት አገልግሎት ጽ/ቤት በደህና መጡ!!";
+en:{
+navHome:"Home",
+navResident:"Resident",
+navVital:"Vital Events",
+navPrinting:"Printing",
+navContact:"Contact",
 
-document.getElementById("welcomeText").innerHTML="የሲቪል ምዝገባ እና የነዋሪነት አገልግሎት ጽ/ቤት ለህብረተሰቡ የልደት፣ የጋብቻ፣ የፍቺ፣ የሞት፣ የነዋሪነት፣ የህትመት እና ሌሎች አገልግሎቶችን ይሰጣል።";
+welcomeTitle:"Welcome to CRRSA Gulele Woreda 03",
 
+welcomeText:
+"We provide Civil Registration and Residency Services including Birth, Marriage, Divorce, Death Registration, Resident Services, Printing Services and Remark Services.",
+
+residentCard:"Resident Service",
+residentText:
+"Resident ID, Residence Verification, Single Status, Proof of Life and Transfer Letter Services.",
+
+vitalCard:"Vital Events",
+vitalText:
+"Birth, Marriage, Divorce and Death Registration Services."
+},
+
+
+am:{
+navHome:"መነሻ",
+navResident:"የነዋሪ አገልግሎት",
+navVital:"የወሳኝ ኩነቶች",
+navPrinting:"ህትመት",
+navContact:"ያግኙን",
+
+welcomeTitle:
+"እንኳን ወደ CRRSA ጉለሌ ወረዳ 03 በደህና መጡ",
+
+welcomeText:
+"የልደት፣ ጋብቻ፣ ፍቺ፣ ሞት ምዝገባ፣ የነዋሪ አገልግሎት፣ ህትመት እና ማስተካከያ አገልግሎቶችን እንሰጣለን።",
+
+residentCard:"የነዋሪ አገልግሎት",
+
+residentText:
+"የነዋሪ መታወቂያ፣ የመኖሪያ ማረጋገጫ፣ ያላገባ ማረጋገጫ፣ የሕይወት ማረጋገጫ እና መሸኛ አገልግሎት።",
+
+vitalCard:"የወሳኝ ኩነቶች",
+
+vitalText:
+"የልደት፣ ጋብቻ፣ ፍቺ እና ሞት ምዝገባ አገልግሎት።"
+},
+
+
+om:{
+
+navHome:"Mana",
+navResident:"Tajaajila Jiraataa",
+navVital:"Taateewwan Murteessoo",
+navPrinting:"Maxxansaa",
+navContact:"Nu Qunnamaa",
+
+welcomeTitle:
+"Baga gara CRRSA Gulele Woreda 03 dhuftan",
+
+welcomeText:
+"Tajaajila galmee dhalootaa, gaa'elaa, hiikaa, du'aa, tajaajila jiraataa, maxxansaa fi sirreeffamaa ni kennina.",
+
+residentCard:
+"Tajaajila Jiraataa",
+
+residentText:
+"ID Jiraataa, mirkaneessa jireenyaa, ragaa qeenxummaa, ragaa jiraachuu fi tajaajila dabarsaa.",
+
+vitalCard:
+"Taateewwan Murteessoo",
+
+vitalText:
+"Galmee dhalootaa, gaa'elaa, hiikaa fi du'aa."
 }
 
-else if(lang=="om"){
+};
 
-document.getElementById("navHome").innerHTML="Mana";
-document.getElementById("navResident").innerHTML="Tajaajila Jiraattotaa";
-document.getElementById("navVital").innerHTML="Galmee Sivilii";
-document.getElementById("navPrinting").innerHTML="Maxxansaa";
-document.getElementById("navRemark").innerHTML="Fooyya'iinsa";
-document.getElementById("navContact").innerHTML="Qunnamtii";
 
-document.getElementById("welcomeTitle").innerHTML="Baga Nagaan Gara Waajjira CRRSA Aanaa Gullallee 03 Dhuftan!";
+let t=text[lang];
 
-document.getElementById("welcomeText").innerHTML="Waajjirri kun tajaajila galmee dhalootaa, gaa'elaa, hiikkaa gaa'elaa, du'aa fi tajaajila jiraattotaa kenna.";
 
-}
+for(let id in t){
 
-else{
-
-document.getElementById("navHome").innerHTML="Home";
-document.getElementById("navResident").innerHTML="Resident";
-document.getElementById("navVital").innerHTML="Vital Events";
-document.getElementById("navPrinting").innerHTML="Printing";
-document.getElementById("navRemark").innerHTML="Remark";
-document.getElementById("navContact").innerHTML="Contact";
-
-document.getElementById("welcomeTitle").innerHTML="Welcome to CRRSA Gulele Woreda 03";
-
-document.getElementById("welcomeText").innerHTML="Civil Registration and Residency Service Office provides Birth Registration, Marriage Registration, Divorce Registration, Death Registration, Resident Services, Printing Services, Remark Services and other public services.";
-
-}
-document.getElementById("residentCard").innerHTML="የነዋሪነት አገልግሎት";
-document.getElementById("vitalCard").innerHTML="የሲቪል ምዝገባ";
-document.getElementById("printingCard").innerHTML="የህትመት አገልግሎት";
-document.getElementById("remarkCard").innerHTML="የማስተካከያ አገልግሎት";
-
-document.getElementById("residentText").innerHTML="የነዋሪነት ማረጋገጫ፣ መሸኛ፣ እና ሌሎች አገልግሎቶች።";
-document.getElementById("vitalText").innerHTML="የልደት፣ የጋብቻ፣ የፍቺ እና የሞት ምዝገባ።";
-document.getElementById("printingText").innerHTML="የመታወቂያ ህትመት እና ምትክ አገልግሎት።";
-document.getElementById("remarkText").innerHTML="የመረጃ ማስተካከያ አገልግሎት።";
- 
- document.getElementById("residentCard").innerHTML="Tajaajila Jiraattotaa";
-document.getElementById("vitalCard").innerHTML="Galmee Sivilii";
-document.getElementById("printingCard").innerHTML="Tajaajila Maxxansaa";
-document.getElementById("remarkCard").innerHTML="Tajaajila Fooyya'iinsaa";
-
-document.getElementById("residentText").innerHTML="Ragaa jiraattummaa fi tajaajiloota biroo.";
-document.getElementById("vitalText").innerHTML="Galmee dhalootaa, gaa'elaa, hiikkaa fi du'aa.";
-document.getElementById("printingText").innerHTML="Maxxansaa fi bakka bu'iinsa eenyummaa.";
-document.getElementById("remarkText").innerHTML="Tajaajila sirreeffamaa.";
-}
- window.onload = function(){
-
-const lang = localStorage.getItem("language");
-
-if(lang){
-
-document.getElementById("language").value = lang;
-
-changeLanguage();
-
-}
-
-}
-</script>
-// =====================================
-// CRRSA Search System
-// 3 Language Search
-// Amharic / English / Afaan Oromoo
-// =====================================
-
-<script>
-   function searchService(){
-
-
- let searchText = document
-.getElementById("searchInput")
-.value
-.toLowerCase();
-
-
-let lang = localStorage.getItem("language") || "am";
-
-
-
-// =================
-// AMHARIC
-// =================
-
-if(lang=="am"){
-
-
-if(searchText.includes("ልደት")){
-
-window.location="birth.html";
-
-}
-
-else if(searchText.includes("ጋብቻ")){
-
-window.location="marriage-registration.html";
-
-}
-
-else if(searchText.includes("ፍቺ")){
-
-window.location="divorce-registration.html";
-
-}
-
-else if(searchText.includes("ሞት")){
-
-window.location="death-registration.html";
-
-}
-
-else if(searchText.includes("ጉዲፈቻ")){
-
-window.location="adoption-registration.html";
-
-}
-
-else if(searchText.includes("መሸኛ")){
-
-window.location="transfer-letter.html";
-
-}
-
-else{
-
-alert("አገልግሎት አልተገኘም");
-
-}
-
-}
-
-
-
-
-// =================
-// ENGLISH
-// =================
-
-else if(lang=="en"){
-
-
-if(searchText.includes("birth")){
-
-window.location="birth.html";
-
-}
-
-else if(searchText.includes("marriage")){
-
-window.location="marriage-registration.html";
-
-}
-
-else if(searchText.includes("divorce")){
-
-window.location="divorce-registration.html";
-
-}
-
-else if(searchText.includes("death")){
-
-window.location="death-registration.html";
-
-}
-
-else if(searchText.includes("adoption")){
-
-window.location="adoption-registration.html";
-
-}
-
-else if(searchText.includes("transfer")){
-
-window.location="transfer-letter.html";
-
-}
-
-else{
-
-alert("Service not found");
-
-}
-
-}
-
-
-
-
-
-// =================
-// AFAAN OROMOO
-// =================
-
-else if(lang=="om"){
-
-
-if(searchText.includes("dhaloota")){
-
-window.location="birth.html";
-
-}
-
-else if(searchText.includes("gaa'ela")){
-
-window.location="marriage.html";
-
-}
-
-else if(searchText.includes("hiikkaa")){
-
-window.location="divorce.html";
-
-}
-
-else if(searchText.includes("du'aa")){
-
-window.location="death.html";
-
-}
-
-else if(searchText.includes("guddifachaa")){
-
-window.location="adoption.html";
-
-}
-
-else if(searchText.includes("ce'umsaa")){
-
-window.location="transfer-letter.html";
-
-}
-
-else{
-
-alert("Tajaajilli hin argamne");
+document.getElementById(id).innerHTML=t[id];
 
 }
 
 
 }
 
-
-}
 </script>
 </body>
 </html>
