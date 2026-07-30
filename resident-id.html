@@ -139,5 +139,130 @@ footer{
 
 </footer>
 
+
+
+<script>
+
+window.onload=function(){
+
+let lang=localStorage.getItem("selectedLanguage") || "am";
+
+document.getElementById("language").value=lang;
+
+changeLanguage();
+
+}
+
+
+let residentText={
+
+
+en:{
+
+pageTitle:"CRRSA Gulele Woreda 03",
+pageSubTitle:"Resident ID Service",
+
+residentIdTitle:"Resident ID",
+
+requirementTitle:"Requirements to get New Resident ID",
+
+req1:"Registered on Resident Registration Form 001.",
+
+req2:"Must be Ethiopian citizen and 18 years or above.",
+
+req3:"Must provide legal proof such as birth certificate, education document or other age proof.",
+
+req4:"Applicant must appear in person. Service cannot be provided by delegation.",
+
+req5:"Resident ID service is valid for 4 years.",
+
+req6:"Resident ID service is provided according to Regulation 145/2015.",
+
+backBtn:"⬅ Back to Resident Service"
+
+},
+
+
+am:{
+
+pageTitle:"CRRSA ጉለሌ ወረዳ 03",
+pageSubTitle:"የነዋሪ መታወቂያ አገልግሎት",
+
+residentIdTitle:"የነዋሪ መታወቂያ",
+
+requirementTitle:"አዲስ መታወቂያ ለማግኘት የሚያስፈልጉ መስፈርቶች",
+
+req1:"በነዋሪነት መመዝገቢያ ቅጽ 001 ላይ የተመዘገበ።",
+
+req2:"ዜግነቱ ኢትዮጵያዊ እና 18 ዓመት እና ከዚያ በላይ መሆን።",
+
+req3:"ህጋዊ ማስረጃ ማቅረብ አለበት።",
+
+req4:"ባለጉዳዩ በአካል መቅረብ አለበት።",
+
+req5:"መታወቂያው ለ4 ዓመት ያገለግላል።",
+
+req6:"በመመሪያ 145/2015 መሠረት ይሰጣል።",
+
+backBtn:"⬅ ወደ ነዋሪ አገልግሎት ተመለስ"
+
+},
+
+
+om:{
+
+pageTitle:"CRRSA Gulele Woreda 03",
+pageSubTitle:"Tajaajila ID Jiraataa",
+
+residentIdTitle:"ID Jiraataa",
+
+requirementTitle:"Ulaagaalee ID Jiraataa Haaraa Argachuuf",
+
+req1:"Unka galmee jiraataa 001 irratti galmaa'uu qaba.",
+
+req2:"Lammii Itoophiyaa ta'uu fi umuriin isaa waggaa 18 ol ta'uu qaba.",
+
+req3:"Ragaa seeraa dhiyeessuu qaba.",
+
+req4:"Nama dhuunfaa ta'uun argamuu qaba.",
+
+req5:"ID Jiraataa waggaa 4 tajaajila.",
+
+req6:"Akka qajeelfama 145/2015tti kennama.",
+
+backBtn:"⬅ Gara Tajaajila Jiraataa Deebi'i"
+
+}
+
+};
+
+
+function changeLanguage(){
+
+let lang=document.getElementById("language").value;
+
+localStorage.setItem("selectedLanguage",lang);
+
+
+let t=residentText[lang];
+
+
+for(let id in t){
+
+let el=document.getElementById(id);
+
+if(el){
+
+el.innerHTML=t[id];
+
+}
+
+}
+
+}
+
+</script>
+
+
 </body>
 </html>
