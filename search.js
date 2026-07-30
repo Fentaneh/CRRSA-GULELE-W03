@@ -110,8 +110,11 @@ let result=document.getElementById("searchResult");
 result.innerHTML="";
 
 
-let lang = localStorage.getItem("language") || "am";
+let lang = localStorage.getItem("language");
 
+if(!lang){
+    lang = document.getElementById("language")?.value || "am";
+}
 
 let buttonText={
 am:"ክፈት",
