@@ -352,24 +352,79 @@ setText("backButton",
 // LOAD SAVED LANGUAGE
 // ===============================
 
-window.onload=function(){
+window.addEventListener("load", function(){
 
-let lang = localStorage.getItem("language") || "am";
-
-
-let selector = document.getElementById("language");
+let savedLanguage = localStorage.getItem("language");
 
 
-if(selector){
-
-selector.value = lang;
-
+if(!savedLanguage){
+    savedLanguage = "am";
 }
 
 
-changeLanguage();
+// Set dropdown value
+let selector = document.getElementById("language");
+
+if(selector){
+    selector.value = savedLanguage;
+}
+
+
+// Apply language without changing it
+applyLanguage(savedLanguage);
 
 
 setBackButton();
 
-};
+});
+
+
+// Apply saved language
+function applyLanguage(lang){
+
+
+if(lang=="am"){
+
+document.title = "የጋብቻ ምዝገባ";
+
+setText("officeTitle","CRRSA ጉለሌ ወረዳ 03");
+setText("pageTitle","የጋብቻ ምዝገባ አገልግሎት");
+setText("serviceTitle","የጋብቻ ምዝገባ");
+
+setCivilAm();
+setNotesAm();
+setTraditionalAm();
+
+}
+
+
+else if(lang=="en"){
+
+document.title="Marriage Registration";
+
+setText("officeTitle","CRRSA Gulele Woreda 03");
+setText("pageTitle","Marriage Registration Service");
+setText("serviceTitle","Marriage Registration");
+
+setCivilEn();
+setNotesEn();
+setTraditionalEn();
+
+}
+
+
+else if(lang=="om"){
+
+document.title="Galmee Fuudhaa fi Heerumaa";
+
+setText("officeTitle","CRRSA Aanaa Gulleellee 03");
+setText("pageTitle","Tajaajila Galmee Fuudhaa fi Heerumaa");
+setText("serviceTitle","Galmee Fuudhaa fi Heerumaa");
+
+setCivilOm();
+setNotesOm();
+setTraditionalOm();
+
+}
+
+}
