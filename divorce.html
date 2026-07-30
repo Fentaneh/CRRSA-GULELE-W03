@@ -180,7 +180,9 @@ Divorce Registration Service
   function changeLanguage() {
 
 let lang = document.getElementById("language").value;
-  
+
+localStorage.setItem("selectedLanguage", lang);
+
 if(lang=="am"){
 
 document.title="የፍቺ ምዝገባ";
@@ -330,7 +332,21 @@ document.getElementById("backButton").innerHTML=
 
 }
 
-}  
+} 
+
+ window.onload = function(){
+
+let savedLanguage = localStorage.getItem("selectedLanguage");
+
+if(savedLanguage){
+
+document.getElementById("language").value = savedLanguage;
+
+changeLanguage();
+
+}
+
+} 
   
 </script>
   
