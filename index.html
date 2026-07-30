@@ -636,38 +636,7 @@ Feedback
 <a class="button" href="tel:011-12-27-434">Call Now</a>
 </div>
 </div>
- <script>
-function setLanguage(lang) {
-
-    if (lang === "am") {
-        document.querySelector("h1").innerText = "CRRSA Gulele Woreda 03 Office";
-        document.querySelector("header p").innerText = "የሲቪል ምዝገባ እና የነዋሪነት አገልግሎት";
-    }
-
-    if (lang === "en") {
-        document.querySelector("h1").innerText = "CRRSA Gulele Woreda 03";
-        document.querySelector("header p").innerText = "Civil Registration and Residency Service";
-    }
-
-}
-</script>
- <script>
-function searchService() {
-    let text = document.getElementById("searchInput").value.toLowerCase();
-
-    if (text.includes("resident")) {
-        window.location.href = "resident.html";
-    } else if (text.includes("vital")) {
-        window.location.href = "vital-events.html";
-    } else if (text.includes("printing")) {
-        window.location.href = "printing.html";
-    } else if (text.includes("remark")) {
-        window.location.href = "remark.html";
-    } else {
-        alert("Service not found.");
-    }
-}
-</script>
+ 
  <section id="contact" class="contact">
 
 <h2>Contact Us</h2>
