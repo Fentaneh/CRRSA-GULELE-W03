@@ -854,6 +854,20 @@ element.innerHTML = t[id];
 
 }
 
+window.onload = function(){
+
+let savedLanguage = localStorage.getItem("selectedLanguage");
+
+if(savedLanguage){
+
+document.getElementById("language").value = savedLanguage;
+
+changeLanguage();
+
+}
+
+}
+
 </script>
  
 
