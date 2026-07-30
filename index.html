@@ -670,6 +670,7 @@ let lang = document.getElementById("language").value;
 let text = {
 
 en:{
+
 navHome:"Home",
 navResident:"Resident",
 navVital:"Vital Events",
@@ -687,146 +688,176 @@ residentText:
 
 vitalCard:"Vital Events",
 vitalText:
-"Birth, Marriage, Divorce and Death Registration Services."
+"Birth, Marriage, Divorce and Death Registration Services.",
 
- birthTitle:"🍼 Birth Registration",
- birthBtn:"Open",
+residentBtn:"Open",
+vitalBtn:"Open",
 
- marriageTitle:"💍 Marriage Registration",
- marriageBtn:"Open",
+birthTitle:"🍼 Birth Registration",
+birthBtn:"Open",
 
- divorceTitle:"📄 Divorce Registration",
- divorceBtn:"Open",
+marriageTitle:"💍 Marriage Registration",
+marriageBtn:"Open",
 
- deathTitle:"⚰️ Death Registration",
- deathBtn:"Open",
+divorceTitle:"📄 Divorce Registration",
+divorceBtn:"Open",
 
- transferTitle:"🚚 Transfer Service",
- transferBtn:"Open",
+deathTitle:"⚰️ Death Registration",
+deathBtn:"Open",
 
- feedbackTitle:"💬 Feedback",
- feedbackBtn:"Feedback",
+transferTitle:"🚚 Transfer Service",
+transferBtn:"Open",
 
- onlineTitle:"🪪 Online ID",
- locationTitle:"📍 Location GPS",
- callTitle:"☎️ Call Center",
- 
- },
+feedbackTitle:"💬 Feedback",
+feedbackBtn:"Feedback",
 
+onlineTitle:"🪪 Online ID",
+onlineBtn:"Open Portal",
 
- am:{
- navHome:"መነሻ",
- navResident:"የነዋሪ አገልግሎት",
- navVital:"የወሳኝ ኩነቶች",
- navPrinting:"ህትመት",
- navContact:"ያግኙን",
+locationTitle:"📍 Location GPS",
+locationBtn:"Open Location",
 
- welcomeTitle:
- "እንኳን ወደ CRRSA ጉለሌ ወረዳ 03 በደህና መጡ",
+callTitle:"☎️ Call Center",
+callBtn:"Call Now"
 
- welcomeText:
- "የልደት፣ ጋብቻ፣ ፍቺ፣ ሞት ምዝገባ፣ የነዋሪ አገልግሎት፣ ህትመት እና ማስተካከያ አገልግሎቶችን እንሰጣለን።",
-
- residentCard:"የነዋሪ አገልግሎት",
-
- residentText:
- "የነዋሪ መታወቂያ፣ የመኖሪያ ማረጋገጫ፣ ያላገባ ማረጋገጫ፣ የሕይወት ማረጋገጫ እና መሸኛ አገልግሎት።",
-
- vitalCard:"የወሳኝ ኩነቶች",
-
- vitalText:
- "የልደት፣ ጋብቻ፣ ፍቺ እና ሞት ምዝገባ አገልግሎት።"
-
- birthTitle:"🍼 የልደት ምዝገባ",
- birthBtn:"ክፈት",
-
- marriageTitle:"💍 የጋብቻ ምዝገባ",
- marriageBtn:"ክፈት",
-
- divorceTitle:"📄 የፍቺ ምዝገባ",
- divorceBtn:"ክፈት",
-
- deathTitle:"⚰️ የሞት ምዝገባ",
- deathBtn:"ክፈት",
-
- transferTitle:"🚚 መሸኛ አገልግሎት",
- transferBtn:"ክፈት",
-
- feedbackTitle:"💬 አስተያየት",
- feedbackBtn:"ላክ",
-
- onlineTitle:"🪪 የመስመር ላይ ID",
- locationTitle:"📍 አድራሻ",
- callTitle:"☎️ የጥሪ ማዕከል",
-  
- },
+},
 
 
- om:{
+am:{
 
- navHome:"Mana",
- navResident:"Tajaajila Jiraataa",
- navVital:"Taateewwan Murteessoo",
- navPrinting:"Maxxansaa",
- navContact:"Nu Qunnamaa",
+navHome:"መነሻ",
+navResident:"የነዋሪ አገልግሎት",
+navVital:"የወሳኝ ኩነቶች",
+navPrinting:"ህትመት",
+navContact:"ያግኙን",
 
- welcomeTitle:
- "Baga gara CRRSA Gulele Woreda 03 dhuftan",
+welcomeTitle:"እንኳን ወደ CRRSA ጉለሌ ወረዳ 03 በደህና መጡ",
 
- welcomeText:
- "Tajaajila galmee dhalootaa, gaa'elaa, hiikaa, du'aa, tajaajila jiraataa, maxxansaa fi sirreeffamaa ni kennina.",
+welcomeText:
+"የልደት፣ ጋብቻ፣ ፍቺ፣ ሞት ምዝገባ፣ የነዋሪ አገልግሎት፣ ህትመት እና ማስተካከያ አገልግሎቶችን እንሰጣለን።",
 
- residentCard:
- "Tajaajila Jiraataa",
+residentCard:"የነዋሪ አገልግሎት",
 
- residentText:
- "ID Jiraataa, mirkaneessa jireenyaa, ragaa qeenxummaa, ragaa jiraachuu fi tajaajila dabarsaa.",
+residentText:
+"የነዋሪ መታወቂያ፣ የመኖሪያ ማረጋገጫ፣ ያላገባ ማረጋገጫ፣ የሕይወት ማረጋገጫ እና መሸኛ አገልግሎት።",
 
- vitalCard:
- "Taateewwan Murteessoo",
+vitalCard:"የወሳኝ ኩነቶች",
 
- vitalText:
- "Galmee dhalootaa, gaa'elaa, hiikaa fi du'aa."
+vitalText:
+"የልደት፣ ጋብቻ፣ ፍቺ እና ሞት ምዝገባ አገልግሎት።",
 
- birthTitle:"🍼 Galmee Dhalootaa",
- birthBtn:"Banuu",
+residentBtn:"ክፈት",
+vitalBtn:"ክፈት",
 
- marriageTitle:"💍 Galmee Gaa'elaa",
- marriageBtn:"Banuu",
+birthTitle:"🍼 የልደት ምዝገባ",
+birthBtn:"ክፈት",
 
- divorceTitle:"📄 Galmee Hiikaa",
- divorceBtn:"Banuu",
+marriageTitle:"💍 የጋብቻ ምዝገባ",
+marriageBtn:"ክፈት",
 
- deathTitle:"⚰️ Galmee Du'aa",
- deathBtn:"Banuu",
+divorceTitle:"📄 የፍቺ ምዝገባ",
+divorceBtn:"ክፈት",
 
- transferTitle:"🚚 Tajaajila Dabarsaa",
- transferBtn:"Banuu",
+deathTitle:"⚰️ የሞት ምዝገባ",
+deathBtn:"ክፈት",
 
- feedbackTitle:"💬 Yaada",
- feedbackBtn:"Ergi",
+transferTitle:"🚚 መሸኛ አገልግሎት",
+transferBtn:"ክፈት",
 
- onlineTitle:"🪪 ID Online",
- locationTitle:"📍 Teessoo",
- callTitle:"☎️ Waamicha",
-  
- }
+feedbackTitle:"💬 አስተያየት",
+feedbackBtn:"ላክ",
 
- };
+onlineTitle:"🪪 የመስመር ላይ ID",
+onlineBtn:"ክፈት",
+
+locationTitle:"📍 አድራሻ",
+locationBtn:"ክፈት",
+
+callTitle:"☎️ የጥሪ ማዕከል",
+callBtn:"ይደውሉ"
+
+},
 
 
-let t=text[lang];
+om:{
+
+navHome:"Mana",
+navResident:"Tajaajila Jiraataa",
+navVital:"Taateewwan Murteessoo",
+navPrinting:"Maxxansaa",
+navContact:"Nu Qunnamaa",
+
+welcomeTitle:"Baga gara CRRSA Gulele Woreda 03 dhuftan",
+
+welcomeText:
+"Tajaajila galmee dhalootaa, gaa'elaa, hiikaa, du'aa, tajaajila jiraataa, maxxansaa fi sirreeffamaa ni kennina.",
+
+residentCard:"Tajaajila Jiraataa",
+
+residentText:
+"ID Jiraataa, mirkaneessa jireenyaa, ragaa qeenxummaa, ragaa jiraachuu fi tajaajila dabarsaa.",
+
+vitalCard:"Taateewwan Murteessoo",
+
+vitalText:
+"Galmee dhalootaa, gaa'elaa, hiikaa fi du'aa.",
+
+residentBtn:"Banuu",
+vitalBtn:"Banuu",
+
+birthTitle:"🍼 Galmee Dhalootaa",
+birthBtn:"Banuu",
+
+marriageTitle:"💍 Galmee Gaa'elaa",
+marriageBtn:"Banuu",
+
+divorceTitle:"📄 Galmee Hiikaa",
+divorceBtn:"Banuu",
+
+deathTitle:"⚰️ Galmee Du'aa",
+deathBtn:"Banuu",
+
+transferTitle:"🚚 Tajaajila Dabarsaa",
+transferBtn:"Banuu",
+
+feedbackTitle:"💬 Yaada",
+feedbackBtn:"Ergi",
+
+onlineTitle:"🪪 ID Online",
+onlineBtn:"Banuu",
+
+locationTitle:"📍 Teessoo",
+locationBtn:"Banuu",
+
+callTitle:"☎️ Waamicha",
+callBtn:"Bilbili"
+
+}
+
+};
+
+
+let t = text[lang];
 
 
 for(let id in t){
 
-document.getElementById(id).innerHTML=t[id];
+let element = document.getElementById(id);
 
- }
+if(element){
 
+element.innerHTML = t[id];
 
- }
+}
+
+}
+
+}
 
 </script>
+ 
+
+
+
 </body>
 </html>
