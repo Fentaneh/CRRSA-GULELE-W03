@@ -147,8 +147,9 @@ CRRSA Gulele Woreda 03
 
 function changeLanguage(){
 
-let lang=document.getElementById("language").value;
+let lang = document.getElementById("language").value;
 
+localStorage.setItem("selectedLanguage", lang);
 
 if(lang=="am"){
 
