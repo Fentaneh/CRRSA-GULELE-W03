@@ -220,6 +220,8 @@ function changeLanguage() {
 
 let lang = document.getElementById("language").value;
 
+localStorage.setItem("selectedLanguage", lang);
+    
 if (lang == "am") {
 
 document.title = "የወሳኝ ኩነት አገልግሎት";
