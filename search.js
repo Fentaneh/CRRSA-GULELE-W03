@@ -1,6 +1,6 @@
 // ======================================
 // CRRSA Gulele Woreda 03
-// Full Website Search System
+// Search System
 // Amharic / English / Afaan Oromoo
 // ======================================
 
@@ -61,70 +61,64 @@ am:"ያላገባ ማስረጃ",
 en:"Single Status Certificate",
 om:"Ragaa Haala Qeenxee",
 file:"single-status.html"
-},
-
-{
-am:"የሕይወት ማረጋገጫ",
-en:"Proof of Life Certificate",
-om:"Ragaa Jiraachuu",
-file:"proof-of-life.html"
-},
-
-{
-am:"የነዋሪነት ማረጋገጫ",
-en:"Resident Verification",
-om:"Mirkaneessa Jiraataa",
-file:"resident-service.html"
 }
 
 ];
 
 
-
-// OPEN PAGE FUNCTION
+// OPEN PAGE
 
 function openService(file,url){
 
-    if(url){
+if(url){
 
-        window.open(url,"_blank");
+window.open(url,"_blank");
 
-    }
+}
 
-    else if(file){
+else if(file){
 
-        window.location.href=file;
+window.location.href=file;
 
-    }
+}
 
-    else{
+else{
 
-        alert("Page not found");
+alert("Page not found");
 
-    }
+}
 
 }
 
 
 
-
-// SEARCH FUNCTION
+// SEARCH
 
 function searchWebsite(){
 
 
-let text =
-document.getElementById("searchInput")
+let text=document
+.getElementById("searchInput")
 .value
 .toLowerCase()
 .trim();
 
 
-let result =
-document.getElementById("searchResult");
+let result=document.getElementById("searchResult");
 
 
 result.innerHTML="";
+
+
+let lang = localStorage.getItem("language") || "am";
+
+
+let buttonText={
+am:"ክፈት",
+en:"Open",
+om:"Bani"
+};
+
 
 
 if(text==""){
@@ -144,28 +138,40 @@ let found=false;
 services.forEach(function(service){
 
 
-let am = service.am.toLowerCase();
-
-let en = service.en.toLowerCase();
-
-let om = service.om.toLowerCase();
-
-
-
 if(
-am.includes(text) ||
-en.includes(text) ||
-om.includes(text)
+
+service.am.toLowerCase().includes(text) ||
+
+service.en.toLowerCase().includes(text) ||
+
+service.om.toLowerCase().includes(text)
+
 ){
 
 
 found=true;
 
 
+let title;
 
-console.log("FILE:",service.file);
 
-console.log("URL:",service.url);
+if(lang=="am"){
+
+title=service.am;
+
+}
+
+else if(lang=="om"){
+
+title=service.om;
+
+}
+
+else{
+
+title=service.en;
+
+}
 
 
 
@@ -173,20 +179,12 @@ result.innerHTML += `
 
 <div class="search-card">
 
-
-<h3>${service.en}</h3>
-
-
-<p>${service.am}</p>
-
-
-<p>${service.om}</p>
-
+<h3>${title}</h3>
 
 
 <button onclick="openService('${service.file || ""}','${service.url || ""}')">
 
-Open / ክፈት / Bani
+${buttonText[lang]}
 
 </button>
 
@@ -202,21 +200,17 @@ Open / ክፈት / Bani
 
 
 
-if(found==false){
+if(!found){
 
 
-result.innerHTML=`
+result.innerHTML=
 
+`
 <p>
-
 Service not found<br>
-
 አገልግሎት አልተገኘም<br>
-
 Tajaajilli hin argamne
-
 </p>
-
 `;
 
 }
