@@ -55,7 +55,20 @@ en:"Resident Service",
 om:"Tajaajila Jiraataa",
 file:"resident.html"
 },
+    
+{
+am:"መሸኛ",
+en:"Transfer Letter",
+om:"Xalayaa Dabarsaa",
+file:"transfer.html"
+},
 
+{
+am:"የሕይወት ማረጋገጫ",
+en:"Proof of Life",
+om:"Ragaa Jiraachuu",
+file:"proof-of-life.html"
+},
 {
 am:"ያላገባ ማስረጃ",
 en:"Single Status Certificate",
