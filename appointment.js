@@ -389,28 +389,28 @@ function toggleOtherService(){
 
 // Load Data When Open
 
-
 window.onload = function(){
 
     showAppointments();
 
     let today = new Date();
 
-    let gc =
-    today.getFullYear() + "-" +
-    String(today.getMonth()+1).padStart(2,"0") + "-" +
-    String(today.getDate()).padStart(2,"0");
+    let year = today.getFullYear();
+    let month = String(today.getMonth()+1).padStart(2,"0");
+    let day = String(today.getDate()).padStart(2,"0");
 
-
-    let input =
+    let application =
     document.getElementById("applicationDate");
 
 
-    if(input){
+    if(application){
 
-        input.value =
-        gc + " (G.C.)";
+        application.value =
+        year + "-" + month + "-" + day;
 
     }
+
+};
+
 
 };
