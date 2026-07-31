@@ -61,7 +61,6 @@ let number =
 
 let appointment = {
 
-
 number:number,
 
 name:name,
@@ -70,10 +69,11 @@ phone:phone,
 
 service:service,
 
-date:date,
+applicationDate:applicationDate,
+
+appointmentDate:appointmentDate,
 
 status:"Pending"
-
 
 };
 
