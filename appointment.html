@@ -128,8 +128,22 @@ placeholder="Write the service you need">
 </div> 
 
 <label>
+ያመለከቱበት ቀን / Application Date
+</label>
+
+<input
+id="applicationDate"
+type="date"
+readonly>
+
+
+<br><br>
+
+
+<label>
 Calendar Type / የቀን አይነት
 </label>
+
 
 <select id="calendarType" onchange="changeCalendar()">
 
@@ -137,39 +151,57 @@ Calendar Type / የቀን አይነት
 Gregorian (G.C.)
 </option>
 
+
 <option value="ec">
 Ethiopian (E.C.)
 </option>
 
+
 </select>
+
 
 <br><br>
 
+
+
 <div id="gcDateBox">
 
+
 <label>
-Select Date (G.C.) / ቀን ይምረጡ
+የቀጠሮ ቀን (G.C.) / Appointment Date
 </label>
 
+
 <input
-id="date"
+id="appointmentDate"
 type="date"
 required>
 
+
 </div>
+
+
+
+
 
 <div id="ecDateBox" style="display:none;">
 
+
 <label>
-Select Date (E.C.) / የኢትዮጵያ ቀን
+የቀጠሮ ቀን (E.C.)
 </label>
+
+
+<br>
+
 
 <input
 id="ecDay"
 type="number"
 min="1"
 max="30"
-placeholder="Day">
+placeholder="ቀን">
+
 
 <select id="ecMonth">
 
@@ -189,14 +221,18 @@ placeholder="Day">
 
 </select>
 
+
 <input
 id="ecYear"
 type="number"
-placeholder="Year">
+placeholder="ዓመት">
+
 
 </div>
 
+
 <br>
+
 
 <button class="button">
 
