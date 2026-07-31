@@ -391,25 +391,26 @@ function toggleOtherService(){
 
 
 window.onload = function(){
-    
-console.log(document.getElementById("applicationDate"));    
 
-showAppointments();
+    showAppointments();
 
-let today = new Date();
+    let today = new Date();
 
-let date =
-today.getFullYear()+"-"+
-String(today.getMonth()+1).padStart(2,"0")+"-"+
-String(today.getDate()).padStart(2,"0");
+    let gc =
+    today.getFullYear() + "-" +
+    String(today.getMonth()+1).padStart(2,"0") + "-" +
+    String(today.getDate()).padStart(2,"0");
 
-let appDate =
-document.getElementById("applicationDate");
 
-if(appDate){
+    let input =
+    document.getElementById("applicationDate");
 
-appDate.value = date;
 
-}
+    if(input){
+
+        input.value =
+        gc + " (G.C.)";
+
+    }
 
 };
