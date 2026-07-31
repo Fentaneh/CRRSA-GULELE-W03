@@ -267,3 +267,39 @@ loadAppointments();
 
 
 }
+function exportToExcel() {
+
+    let appointments =
+        JSON.parse(localStorage.getItem("appointments")) || [];
+
+    if (appointments.length === 0) {
+        alert("No appointment data found.");
+        return;
+    }
+
+    let csv =
+        "Appointment No,Name,Phone,Service,Date,Status\n";
+
+    appointments.forEach(function(a){
+
+        csv += `"${a.number}","${a.name}","${a.phone}","${a.service}","${a.date}","${a.status}"\n`;
+
+    });
+
+    let blob = new Blob([csv], {
+        type: "text/csv;charset=utf-8;"
+    });
+
+    let link = document.createElement("a");
+
+    link.href = URL.createObjectURL(blob);
+
+    link.download = "CRRSA_Appointments.csv";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+}
