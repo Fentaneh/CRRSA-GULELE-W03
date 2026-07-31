@@ -62,7 +62,12 @@ en:"Transfer Letter",
 om:"Xalayaa Dabarsaa",
 file:"transfer-letter.html"
 },
-
+{
+am:"የነዋሪነት ማረጋገጫ",
+en:"Resident Verification Service",
+om:"Tajaajila Mirkaneessa Jiraataa",
+file:"resident-service.html"
+},
 {
 am:"የሕይወት ማረጋገጫ",
 en:"Proof of Life",
