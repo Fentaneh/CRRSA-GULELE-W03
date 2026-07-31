@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
 CRRSA Admin Panel
@@ -19,11 +23,14 @@ CRRSA Admin Panel
 
 <header>
 
-<img src="logo.png">
+
+<img src="logo.png" width="90">
+
 
 <h1>
 CRRSA Gulele Woreda 03
 </h1>
+
 
 <p>
 Admin Appointment Management
@@ -34,8 +41,15 @@ Admin Appointment Management
 
 
 
+
 <div class="container">
 
+
+
+<!-- LOGIN SECTION -->
+
+
+<div id="loginBox">
 
 
 <h2>
@@ -44,25 +58,36 @@ Admin Appointment Management
 
 
 
-<div id="loginBox">
+<label>
+Username
+</label>
 
 
 <input 
 id="username"
 type="text"
-placeholder="Username">
+placeholder="Enter Username">
+
 
 
 <br><br>
+
+
+
+<label>
+Password
+</label>
 
 
 <input 
 id="password"
 type="password"
-placeholder="Password">
+placeholder="Enter Password">
+
 
 
 <br><br>
+
 
 
 <button class="button" onclick="adminLogin()">
@@ -78,15 +103,18 @@ Login
 
 
 
+
+<!-- ADMIN PANEL -->
+
+
 <div id="adminPanel" style="display:none;">
 
 
 
 <h2>
-
 📋 Appointment List
-
 </h2>
+
 
 
 
@@ -94,6 +122,7 @@ Login
 
 
 <thead>
+
 
 <tr>
 
@@ -121,10 +150,12 @@ Login
 
 
 
+
 <tbody id="adminTable">
 
 
 </tbody>
+
 
 
 </table>
@@ -132,6 +163,7 @@ Login
 
 
 </div>
+
 
 
 
@@ -143,6 +175,7 @@ Login
 
 <footer>
 
+
 © 2026 CRRSA Gulele Woreda 03
 
 </footer>
@@ -151,7 +184,9 @@ Login
 
 
 
+
 <script src="admin.js"></script>
+
 
 
 </body>
