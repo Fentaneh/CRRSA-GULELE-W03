@@ -52,11 +52,31 @@ return;
 
 // Generate Appointment Number
 
+let today =
+new Date().toISOString().split("T")[0];
+
+
+let appointments =
+JSON.parse(localStorage.getItem("appointments")) || [];
+
+
+let todayAppointments =
+appointments.filter(function(a){
+
+    return a.applicationDate === today;
+
+});
+
+
+let count =
+todayAppointments.length + 1;
+
+
 let number =
-"CRRSA-" + Date.now();
-
-
-
+"CRRSA-" +
+today.replaceAll("-","") +
+"-" +
+String(count).padStart(2,"0");
 
 
 let appointment = {
