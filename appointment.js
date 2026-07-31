@@ -388,40 +388,4 @@ document.getElementById("ecDateBox").style.display="block";
 }
 
 }
-window.onload = function(){
 
-    let today = new Date();
-
-    let year = today.getFullYear();
-
-    let month = String(today.getMonth() + 1).padStart(2,"0");
-
-    let day = String(today.getDate()).padStart(2,"0");
-
-
-    let applicationDate =
-        document.getElementById("applicationDate");
-
-
-    if(applicationDate){
-
-        applicationDate.value =
-        year + "-" + month + "-" + day;
-
-    }
-
-};
-window.onload=function(){
-
-let today=new Date();
-
-let date =
-today.getFullYear()+"-"+
-String(today.getMonth()+1).padStart(2,"0")+"-"+
-String(today.getDate()).padStart(2,"0");
-
-
-document.getElementById("applicationDate").value=date;
-
-
-};
