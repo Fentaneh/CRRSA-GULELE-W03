@@ -128,24 +128,81 @@ placeholder="Write the service you need">
 </div> 
 
 <label>
-Select Date / ቀን ይምረጡ
+Calendar Type / የቀን አይነት
 </label>
 
+<select id="calendarType" onchange="changeCalendar()">
 
-<input 
+<option value="gc">
+Gregorian (G.C.)
+</option>
+
+<option value="ec">
+Ethiopian (E.C.)
+</option>
+
+</select>
+
+<br><br>
+
+<div id="gcDateBox">
+
+<label>
+Select Date (G.C.) / ቀን ይምረጡ
+</label>
+
+<input
 id="date"
 type="date"
 required>
 
+</div>
 
+<div id="ecDateBox" style="display:none;">
 
+<label>
+Select Date (E.C.) / የኢትዮጵያ ቀን
+</label>
+
+<input
+id="ecDay"
+type="number"
+min="1"
+max="30"
+placeholder="Day">
+
+<select id="ecMonth">
+
+<option>መስከረም</option>
+<option>ጥቅምት</option>
+<option>ህዳር</option>
+<option>ታህሳስ</option>
+<option>ጥር</option>
+<option>የካቲት</option>
+<option>መጋቢት</option>
+<option>ሚያዝያ</option>
+<option>ግንቦት</option>
+<option>ሰኔ</option>
+<option>ሐምሌ</option>
+<option>ነሐሴ</option>
+<option>ጳጉሜ</option>
+
+</select>
+
+<input
+id="ecYear"
+type="number"
+placeholder="Year">
+
+</div>
+
+<br>
 
 <button class="button">
 
 Submit Appointment
 
 </button>
-
 
 
 </form>
