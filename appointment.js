@@ -391,11 +391,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const input = document.getElementById("applicationDate");
 
     if (input) {
-        input.valueAsDate = new Date();
+
+        const today = new Date();
+
+        let ecYear = today.getFullYear() - 8;
+        let ecMonth = today.getMonth() + 1;
+        let ecDay = today.getDate();
+
+        input.value =
+        ecDay + "/" +
+        ecMonth + "/" +
+        ecYear +
+        " E.C.";
+
     }
 
 });
-
 
 
 
