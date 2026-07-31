@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>Online Appointment</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Online Appointment Booking
+</title>
+
 
 <link rel="stylesheet" href="style.css">
+
 
 </head>
 
@@ -15,14 +23,34 @@
 
 <header>
 
+
+<select id="language">
+
+<option value="en">
+English
+</option>
+
+<option value="am">
+አማርኛ
+</option>
+
+<option value="om">
+Afaan Oromoo
+</option>
+
+</select>
+
+
 <img src="logo.png">
 
+
 <h1>
-CRRSA Gulele Woreda 03
+AACRRSA Woreda 03
 </h1>
 
+
 <p>
-Online Appointment Booking
+Online Appointment Booking / ቀጠሮ መያዣ
 </p>
 
 
@@ -34,17 +62,25 @@ Online Appointment Booking
 
 
 <h2>
-📅 ቀጠሮ መያዣ / Online Appointment
+📅 Online Appointment Booking
 </h2>
 
-<form id="appointmentForm" onsubmit="createAppointment(event)">
+
+
+<form id="appointmentForm" 
+onsubmit="createAppointment(event)">
+
 
 
 <label>
 Full Name / ሙሉ ስም
 </label>
 
-<input id="fullName" type="text" required>
+
+<input 
+id="fullName"
+type="text"
+required>
 
 
 
@@ -52,7 +88,12 @@ Full Name / ሙሉ ስም
 Phone Number / ስልክ ቁጥር
 </label>
 
-<input id="phone" type="tel" required>
+
+<input 
+id="phone"
+type="tel"
+required>
+
 
 
 
@@ -63,27 +104,34 @@ Select Service / አገልግሎት ይምረጡ
 
 <select id="service">
 
+
 <option>
 Resident ID
 </option>
+
 
 <option>
 Birth Registration
 </option>
 
+
 <option>
 Marriage Registration
 </option>
+
 
 <option>
 Divorce Registration
 </option>
 
+
 <option>
 Death Registration
 </option>
 
+
 </select>
+
 
 
 
@@ -91,47 +139,78 @@ Death Registration
 Select Date / ቀን ይምረጡ
 </label>
 
-<input id="date" type="date" required>
+
+<input 
+id="date"
+type="date"
+required>
+
 
 
 
 <button class="button">
+
 Submit Appointment
+
 </button>
+
 
 
 </form>
-<!-- Appointment Result -->
 
-<div id="appointmentResult"></div>
 
-<div id="qrcode"></div>
+
+
 
 <br>
 
-<button id="printButton" 
-onclick="printAppointment()" 
+
+<div id="appointmentResult">
+
+</div>
+
+
+
+<div id="qrcode">
+
+</div>
+
+
+
+<br>
+
+
+<button id="printButton"
+onclick="printAppointment()"
 style="display:none">
+
 
 🖨 Print Appointment
 
+
 </button>
+
 
 
 
 <hr>
 
 
-<!-- Admin Appointment Table -->
 
 <h2>
-📋 Appointment List / ቀጠሮ ዝርዝር
+
+📋 Appointment List
+
 </h2>
+
+
 
 
 <table border="1" width="100%">
 
+
 <thead>
+
 
 <tr>
 
@@ -139,22 +218,26 @@ style="display:none">
 
 <th>Appointment No</th>
 
-<th>Name / ስም</th>
+<th>Name</th>
 
-<th>Phone / ስልክ</th>
+<th>Phone</th>
 
-<th>Service / አገልግሎት</th>
+<th>Service</th>
 
-<th>Date / ቀን</th>
+<th>Date</th>
 
 <th>Status</th>
 
+
 </tr>
+
 
 </thead>
 
 
+
 <tbody id="appointmentTable">
+
 
 </tbody>
 
@@ -163,13 +246,57 @@ style="display:none">
 
 
 
+
+<br>
+
+
+<div class="back">
+
+
+<a href="index.html" class="button">
+
+⬅ Back Home
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
 <footer>
 
-© 2026 CRRSA Gulele Woreda 03.by Fentaneh D.
+
+© 2026 CRRSA Gulele Woreda 03. All Rights Reserved.
+
+<br>
+
+Created by Fentaneh.D
+
 
 </footer>
 
-<script src="appointment.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+
+</script>
+
+
+<script src="appointment.js">
+
+</script>
+
+
+
 </body>
 
 </html>
