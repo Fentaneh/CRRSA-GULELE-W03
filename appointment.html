@@ -37,15 +37,14 @@ Online Appointment Booking
 📅 ቀጠሮ መያዣ / Online Appointment
 </h2>
 
-
-<form>
+<form id="appointmentForm" onsubmit="createAppointment(event)">
 
 
 <label>
 Full Name / ሙሉ ስም
 </label>
 
-<input type="text" required>
+<input id="fullName" type="text" required>
 
 
 
@@ -53,7 +52,7 @@ Full Name / ሙሉ ስም
 Phone Number / ስልክ ቁጥር
 </label>
 
-<input type="tel" required>
+<input id="phone" type="tel" required>
 
 
 
@@ -62,7 +61,7 @@ Select Service / አገልግሎት ይምረጡ
 </label>
 
 
-<select>
+<select id="service">
 
 <option>
 Resident ID
@@ -84,7 +83,6 @@ Divorce Registration
 Death Registration
 </option>
 
-
 </select>
 
 
@@ -93,7 +91,7 @@ Death Registration
 Select Date / ቀን ይምረጡ
 </label>
 
-<input type="date" required>
+<input id="date" type="date" required>
 
 
 
@@ -105,7 +103,7 @@ Submit Appointment
 </form>
 
 
-</div>
+<div id="appointmentResult"></div>
 
 
 
@@ -115,7 +113,7 @@ Submit Appointment
 
 </footer>
 
-
+<script src="appointment.js"></script>
 </body>
 
 </html>
