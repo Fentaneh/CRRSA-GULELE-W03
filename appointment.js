@@ -374,6 +374,8 @@ function toggleOtherService(){
 
 
 window.onload = function(){
+    
+console.log(document.getElementById("applicationDate"));    
 
 showAppointments();
 
