@@ -92,7 +92,7 @@ url:"tel:7533"
 am:"አድራሻ",
 en:"Location GPS",
 om:"Teessoo GPS",
-url:"https://maps.app.goo.gl/ifCdcXLe6uHWrQnbA"
+url:"https://maps.app.goo.gl/STf4Zk87Hc1x2rY56"
 },    
     
 {
