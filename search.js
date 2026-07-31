@@ -60,7 +60,7 @@ file:"resident.html"
 am:"መሸኛ",
 en:"Transfer Letter",
 om:"Xalayaa Dabarsaa",
-file:"transfer.html"
+file:"transfer-letter.html"
 },
 
 {
