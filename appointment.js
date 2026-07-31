@@ -88,22 +88,14 @@ let appointment = {
 
 
 // Save Data
-
-let appointments =
-JSON.parse(localStorage.getItem("appointments")) || [];
-
-
+// Save Data
 
 appointments.push(appointment);
 
-
-
 localStorage.setItem(
-"appointments",
-JSON.stringify(appointments)
+    "appointments",
+    JSON.stringify(appointments)
 );
-
-
 
 
 
