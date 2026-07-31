@@ -1,7 +1,6 @@
 // ======================================
 // CRRSA Gulele Woreda 03
-// Online Appointment System
-// Generate Number + QR + Print + Table
+// Appointment System
 // ======================================
 
 
@@ -33,17 +32,17 @@ document.getElementById("date").value;
 
 
 
-// Create Appointment Number
+// Generate Appointment Number
 
 let number =
-"CRRSA-" + Math.floor(100000 + Math.random() * 900000);
+"CRRSA-" + Date.now();
 
 
 
 
-// Appointment Data
 
 let appointment = {
+
 
 number:number,
 
@@ -57,33 +56,34 @@ date:date,
 
 status:"Pending"
 
+
 };
 
 
 
 
+// Save Data
 
-// Save Appointment
-
-let list =
+let appointments =
 JSON.parse(localStorage.getItem("appointments")) || [];
 
 
 
-list.push(appointment);
+appointments.push(appointment);
 
 
 
 localStorage.setItem(
 "appointments",
-JSON.stringify(list)
+JSON.stringify(appointments)
 );
 
 
 
 
 
-// Show Appointment Slip
+// Show Slip
+
 
 document.getElementById("appointmentResult").innerHTML = `
 
@@ -105,37 +105,37 @@ CRRSA Gulele Woreda 03
 
 
 <p>
-Appointment Number:
-<b>${number}</b>
+<b>Appointment No:</b>
+${number}
 </p>
 
 
 <p>
-Name:
+<b>Name:</b>
 ${name}
 </p>
 
 
 <p>
-Phone:
+<b>Phone:</b>
 ${phone}
 </p>
 
 
 <p>
-Service:
+<b>Service:</b>
 ${service}
 </p>
 
 
 <p>
-Date:
+<b>Date:</b>
 ${date}
 </p>
 
 
 <p>
-Status:
+<b>Status:</b>
 Pending
 </p>
 
@@ -148,8 +148,8 @@ Please keep your appointment number.
 </p>
 
 
-</div>
 
+</div>
 
 `;
 
@@ -157,17 +157,21 @@ Please keep your appointment number.
 
 
 
+// Create QR Code
 
-// Generate QR Code
+
+let qr =
+document.getElementById("qrcode");
 
 
-document.getElementById("qrcode").innerHTML="";
+
+qr.innerHTML="";
 
 
 
 new QRCode(
 
-document.getElementById("qrcode"),
+qr,
 
 {
 
@@ -176,7 +180,7 @@ text:
 `
 CRRSA Gulele Woreda 03
 
-Appointment No:
+Appointment:
 ${number}
 
 Name:
@@ -205,14 +209,12 @@ height:150
 
 
 
-// Show Print Button
-
-document.getElementById("printButton").style.display="block";
-
+document.getElementById("printButton")
+.style.display="block";
 
 
 
-// Refresh Table
+
 
 showAppointments();
 
@@ -224,12 +226,11 @@ showAppointments();
 
 
 // ======================================
-// Display Appointment Table
+// Show Appointment Table
 // ======================================
 
 
 function showAppointments(){
-
 
 
 let list =
@@ -242,11 +243,7 @@ document.getElementById("appointmentTable");
 
 
 
-if(!table){
-
-return;
-
-}
+if(!table) return;
 
 
 
@@ -254,56 +251,30 @@ table.innerHTML="";
 
 
 
-list.forEach(function(a,index){
-
+list.forEach((a,index)=>{
 
 
 table.innerHTML += `
 
-
 <tr>
 
+<td>${index+1}</td>
 
-<td>
-${index + 1}
-</td>
+<td>${a.number}</td>
 
+<td>${a.name}</td>
 
-<td>
-${a.number}
-</td>
+<td>${a.phone}</td>
 
+<td>${a.service}</td>
 
-<td>
-${a.name}
-</td>
+<td>${a.date}</td>
 
-
-<td>
-${a.phone}
-</td>
-
-
-<td>
-${a.service}
-</td>
-
-
-<td>
-${a.date}
-</td>
-
-
-<td>
-${a.status}
-</td>
-
+<td>${a.status}</td>
 
 </tr>
 
-
 `;
-
 
 
 });
@@ -314,8 +285,9 @@ ${a.status}
 
 
 
+
 // ======================================
-// Print Appointment Slip
+// Print Slip
 // ======================================
 
 
@@ -323,19 +295,17 @@ function printAppointment(){
 
 
 
-let content =
-
+let printData =
 document.getElementById("printArea").innerHTML;
 
 
 
-let oldPage =
-
+let old =
 document.body.innerHTML;
 
 
 
-document.body.innerHTML = content;
+document.body.innerHTML = printData;
 
 
 
@@ -343,12 +313,11 @@ window.print();
 
 
 
-document.body.innerHTML = oldPage;
+document.body.innerHTML = old;
 
 
 
 location.reload();
-
 
 
 }
@@ -357,13 +326,11 @@ location.reload();
 
 
 
-// Load Table When Page Opens
+// Load Data When Open
 
 
 window.onload=function(){
 
-
 showAppointments();
-
 
 };
