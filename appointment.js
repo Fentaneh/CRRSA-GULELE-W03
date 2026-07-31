@@ -389,45 +389,21 @@ function toggleOtherService(){
 
 // Load Data When Open
 
-window.onload = function(){
+window.addEventListener("load", function () {
 
     showAppointments();
 
-    let today = new Date();
+    const applicationInput = document.getElementById("applicationDate");
 
-    let year = today.getFullYear();
-    let month = String(today.getMonth()+1).padStart(2,"0");
-    let day = String(today.getDate()).padStart(2,"0");
+    if (applicationInput) {
 
-    let application =
-    document.getElementById("applicationDate");
+        const today = new Date();
 
+        applicationInput.value = today.toISOString().split("T")[0];
 
-    if(application){
-
-        application.value =
-        year + "-" + month + "-" + day;
-
-    }
-
-};
-
-
-window.addEventListener("load", function () {
-
-    const app = document.getElementById("applicationDate");
-
-    if (app) {
-        app.value = new Date().toISOString().split("T")[0];
     }
 
 });
-
-
-
-
-
-
 
 
 
