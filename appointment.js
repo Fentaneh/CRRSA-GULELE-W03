@@ -392,7 +392,17 @@ window.addEventListener("load", function () {
 
 });
 
+document.addEventListener("DOMContentLoaded", function () {
 
+    showAppointments();
+
+    const input = document.getElementById("applicationDate");
+
+    if (input) {
+        input.valueAsDate = new Date();
+    }
+
+});
 
 
 
