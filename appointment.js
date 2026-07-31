@@ -358,3 +358,21 @@ window.onload=function(){
 showAppointments();
 
 };
+function changeCalendar(){
+
+let type =
+document.getElementById("calendarType").value;
+
+if(type=="gc"){
+
+document.getElementById("gcDateBox").style.display="block";
+document.getElementById("ecDateBox").style.display="none";
+
+}else{
+
+document.getElementById("gcDateBox").style.display="none";
+document.getElementById("ecDateBox").style.display="block";
+
+}
+
+}
