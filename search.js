@@ -88,6 +88,12 @@ en:"Call Center",
 om:"Wiirtuu Bilbilaa",
 url:"tel:7533"
 }, 
+{
+am:"አድራሻ",
+en:"Location GPS",
+om:"Teessoo GPS",
+url:"https://maps.google.com/?q=https://maps.app.goo.gl/j688fZA2B3HEcWt87"
+},    
     
 {
 am:"ያግኙን",
