@@ -101,9 +101,33 @@ Submit Appointment
 
 
 </form>
+<!-- Appointment Result -->
+
+<div id="appointmentResult"></div>
+
+<div id="qrcode"></div>
+
+<br>
+
+<button id="printButton" 
+onclick="printAppointment()" 
+style="display:none">
+
+🖨 Print Appointment
+
+</button>
+
+
+
+<hr>
+
+
+<!-- Admin Appointment Table -->
+
 <h2>
-📋 Appointment List
+📋 Appointment List / ቀጠሮ ዝርዝር
 </h2>
+
 
 <table border="1" width="100%">
 
@@ -112,11 +136,17 @@ Submit Appointment
 <tr>
 
 <th>No</th>
+
 <th>Appointment No</th>
-<th>Name</th>
-<th>Phone</th>
-<th>Service</th>
-<th>Date</th>
+
+<th>Name / ስም</th>
+
+<th>Phone / ስልክ</th>
+
+<th>Service / አገልግሎት</th>
+
+<th>Date / ቀን</th>
+
 <th>Status</th>
 
 </tr>
@@ -130,18 +160,6 @@ Submit Appointment
 
 
 </table>
-
-<div id="appointmentResult">
-
-</div>
-
-<br>
-
-<button id="printButton" onclick="printAppointment()" style="display:none">
-
-🖨 Print Appointment
-
-</button>
 
 
 
