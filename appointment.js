@@ -147,10 +147,14 @@ ${service}
 
 
 <p>
-<b>Date:</b>
-${date}
+<b>Application Date:</b>
+${applicationDate}
 </p>
 
+<p>
+<b>Appointment Date:</b>
+${appointmentDate}
+</p>
 
 <p>
 <b>Status:</b>
@@ -207,8 +211,11 @@ ${name}
 Service:
 ${service}
 
-Date:
-${date}
+Application Date:
+${applicationDate}
+
+Appointment Date:
+${appointmentDate}
 
 Status:
 Pending
@@ -286,7 +293,8 @@ table.innerHTML += `
 
 <td>${a.service}</td>
 
-<td>${a.date}</td>
+<td>${a.applicationDate}</td>
+<td>${a.appointmentDate}</td>
 
 <td>${a.status}</td>
 
