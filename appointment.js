@@ -373,27 +373,24 @@ function toggleOtherService(){
 // Load Data When Open
 
 
-window.onload=function(){
+window.onload = function(){
 
 showAppointments();
 
+let today = new Date();
+
+let date =
+today.getFullYear()+"-"+
+String(today.getMonth()+1).padStart(2,"0")+"-"+
+String(today.getDate()).padStart(2,"0");
+
+let appDate =
+document.getElementById("applicationDate");
+
+if(appDate){
+
+appDate.value = date;
+
+}
+
 };
-function changeCalendar(){
-
-let type =
-document.getElementById("calendarType").value;
-
-if(type=="gc"){
-
-document.getElementById("gcDateBox").style.display="block";
-document.getElementById("ecDateBox").style.display="none";
-
-}else{
-
-document.getElementById("gcDateBox").style.display="none";
-document.getElementById("ecDateBox").style.display="block";
-
-}
-
-}
-
