@@ -24,6 +24,12 @@ document.getElementById("phone").value;
 let service =
 document.getElementById("service").value;
 
+if(service === "Other"){
+
+    service =
+    document.getElementById("otherService").value;
+
+}
 
 
 let date =
@@ -322,7 +328,25 @@ location.reload();
 
 }
 
+function toggleOtherService(){
 
+    let service =
+        document.getElementById("service").value;
+
+    let box =
+        document.getElementById("otherServiceBox");
+
+    if(service === "Other"){
+
+        box.style.display = "block";
+
+    }else{
+
+        box.style.display = "none";
+
+    }
+
+}
 
 
 
