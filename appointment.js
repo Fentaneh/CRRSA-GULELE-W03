@@ -32,10 +32,6 @@ if(service === "Other"){
 }
 
 
-let applicationDate =
-document.getElementById("applicationDate").value;
-
-
 let appointmentDate =
 document.getElementById("appointmentDate").value;
 
