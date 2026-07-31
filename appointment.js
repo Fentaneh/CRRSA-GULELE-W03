@@ -76,23 +76,14 @@ String(count).padStart(2,"0");
 
 
 let appointment = {
-
-number:number,
-
-name:name,
-
-phone:phone,
-
-service:service,
-
-applicationDate:applicationDate,
-
-appointmentDate:appointmentDate,
-
-status:"Pending"
-
+    number: number,
+    name: name,
+    phone: phone,
+    service: service,
+    applicationDate: applicationDate,
+    appointmentDate: appointmentDate,
+    status: "Pending"
 };
-
 
 
 
