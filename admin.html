@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>
+CRRSA Admin Panel
+</title>
+
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<img src="logo.png">
+
+<h1>
+CRRSA Gulele Woreda 03
+</h1>
+
+<p>
+Admin Appointment Management
+</p>
+
+
+</header>
+
+
+
+<div class="container">
+
+
+
+<h2>
+🔐 Admin Login
+</h2>
+
+
+
+<div id="loginBox">
+
+
+<input 
+id="username"
+type="text"
+placeholder="Username">
+
+
+<br><br>
+
+
+<input 
+id="password"
+type="password"
+placeholder="Password">
+
+
+<br><br>
+
+
+<button class="button" onclick="adminLogin()">
+
+Login
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div id="adminPanel" style="display:none;">
+
+
+
+<h2>
+
+📋 Appointment List
+
+</h2>
+
+
+
+<table border="1" width="100%">
+
+
+<thead>
+
+<tr>
+
+<th>No</th>
+
+<th>Appointment No</th>
+
+<th>Name</th>
+
+<th>Phone</th>
+
+<th>Service</th>
+
+<th>Date</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody id="adminTable">
+
+
+</tbody>
+
+
+</table>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<footer>
+
+© 2026 CRRSA Gulele Woreda 03
+
+</footer>
+
+
+
+
+
+<script src="admin.js"></script>
+
+
+</body>
+
+</html>
