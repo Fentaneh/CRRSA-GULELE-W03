@@ -27,30 +27,69 @@ let number =
 
 document.getElementById("appointmentResult").innerHTML = `
 
-<h2>✅ Appointment Successful</h2>
+
+<div id="printArea">
+
+
+<h2>
+CRRSA Gulele Woreda 03
+</h2>
+
+
+<h3>
+📅 Appointment Confirmation
+</h3>
+
+
+<hr>
+
 
 <p>
 Appointment Number:
 <b>${number}</b>
 </p>
 
-<p>
-Name: ${name}
-</p>
 
 <p>
-Service: ${service}
+Name:
+${name}
 </p>
 
-<p>
-Date: ${date}
-</p>
 
 <p>
-Please save your appointment number.
+Phone:
+${phone}
 </p>
+
+
+<p>
+Service:
+${service}
+</p>
+
+
+<p>
+Date:
+${date}
+</p>
+
+
+<hr>
+
+
+<p>
+Please keep this number.
+</p>
+
+
+</div>
+
 
 `;
+
+
+
+document.getElementById("printButton").style.display="block";
 
 
 
@@ -58,6 +97,30 @@ localStorage.setItem(
 "appointmentNumber",
 number
 );
+
+
+}
+
+
+
+
+function printAppointment(){
+
+let content =
+document.getElementById("printArea").innerHTML;
+
+
+let old =
+document.body.innerHTML;
+
+
+document.body.innerHTML = content;
+
+
+window.print();
+
+
+document.body.innerHTML = old;
 
 
 }
