@@ -74,6 +74,28 @@ en:"Proof of Life",
 om:"Ragaa Jiraachuu",
 file:"proof-of-life.html"
 },
+    
+{
+am:"አስተያየት",
+en:"Feedback",
+om:"Yaada",
+url:"https://docs.google.com/forms/d/e/1FAIpQLSeX2m503_AdDI42Bw4c350LB5ptvUTVhZOXCPHUPVmIE2nRQA/viewform"
+},
+    
+{
+am:"የጥሪ ማዕከል",
+en:"Call Center",
+om:"Wiirtuu Bilbilaa",
+url:"tel:7533"
+}, 
+    
+{
+am:"ያግኙን",
+en:"Contact",
+om:"Nu Qunnamaa",
+file:"contact.html"
+},
+    
 {
 am:"ያላገባ ማስረጃ",
 en:"Single Status Certificate",
