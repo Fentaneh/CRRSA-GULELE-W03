@@ -329,29 +329,6 @@ table.innerHTML += `
 }
 
 
-function getEthiopianDate(date){
-
-    let gc = new Date(date);
-
-    let year = gc.getFullYear() - 8;
-
-    let month = gc.getMonth() + 1;
-
-    let day = gc.getDate();
-
-
-    if(month < 9){
-
-        year = year - 1;
-
-    }
-
-
-    return day + "/" + month + "/" + year + " E.C.";
-
-}
-
-
 // ======================================
 // Print Slip
 // ======================================
