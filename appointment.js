@@ -32,9 +32,21 @@ if(service === "Other"){
 }
 
 
-let date =
-document.getElementById("date").value;
+let applicationDate =
+document.getElementById("applicationDate").value;
 
+
+let appointmentDate =
+document.getElementById("appointmentDate").value;
+
+
+if(appointmentDate==""){
+
+alert("Please select appointment date");
+
+return;
+
+}
 
 
 
@@ -397,5 +409,19 @@ window.onload = function(){
         year + "-" + month + "-" + day;
 
     }
+
+};
+window.onload=function(){
+
+let today=new Date();
+
+let date =
+today.getFullYear()+"-"+
+String(today.getMonth()+1).padStart(2,"0")+"-"+
+String(today.getDate()).padStart(2,"0");
+
+
+document.getElementById("applicationDate").value=date;
+
 
 };
