@@ -1,377 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>
-Online Appointment Booking
-</title>
-
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRRSA Appointment</title>
 <link rel="stylesheet" href="style.css">
-
-
 </head>
-
-
 <body>
+<h2>CRRSA Gulele Woreda 03 - Appointment</h2>
 
+<form id="appointmentForm" onsubmit="createAppointment(event)">
+<label>Full Name</label>
+<input id="fullName" type="text" required>
 
-<header>
+<label>Phone</label>
+<input id="phone" type="tel" required>
 
-
-<select id="language">
-
-<option value="en">
-English
-</option>
-
-<option value="am">
-አማርኛ
-</option>
-
-<option value="om">
-Afaan Oromoo
-</option>
-
-</select>
-
-
-<img src="logo.png">
-
-
-<h1>
-AACRRSA Woreda 03
-</h1>
-
-
-<p>
-Online Appointment Booking / ቀጠሮ መያዣ
-</p>
-
-
-</header>
-
-
-
-<div class="container">
-
-
-<h2>
-📅 Online Appointment Booking
-</h2>
-
-
-
-<form id="appointmentForm" 
-onsubmit="createAppointment(event)">
-
-
-
-<label>
-Full Name / ሙሉ ስም
-</label>
-
-
-<input 
-id="fullName"
-type="text"
-required>
-
-
-
-<label>
-Phone Number / ስልክ ቁጥር
-</label>
-
-
-<input 
-id="phone"
-type="tel"
-required>
-
-
-<label>
-Select Service / አገልግሎት ይምረጡ
-</label>
-
-
+<label>Service</label>
 <select id="service" onchange="toggleOtherService()">
-
-<option value="Resident ID">Resident ID</option>
-
-<option value="Birth Registration">Birth Registration</option>
-
-<option value="Marriage Registration">Marriage Registration</option>
-
-<option value="Divorce Registration">Divorce Registration</option>
-
-<option value="Death Registration">Death Registration</option>
-
-<option value="Other">Other / ሌላ</option>
-
+<option>Resident ID</option>
+<option>Birth Registration</option>
+<option>Marriage Registration</option>
+<option>Divorce Registration</option>
+<option>Death Registration</option>
+<option>Other</option>
 </select>
 
- <div id="otherServiceBox" style="display:none; margin-top:10px;">
-
-<label>የሚፈልጉትን አገልግሎት ይፃፉ</label>
-
-<input
-id="otherService"
-type="text"
-placeholder="Write the service you need">
-
-</div> 
-
-<label>
-ያመለከቱበት ቀን / Application Date
-</label>
-
-<input
-id="applicationDate"
-type="text"
-readonly>
-
-
-<br><br>
-
-
-<label>
-Calendar Type / የቀን አይነት
-</label>
-
-
-<select id="calendarType" onchange="changeCalendar()">
-
-<option value="gc">
-Gregorian (G.C.)
-</option>
-
-
-<option value="ec">
-Ethiopian (E.C.)
-</option>
-
-
-</select>
-
-
-<br><br>
-
-
-
-<div id="gcDateBox">
-
-
-<label>
-የቀጠሮ ቀን (G.C.) / Appointment Date
-</label>
-
-
-<input
-id="appointmentDate"
-type="date"
-required>
-
-
+<div id="otherServiceBox" style="display:none">
+<input id="otherService" type="text" placeholder="Specify service">
 </div>
 
+<label>Application Date</label>
+<input id="applicationDate" type="text" readonly>
 
+<label>Appointment Date</label>
+<input id="appointmentDate" type="date" required>
 
-
-
-<div id="ecDateBox" style="display:none;">
-
-
-<label>
-የቀጠሮ ቀን (E.C.)
-</label>
-
-
-<br>
-
-
-<input
-id="ecDay"
-type="number"
-min="1"
-max="30"
-placeholder="ቀን">
-
-
-<select id="ecMonth">
-
-<option>መስከረም</option>
-<option>ጥቅምት</option>
-<option>ህዳር</option>
-<option>ታህሳስ</option>
-<option>ጥር</option>
-<option>የካቲት</option>
-<option>መጋቢት</option>
-<option>ሚያዝያ</option>
-<option>ግንቦት</option>
-<option>ሰኔ</option>
-<option>ሐምሌ</option>
-<option>ነሐሴ</option>
-<option>ጳጉሜ</option>
-
-</select>
-
-
-<input
-id="ecYear"
-type="number"
-placeholder="ዓመት">
-
-
-</div>
-
-
-<br>
-
-
-<button class="button">
-
-Submit Appointment
-
-</button>
-
-
+<button type="submit">Submit Appointment</button>
 </form>
 
+<div id="appointmentResult"></div>
+<div id="qrcode"></div>
+<button id="printButton" style="display:none" onclick="printAppointment()">Print</button>
 
-
-
-
-<br>
-
-
-<div id="appointmentResult">
-
-</div>
-
-
-
-<div id="qrcode">
-
-</div>
-
-
-
-<br>
-
-
-<button id="printButton"
-onclick="printAppointment()"
-style="display:none">
-
-
-🖨 Print Appointment
-
-
-</button>
-
-
-
-
-<hr>
-
-
-
-<h2>
-
-📋 Appointment List
-
-</h2>
-
-
-
-
-<table border="1" width="100%">
-
-
-<thead>
-
-
-<tr>
-
-<th>No</th>
-
-<th>Appointment No</th>
-
-<th>Name</th>
-
-<th>Phone</th>
-
-<th>Service</th>
-
-<th>Date</th>
-
-<th>Status</th>
-
-
-</tr>
-
-
-</thead>
-
-
-
-<tbody id="appointmentTable">
-
-
-</tbody>
-
-
+<h3>Appointments</h3>
+<table border="1">
+<thead><tr><th>No</th><th>Appointment No</th><th>Name</th><th>Phone</th><th>Service</th><th>Application Date</th><th>Appointment Date</th><th>Status</th></tr></thead>
+<tbody id="appointmentTable"></tbody>
 </table>
 
-
-
-
-<br>
-
-
-<div class="back">
-
-
-<a href="index.html" class="button">
-
-⬅ Back Home
-
-</a>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-<footer>
-
-
-© 2026 CRRSA Gulele Woreda 03. All Rights Reserved.
-
-<br>
-
-Created by Fentaneh.D
-
-
-</footer>
-
-
-<script src="https://cdn.jsdelivr.net/npm/ethiopian-date@1.0.5/dist/ethiopian-date.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="appointment.js"></script>
- 
 </body>
-
 </html>
