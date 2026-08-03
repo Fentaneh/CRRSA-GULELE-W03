@@ -10,15 +10,27 @@ document.addEventListener("DOMContentLoaded", function(){
 
     showAppointments();
 
-    let input = document.getElementById("applicationDate");
+
+    let input =
+    document.getElementById("applicationDate");
+
 
     if(input){
 
         let today = new Date();
 
-        let ecYear = today.getFullYear() - 8;
-        let ecMonth = today.getMonth() + 1;
-        let ecDay = today.getDate();
+
+        // E.C. conversion
+        let ecYear =
+        today.getFullYear() - 8;
+
+
+        let ecMonth =
+        today.getMonth() + 1;
+
+
+        let ecDay =
+        today.getDate();
 
 
         input.value =
@@ -30,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
 });
-
 // ======================================
 // Set Application Date
 // ======================================
