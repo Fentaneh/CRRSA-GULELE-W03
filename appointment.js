@@ -8,14 +8,25 @@
 // Page Load
 // ===============================
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function(){
 
     showAppointments();
 
-    setApplicationDate();
+    let input = document.getElementById("applicationDate");
+
+    if(input){
+
+        let today = new Date();
+
+        let year = today.getFullYear();
+        let month = String(today.getMonth()+1).padStart(2,"0");
+        let day = String(today.getDate()).padStart(2,"0");
+
+        input.value = day + "/" + month + "/" + year;
+
+    }
 
 });
-
 
 
 // ===============================
