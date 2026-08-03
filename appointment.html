@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CRRSA Appointment</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <h2>CRRSA Gulele Woreda 03 - Appointment</h2>
 
 <form id="appointmentForm" onsubmit="createAppointment(event)">
+
 <label>Full Name</label>
 <input id="fullName" type="text" required>
 
@@ -17,45 +20,127 @@
 <input id="phone" type="tel" required>
 
 <label>Service</label>
+
 <select id="service" onchange="toggleOtherService()">
-<option>Resident ID</option>
-<option>Birth Registration</option>
-<option>Marriage Registration</option>
-<option>Divorce Registration</option>
-<option>Death Registration</option>
-<option>Other</option>
+
+<option value="Resident ID">Resident ID</option>
+<option value="Birth Registration">Birth Registration</option>
+<option value="Marriage Registration">Marriage Registration</option>
+<option value="Divorce Registration">Divorce Registration</option>
+<option value="Death Registration">Death Registration</option>
+<option value="Other">Other</option>
+
 </select>
 
 <div id="otherServiceBox" style="display:none">
-<input id="otherService" type="text" placeholder="Specify service">
+
+<input
+id="otherService"
+type="text"
+placeholder="Specify Service">
+
 </div>
+
+
+<label>Calendar Type</label>
+
+<select id="calendarType" onchange="changeCalendar()">
+
+<option value="gc">
+Gregorian (G.C.)
+</option>
+
+<option value="ec">
+Ethiopian (E.C.)
+</option>
+
+</select>
+
 
 <label>
 Application Date / ያመለከቱበት ቀን
 </label>
 
-<input 
-id="applicationDate" 
-type="text" 
+<input
+id="applicationDate"
+type="text"
 readonly>
 
-<label>Appointment Date</label>
-<input id="appointmentDate" type="date" required>
 
-<button type="submit">Submit Appointment</button>
+<label>
+Appointment Date
+</label>
+
+<input
+id="appointmentDate"
+type="date"
+required>
+
+
+<button type="submit">
+
+Submit Appointment
+
+</button>
+
 </form>
 
+
+<hr>
+
 <div id="appointmentResult"></div>
+
 <div id="qrcode"></div>
-<button id="printButton" style="display:none" onclick="printAppointment()">Print</button>
+
+<button
+id="printButton"
+style="display:none"
+onclick="printAppointment()">
+
+Print
+
+</button>
+
+<hr>
 
 <h3>Appointments</h3>
+
 <table border="1">
-<thead><tr><th>No</th><th>Appointment No</th><th>Name</th><th>Phone</th><th>Service</th><th>Application Date</th><th>Appointment Date</th><th>Status</th></tr></thead>
-<tbody id="appointmentTable"></tbody>
+
+<thead>
+
+<tr>
+
+<th>No</th>
+
+<th>Appointment No</th>
+
+<th>Name</th>
+
+<th>Phone</th>
+
+<th>Service</th>
+
+<th>Application Date</th>
+
+<th>Appointment Date</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="appointmentTable">
+
+</tbody>
+
 </table>
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <script src="appointment.js"></script>
+
 </body>
 </html>
