@@ -40,21 +40,106 @@ function setApplicationDate() {
 
     if (!input) return;
 
+
     let today = new Date();
 
-    // Temporary Ethiopian Date
-    let ecYear = today.getFullYear() - 8;
-    let ecMonth = today.getMonth() + 1;
-    let ecDay = today.getDate();
+
+    let ecDate = gregorianToEthiopian(
+        today.getFullYear(),
+        today.getMonth() + 1,
+        today.getDate()
+    );
+
 
     input.value =
-        ecDay + "/" +
-        ecMonth + "/" +
-        ecYear + " E.C.";
+        ecDate.day + "/" +
+        ecDate.month + "/" +
+        ecDate.year +
+        " E.C.";
 
 }
 
 
+
+// Gregorian to Ethiopian Calendar
+
+function gregorianToEthiopian(gYear, gMonth, gDay) {
+
+
+    let date = new Date(
+        gYear,
+        gMonth - 1,
+        gDay
+    );
+
+
+    let newYear =
+    new Date(
+        gYear,
+        8,
+        11
+    );
+
+
+    let year;
+
+
+    if(date < newYear){
+
+        year = gYear - 8;
+
+    }else{
+
+        year = gYear - 7;
+
+    }
+
+
+    let diff =
+    Math.floor(
+        (date - newYear) /
+        (1000 * 60 * 60 * 24)
+    );
+
+
+    if(diff < 0){
+
+        newYear =
+        new Date(
+            gYear - 1,
+            8,
+            11
+        );
+
+        diff =
+        Math.floor(
+            (date - newYear) /
+            (1000 * 60 * 60 * 24)
+        );
+
+    }
+
+
+    let month =
+    Math.floor(diff / 30) + 1;
+
+
+    let day =
+    (diff % 30) + 1;
+
+
+    return {
+
+        year: year,
+
+        month: month,
+
+        day: day
+
+    };
+
+
+}
 
 // ===============================
 // Create Appointment
