@@ -63,50 +63,6 @@ function setApplicationDate(){
 }
 
 
-// ======================================
-// Check Duplicate Appointment
-// Same person + Same service
-// ======================================
-
-// Check duplicate service appointment
-
-let alreadyApplied =
-appointments.filter(function(a){
-
-    return (
-        a.phone === phone &&
-        a.service === service
-    );
-
-});
-
-
-if(alreadyApplied.length >= 1){
-
-    alert(
-    "You already have an appointment for this service."
-    );
-
-    return;
-
-}
-
-
-// ======================================
-// Save New Appointment
-// ======================================
-
-
-appointments.push(appointment);
-
-
-
-localStorage.setItem(
-    "appointments",
-    JSON.stringify(appointments)
-);
-
-
 // ===============================
 // Create Appointment
 // ===============================
