@@ -16,20 +16,20 @@ document.addEventListener("DOMContentLoaded", function(){
 
         let today = new Date();
 
-        let year = today.getFullYear();
-
-        let month = String(today.getMonth()+1).padStart(2,"0");
-
-        let day = String(today.getDate()).padStart(2,"0");
+        let ecYear = today.getFullYear() - 8;
+        let ecMonth = today.getMonth() + 1;
+        let ecDay = today.getDate();
 
 
         input.value =
-        year + "-" + month + "-" + day;
+        ecDay + "/" +
+        ecMonth + "/" +
+        ecYear +
+        " E.C.";
 
     }
 
 });
-
 
 // ======================================
 // Set Application Date
