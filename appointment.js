@@ -1,16 +1,14 @@
 // ======================================
 // CRRSA Gulele Woreda 03
 // Appointment System
-// appointment.js CLEAN VERSION
 // ======================================
-
 
 
 // ===============================
 // Page Load
 // ===============================
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
 
     showAppointments();
 
@@ -20,334 +18,212 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-
 // ===============================
 // Application Date (E.C.)
 // ===============================
 
-function setApplicationDate(){
-
+function setApplicationDate() {
 
     let input =
     document.getElementById("applicationDate");
 
-
-    if(!input) return;
-
-
+    if (!input) return;
 
     let today = new Date();
 
-
-    // Ethiopian year approximate
-    let ecYear =
-    today.getFullYear() - 8;
-
-
-    let ecMonth =
-    today.getMonth() + 1;
-
-
-    let ecDay =
-    today.getDate();
-
-
+    // Temporary Ethiopian Date
+    let ecYear = today.getFullYear() - 8;
+    let ecMonth = today.getMonth() + 1;
+    let ecDay = today.getDate();
 
     input.value =
-    ecDay + "/" +
-    ecMonth + "/" +
-    ecYear +
-    " E.C.";
-
+        ecDay + "/" +
+        ecMonth + "/" +
+        ecYear + " E.C.";
 
 }
-// Check duplicate appointment
-let alreadyApplied = appointments.filter(function(a){
 
-    return (
-        a.phone === phone &&
-        a.service === service
-    );
 
-});
-
-if(alreadyApplied.length > 0){
-
-    alert("You already applied for this service.");
-
-    return;
-
-}
 
 // ===============================
 // Create Appointment
 // ===============================
 
-function createAppointment(event){
+function createAppointment(event) {
+
+    event.preventDefault();
 
 
-event.preventDefault();
+    let name =
+    document.getElementById("fullName").value.trim();
+
+    let phone =
+    document.getElementById("phone").value.trim();
+
+    let service =
+    document.getElementById("service").value;
 
 
+    if (service === "Other") {
 
-let name =
-document.getElementById("fullName").value;
+        service =
+        document.getElementById("otherService").value.trim();
 
-
-
-let phone =
-document.getElementById("phone").value;
+    }
 
 
+    let applicationDate =
+    document.getElementById("applicationDate").value;
 
-let service =
-document.getElementById("service").value;
-
-
-
-if(service === "Other"){
+    let appointmentDate =
+    document.getElementById("appointmentDate").value;
 
 
-service =
-document.getElementById("otherService").value;
+    if (appointmentDate === "") {
 
+        alert("Please select Appointment Date.");
+
+        return;
+
+    }
+
+
+    let appointments =
+    JSON.parse(localStorage.getItem("appointments")) || [];
+        // ===============================
+    // Duplicate Check
+    // Same Phone + Same Service
+    // ===============================
+
+    let alreadyApplied = appointments.find(function (a) {
+
+        return (
+            a.phone === phone &&
+            a.service === service
+        );
+
+    });
+
+    if (alreadyApplied) {
+
+        alert("You already applied for this service.");
+
+        return;
+
+    }
+
+
+    // ===============================
+    // Daily Appointment Number
+    // ===============================
+
+    let today =
+    new Date().toISOString().split("T")[0];
+
+    let todayCount =
+    appointments.filter(function (a) {
+
+        return a.createdDate === today;
+
+    }).length + 1;
+
+
+    let number =
+        "CRRSA-" +
+        today.replaceAll("-", "") +
+        "-" +
+        String(todayCount).padStart(2, "0");
+
+
+    // ===============================
+    // Appointment Object
+    // ===============================
+
+    let appointment = {
+
+        number: number,
+
+        name: name,
+
+        phone: phone,
+
+        service: service,
+
+        applicationDate: applicationDate,
+
+        appointmentDate: appointmentDate,
+
+        createdDate: today,
+
+        status: "Pending"
+
+    };
+
+
+    appointments.push(appointment);
+
+    localStorage.setItem(
+        "appointments",
+        JSON.stringify(appointments)
+    );
+
+
+    showSlip(appointment);
+
+    showAppointments();
 
 }
-
-
-
-let applicationDate =
-document.getElementById("applicationDate").value;
-
-
-
-let appointmentDate =
-document.getElementById("appointmentDate").value;
-
-
-
-if(appointmentDate === ""){
-
-
-alert("Please select appointment date");
-
-return;
-
-
-}
-
-
-
-
-let appointments =
-JSON.parse(localStorage.getItem("appointments")) || [];
-
-
-
-
-
-// Daily Appointment Number
-
-
-let today =
-new Date().toISOString().split("T")[0];
-
-
-
-let count =
-
-appointments.filter(function(a){
-
-return a.createdDate === today;
-
-
-}).length + 1;
-
-
-
-
-let number =
-
-"CRRSA-" +
-today.replaceAll("-","") +
-"-" +
-String(count).padStart(2,"0");
-
-
-
-
-
-
-let appointment = {
-
-
-number:number,
-
-name:name,
-
-phone:phone,
-
-service:service,
-
-applicationDate:applicationDate,
-
-appointmentDate:appointmentDate,
-
-createdDate:today,
-
-status:"Pending"
-
-
-};
-
-
-
-
-
-
-appointments.push(appointment);
-
-
-
-
-
-localStorage.setItem(
-
-"appointments",
-
-JSON.stringify(appointments)
-
-);
-
-
-
-
-
-showSlip(appointment);
-
-
-
-showAppointments();
-
-
-
-}
-
-
-
-
-
-
-
-
 // ===============================
 // Show Appointment Slip
 // ===============================
 
 function showSlip(data){
 
+    let result =
+    document.getElementById("appointmentResult");
 
+    if(!result) return;
 
-let result =
-document.getElementById("appointmentResult");
+    result.innerHTML = `
 
+    <div id="printArea">
 
+        <h2>CRRSA Gulele Woreda 03</h2>
 
-if(!result) return;
+        <h3>📅 Appointment Confirmation</h3>
 
+        <hr>
 
+        <p><b>Appointment No:</b> ${data.number}</p>
 
-result.innerHTML = `
+        <p><b>Name:</b> ${data.name}</p>
 
+        <p><b>Phone:</b> ${data.phone}</p>
 
-<div id="printArea">
+        <p><b>Service:</b> ${data.service}</p>
 
+        <p><b>Application Date:</b> ${data.applicationDate}</p>
 
-<h2>
-CRRSA Gulele Woreda 03
-</h2>
+        <p><b>Appointment Date:</b> ${data.appointmentDate}</p>
 
+        <p><b>Status:</b> ${data.status}</p>
 
-<h3>
-📅 Appointment Confirmation
-</h3>
+    </div>
 
+    `;
 
-<hr>
+    createQR(data);
 
+    let printButton =
+    document.getElementById("printButton");
 
+    if(printButton){
 
-<p>
-<b>Appointment No:</b>
-${data.number}
-</p>
+        printButton.style.display = "block";
 
-
-<p>
-<b>Name:</b>
-${data.name}
-</p>
-
-
-
-<p>
-<b>Phone:</b>
-${data.phone}
-</p>
-
-
-<p>
-<b>Service:</b>
-${data.service}
-</p>
-
-
-<p>
-<b>Application Date:</b>
-${data.applicationDate}
-</p>
-
-
-<p>
-<b>Appointment Date:</b>
-${data.appointmentDate}
-</p>
-
-
-<p>
-<b>Status:</b>
-${data.status}
-</p>
-
-
-</div>
-
-
-`;
-
-
-
-createQR(data);
-
-
-
-let button =
-document.getElementById("printButton");
-
-
-
-if(button){
-
-button.style.display="block";
+    }
 
 }
-
-
-
-}
-
-
-
 
 
 
@@ -355,38 +231,28 @@ button.style.display="block";
 // QR Code
 // ===============================
 
-
 function createQR(data){
 
+    let qr =
+    document.getElementById("qrcode");
 
+    if(!qr) return;
 
-let qr =
-document.getElementById("qrcode");
+    qr.innerHTML = "";
 
+    new QRCode(qr,{
 
-
-if(!qr) return;
-
-
-
-qr.innerHTML="";
-
-
-
-new QRCode(qr,{
-
-
-text:
-
-
-`
-CRRSA Gulele Woreda 03
+        text:
+`CRRSA Gulele Woreda 03
 
 Appointment No:
 ${data.number}
 
 Name:
 ${data.name}
+
+Phone:
+${data.phone}
 
 Service:
 ${data.service}
@@ -398,274 +264,259 @@ Appointment Date:
 ${data.appointmentDate}
 
 Status:
-${data.status}
+${data.status}`,
 
-`,
+        width:150,
+        height:150
 
-
-width:150,
-
-height:150
-
-
-});
-
-
+    });
 
 }
-
-
-
-
-
-
-
 // ===============================
 // Show Appointment Table
 // ===============================
 
-
 function showAppointments(){
 
+    let table =
+    document.getElementById("appointmentTable");
 
+    if(!table) return;
 
-let table =
-document.getElementById("appointmentTable");
+    let list =
+    JSON.parse(localStorage.getItem("appointments")) || [];
 
+    table.innerHTML = "";
 
+    list.forEach(function(a,index){
 
-if(!table) return;
+        table.innerHTML += `
 
+        <tr>
 
+            <td>${index + 1}</td>
 
-let list =
-JSON.parse(localStorage.getItem("appointments")) || [];
+            <td>${a.number}</td>
 
+            <td>${a.name}</td>
 
+            <td>${a.phone}</td>
 
-table.innerHTML="";
+            <td>${a.service}</td>
 
+            <td>${a.applicationDate}</td>
 
+            <td>${a.appointmentDate}</td>
 
-list.forEach(function(a,index){
+            <td>${a.status}</td>
 
+        </tr>
 
+        `;
 
-table.innerHTML += `
-
-
-<tr>
-
-
-<td>${index+1}</td>
-
-<td>${a.number}</td>
-
-<td>${a.name}</td>
-
-<td>${a.phone}</td>
-
-<td>${a.service}</td>
-
-<td>${a.applicationDate}</td>
-
-<td>${a.appointmentDate}</td>
-
-<td>${a.status}</td>
-
-
-</tr>
-
-
-`;
-
-
-
-});
-
+    });
 
 }
 
 
 
-
-
-
 // ===============================
-// Print
+// Print Appointment
 // ===============================
-
 
 function printAppointment(){
 
+    let printArea =
+    document.getElementById("printArea");
 
+    if(!printArea){
 
-let printArea =
-document.getElementById("printArea");
+        alert("No appointment found.");
 
+        return;
 
+    }
 
-if(!printArea){
+    let oldPage =
+    document.body.innerHTML;
 
-alert("No appointment found");
+    document.body.innerHTML =
+    printArea.innerHTML;
 
-return;
+    window.print();
 
-}
+    document.body.innerHTML =
+    oldPage;
 
-
-
-let old =
-document.body.innerHTML;
-
-
-
-document.body.innerHTML =
-printArea.innerHTML;
-
-
-
-window.print();
-
-
-
-document.body.innerHTML =
-old;
-
-
-
-location.reload();
-
-
+    location.reload();
 
 }
-
-
-
-
-
-
 // ===============================
 // Other Service
 // ===============================
 
-
 function toggleOtherService(){
 
+    let service =
+    document.getElementById("service").value;
 
+    let otherBox =
+    document.getElementById("otherServiceBox");
 
-let service =
-document.getElementById("service").value;
+    if(!otherBox) return;
 
+    if(service === "Other"){
 
+        otherBox.style.display = "block";
 
-let box =
-document.getElementById("otherServiceBox");
+    }else{
 
+        otherBox.style.display = "none";
 
+        let other =
+        document.getElementById("otherService");
 
-if(!box) return;
+        if(other){
 
+            other.value = "";
 
+        }
 
-if(service==="Other"){
-
-
-box.style.display="block";
-
-
-}else{
-
-
-box.style.display="none";
-
-
-}
-
-
+    }
 
 }
 
 
 
-
-
-
 // ===============================
-// Search
+// Search Appointment
 // ===============================
-
 
 function searchAppointment(){
 
+    let search =
+    document.getElementById("searchInput");
 
+    if(!search){
 
-let text =
-document.getElementById("searchInput").value.toLowerCase();
+        showAppointments();
 
+        return;
 
+    }
 
-let list =
-JSON.parse(localStorage.getItem("appointments")) || [];
+    let keyword =
+    search.value.toLowerCase();
 
+    let list =
+    JSON.parse(localStorage.getItem("appointments")) || [];
 
+    let table =
+    document.getElementById("appointmentTable");
 
-let table =
-document.getElementById("appointmentTable");
+    table.innerHTML = "";
 
+    list.forEach(function(a,index){
 
+        let text =
+        (
+            a.number +
+            a.name +
+            a.phone +
+            a.service +
+            a.applicationDate +
+            a.appointmentDate +
+            a.status
+        ).toLowerCase();
 
-table.innerHTML="";
+        if(text.includes(keyword)){
 
+            table.innerHTML += `
 
+            <tr>
 
-list.forEach(function(a,index){
+                <td>${index+1}</td>
+                <td>${a.number}</td>
+                <td>${a.name}</td>
+                <td>${a.phone}</td>
+                <td>${a.service}</td>
+                <td>${a.applicationDate}</td>
+                <td>${a.appointmentDate}</td>
+                <td>${a.status}</td>
 
+            </tr>
 
+            `;
 
-let data =
+        }
 
-(
-a.name+
-a.phone+
-a.number+
-a.service
-).toLowerCase();
+    });
 
+}
+// ===============================
+// Reset Appointment Form
+// ===============================
 
+function resetAppointmentForm(){
 
-if(data.includes(text)){
+    let form =
+    document.getElementById("appointmentForm");
 
+    if(form){
 
+        form.reset();
 
-table.innerHTML += `
+    }
 
-<tr>
+    // Restore Application Date
+    setApplicationDate();
 
-<td>${index+1}</td>
+    // Hide Other Service
+    let otherBox =
+    document.getElementById("otherServiceBox");
 
-<td>${a.number}</td>
+    if(otherBox){
 
-<td>${a.name}</td>
+        otherBox.style.display = "none";
 
-<td>${a.phone}</td>
-
-<td>${a.service}</td>
-
-<td>${a.applicationDate}</td>
-
-<td>${a.appointmentDate}</td>
-
-<td>${a.status}</td>
-
-</tr>
-
-`;
+    }
 
 }
 
 
-});
 
+// ===============================
+// Clear All Appointments (Admin)
+// ===============================
+
+function clearAppointments(){
+
+    if(confirm("Are you sure you want to delete all appointments?")){
+
+        localStorage.removeItem("appointments");
+
+        showAppointments();
+
+        alert("All appointments deleted successfully.");
+
+    }
 
 }
+
+
+
+// ===============================
+// Refresh Appointment Table
+// ===============================
+
+function refreshAppointments(){
+
+    showAppointments();
+
+}
+
+
+
+// ===============================
+// End of appointment.js
+// ===============================
