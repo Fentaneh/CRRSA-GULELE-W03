@@ -886,28 +886,6 @@ ec.style.display="block";
 
 
 
-// ======================================
-// Load Ethiopian Date
-// ======================================
-
-
-document.addEventListener(
-"DOMContentLoaded",
-function(){
-
-
-showEthiopianDate();
-
-
-
-}
-);
-// ======================================
-// Final Fix & Backup
-// ======================================
-
-
-
 function validateAppointment(){
 
 
