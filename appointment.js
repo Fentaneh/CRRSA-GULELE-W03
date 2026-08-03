@@ -392,17 +392,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (input) {
 
-        const today = new Date();
+       const today = new Date();
 
-        let ecYear = today.getFullYear() - 8;
-        let ecMonth = today.getMonth() + 1;
-        let ecDay = today.getDate();
+const ec =
+EthiopianDateConverter.toEthiopian(
+today.getFullYear(),
+today.getMonth()+1,
+today.getDate()
+);
 
-        input.value =
-        ecDay + "/" +
-        ecMonth + "/" +
-        ecYear +
-        " E.C.";
+input.value =
+ec.day + "/" +
+ec.month + "/" +
+ec.year + " E.C.";
 
     }
 
