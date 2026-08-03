@@ -63,7 +63,46 @@ function setApplicationDate(){
 }
 
 
+// ======================================
+// Check Duplicate Appointment
+// Same person + Same service
+// ======================================
 
+let alreadyApplied = appointments.filter(function(a){
+
+    return (
+        a.phone === phone &&
+        a.service === service
+    );
+
+});
+
+
+if(alreadyApplied.length >= 1){
+
+    alert(
+        "You already applied for this service."
+    );
+
+    return;
+
+}
+
+
+
+// ======================================
+// Save New Appointment
+// ======================================
+
+
+appointments.push(appointment);
+
+
+
+localStorage.setItem(
+    "appointments",
+    JSON.stringify(appointments)
+);
 
 
 // ===============================
