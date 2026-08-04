@@ -7,37 +7,38 @@
 // ===============================
 // Page Load
 // ===============================
-
 document.addEventListener("DOMContentLoaded", function(){
 
     showAppointments();
 
     setApplicationDate();
 
+
     let appointmentInput =
     document.getElementById("appointmentDate");
+
 
     if(appointmentInput){
 
         let today = new Date();
 
         let year = today.getFullYear();
-        let month = String(today.getMonth()+1).padStart(2,"0");
-        let day = String(today.getDate()).padStart(2,"0");
+
+        let month =
+        String(today.getMonth()+1).padStart(2,"0");
+
+        let day =
+        String(today.getDate()).padStart(2,"0");
+
+
+        appointmentInput.value =
+        year + "-" + month + "-" + day;
 
         appointmentInput.min =
         year + "-" + month + "-" + day;
 
     }
 
-if(appointmentInput){
-
-    let today = new Date();
-
-    appointmentInput.value =
-    today.toISOString().split("T")[0];
-
-}
 });
 // ===============================
 // Application Date (E.C.)
