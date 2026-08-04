@@ -80,44 +80,67 @@ function setAppointmentDate() {
     if (!input) return;
 
 
-    let today = new Date();
+    function updateEC(){
+
+        let value = input.value.trim();
+
+        if(value === ""){
+            ecText.innerHTML = "";
+            return;
+        }
 
 
-    let day =
-    String(today.getDate()).padStart(2,"0");
-
-    let month =
-    String(today.getMonth()+1).padStart(2,"0");
-
-    let year =
-    today.getFullYear();
+        let parts = value.split("/");
 
 
-    // Default Appointment Date
-    input.value =
-    day + "/" +
-    month + "/" +
-    year;
+        if(parts.length !== 3){
+            ecText.innerHTML = "Use DD/MM/YYYY";
+            return;
+        }
 
 
-    // Ethiopian Date Display
-    if(ecText){
+        let day = Number(parts[0]);
+        let month = Number(parts[1]);
+        let year = Number(parts[2]);
+
 
         let ec =
         gregorianToEthiopian(
             year,
-            today.getMonth()+1,
-            today.getDate()
+            month,
+            day
         );
 
 
         ecText.innerHTML =
         "<b>E.C:</b> " +
-        String(ec.day).padStart(2,"0") + "/" +
-        String(ec.month).padStart(2,"0") + "/" +
+        String(ec.day).padStart(2,"0") +
+        "/" +
+        String(ec.month).padStart(2,"0") +
+        "/" +
         ec.year;
 
     }
+
+
+    let today = new Date();
+
+
+    input.value =
+    String(today.getDate()).padStart(2,"0") +
+    "/" +
+    String(today.getMonth()+1).padStart(2,"0") +
+    "/" +
+    today.getFullYear();
+
+
+    updateEC();
+
+
+    input.addEventListener(
+        "input",
+        updateEC
+    );
 
 }
 // ===============================
