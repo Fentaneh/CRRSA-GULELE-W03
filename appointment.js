@@ -20,15 +20,6 @@ document.addEventListener("DOMContentLoaded", function(){
 // ===============================
 // Application Date G.C + E.C
 // ===============================
-document.addEventListener("DOMContentLoaded", function(){
-
-    setApplicationDate();
-
-    setAppointmentDate();
-
-    showAppointments();
-
-});
 function setAppointmentDate() {
 
     let input =
