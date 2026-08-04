@@ -25,7 +25,37 @@ document.addEventListener("DOMContentLoaded", function(){
         input.value = day + "/" + month + "/" + year;
 
     }
+// Minimum Appointment Date = Today
 
+let appointmentInput =
+document.getElementById("appointmentDate");
+
+
+if(appointmentInput){
+
+    let today = new Date();
+
+
+    let year =
+    today.getFullYear();
+
+
+    let month =
+    String(today.getMonth()+1)
+    .padStart(2,"0");
+
+
+    let day =
+    String(today.getDate())
+    .padStart(2,"0");
+
+
+    appointmentInput.min =
+    year + "-" +
+    month + "-" +
+    day;
+
+}
 });
 
 
