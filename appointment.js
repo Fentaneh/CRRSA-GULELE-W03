@@ -29,7 +29,17 @@ document.addEventListener("DOMContentLoaded", function(){
         year + "-" + month + "-" + day;
 
     }
+let appointmentInput =
+document.getElementById("appointmentDate");
 
+if(appointmentInput){
+
+    let today = new Date();
+
+    appointmentInput.value =
+    today.toISOString().split("T")[0];
+
+}
 });
 // ===============================
 // Application Date (E.C.)
