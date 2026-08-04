@@ -20,6 +20,53 @@ document.addEventListener("DOMContentLoaded", function(){
 // ===============================
 // Application Date G.C + E.C
 // ===============================
+function setApplicationDate(){
+
+    let input =
+    document.getElementById("applicationDate");
+
+    if(!input){
+        console.log("applicationDate not found");
+        return;
+    }
+
+
+    let today = new Date();
+
+
+    let gc =
+    String(today.getDate()).padStart(2,"0") +
+    "/" +
+    String(today.getMonth()+1).padStart(2,"0") +
+    "/" +
+    today.getFullYear() +
+    " G.C.";
+
+
+    let ec =
+    gregorianToEthiopian(
+        today.getFullYear(),
+        today.getMonth()+1,
+        today.getDate()
+    );
+
+
+    let ecText =
+    String(ec.day).padStart(2,"0") +
+    "/" +
+    String(ec.month).padStart(2,"0") +
+    "/" +
+    ec.year +
+    " E.C.";
+
+
+    input.value =
+    gc + " | " + ecText;
+
+
+    console.log(input.value);
+
+}
 function setAppointmentDate() {
 
     let input =
