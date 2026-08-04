@@ -14,60 +14,67 @@ document.addEventListener("DOMContentLoaded", function(){
     setApplicationDate();
 
 
-    let appointmentInput =
-    document.getElementById("appointmentDate");
+   let appointmentInput =
+document.getElementById("appointmentDate");
+
+let appointmentEC =
+document.getElementById("appointmentEC");
 
 
-    if(appointmentInput){
+if(appointmentInput){
 
-        let today = new Date();
-
-
-        // G.C Date
-        let gcDay =
-        String(today.getDate()).padStart(2,"0");
-
-        let gcMonth =
-        String(today.getMonth()+1).padStart(2,"0");
-
-        let gcYear =
-        today.getFullYear();
+    let today = new Date();
 
 
-        let gcDate =
-        gcDay + "/" +
-        gcMonth + "/" +
-        gcYear +
-        " G.C.";
+    // Minimum Date = Today (G.C)
+    let year =
+    today.getFullYear();
+
+    let month =
+    String(today.getMonth()+1).padStart(2,"0");
+
+    let day =
+    String(today.getDate()).padStart(2,"0");
+
+
+    appointmentInput.min =
+    year + "-" + month + "-" + day;
 
 
 
-        // E.C Date
+    // When user select appointment date
+    appointmentInput.addEventListener("change", function(){
+
+
+        let selectedDate =
+        new Date(this.value);
+
+
+
         let ecDate =
         gregorianToEthiopian(
-            gcYear,
-            today.getMonth()+1,
-            today.getDate()
+            selectedDate.getFullYear(),
+            selectedDate.getMonth()+1,
+            selectedDate.getDate()
         );
 
 
-        let ecText =
-        ecDate.day + "/" +
-        ecDate.month + "/" +
-        ecDate.year +
-        " E.C.";
+
+        if(appointmentEC){
+
+            appointmentEC.innerHTML =
+            "E.C: " +
+            ecDate.day + "/" +
+            ecDate.month + "/" +
+            ecDate.year;
+
+        }
 
 
-
-        appointmentInput.value =
-        gcDate +
-        " | " +
-        ecText;
+    });
 
 
-    }
-
-});
+}
 // ===============================
 // Application Date (E.C.)
 // ===============================
