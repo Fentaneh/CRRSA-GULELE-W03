@@ -12,9 +12,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
     showAppointments();
 
-    let input = document.getElementById("applicationDate");
+    setApplicationDate();
 
-    if(input){
+    let appointmentInput =
+    document.getElementById("appointmentDate");
+
+    if(appointmentInput){
 
         let today = new Date();
 
@@ -22,13 +25,12 @@ document.addEventListener("DOMContentLoaded", function(){
         let month = String(today.getMonth()+1).padStart(2,"0");
         let day = String(today.getDate()).padStart(2,"0");
 
-        input.value = day + "/" + month + "/" + year;
+        appointmentInput.min =
+        year + "-" + month + "-" + day;
 
- }
+    }
 
 });
-
-
 // ===============================
 // Application Date (E.C.)
 // ===============================
