@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     setApplicationDate();
 
-
    let appointmentInput =
 document.getElementById("appointmentDate");
 
