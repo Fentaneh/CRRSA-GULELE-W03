@@ -37,30 +37,19 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function setApplicationDate() {
 
-    let input =
-    document.getElementById("applicationDate");
+    let input = document.getElementById("applicationDate");
 
     if (!input) return;
 
-
     let today = new Date();
 
+    let year = today.getFullYear();
+    let month = String(today.getMonth() + 1).padStart(2, "0");
+    let day = String(today.getDate()).padStart(2, "0");
 
-    let ecDate = gregorianToEthiopian(
-        today.getFullYear(),
-        today.getMonth() + 1,
-        today.getDate()
-    );
-
-
-    input.value =
-        ecDate.day + "/" +
-        ecDate.month + "/" +
-        ecDate.year +
-        " E.C.";
+    input.value = day + "/" + month + "/" + year;
 
 }
-
 
 
 // Gregorian to Ethiopian Calendar
