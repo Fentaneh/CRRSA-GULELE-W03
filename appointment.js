@@ -110,49 +110,42 @@ function setApplicationDate(){
 
 // Gregorian to Ethiopian Calendar
 
-function gregorianToEthiopian(gYear, gMonth, gDay) {
+function gregorianToEthiopian(gYear, gMonth, gDay){
+
+    let date = new Date(gYear, gMonth - 1, gDay);
+
+    let ecYear = gYear - 8;
+
+    let ecMonth = gMonth - 1;
+
+    let ecDay = gDay - 10;
 
 
-    let appointmentInput =
-document.getElementById("appointmentDate");
+    if(ecDay <= 0){
 
-let appointmentEC =
-document.getElementById("appointmentEC");
+        ecMonth--;
 
+        ecDay += 30;
 
-if(appointmentInput){
-
-    let today = new Date();
-
-    appointmentInput.min =
-    today.toISOString().split("T")[0];
+    }
 
 
-    appointmentInput.addEventListener("change", function(){
+    if(ecMonth <= 0){
 
-        let selectedDate =
-        new Date(this.value);
+        ecMonth = 13;
 
+        ecYear--;
 
-        let ecDate =
-        gregorianToEthiopian(
-            selectedDate.getFullYear(),
-            selectedDate.getMonth() + 1,
-            selectedDate.getDate()
-        );
+    }
 
 
-        if(appointmentEC){
+    return {
 
-            appointmentEC.innerHTML =
-            "E.C: " +
-            String(ecDate.day).padStart(2,"0") + "/" +
-            String(ecDate.month).padStart(2,"0") + "/" +
-            ecDate.year;
+        year: ecYear,
+        month: ecMonth,
+        day: ecDay
 
-        }
-
-    });
+    };
 
 }
 // ===============================
