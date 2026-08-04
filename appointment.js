@@ -7,15 +7,12 @@
 // ===============================
 // Page Load
 // ===============================
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function(){
 
-    // Application Date
     setApplicationDate();
 
-    // Appointment Date
     setAppointmentDate();
 
-    // Load Appointments
     showAppointments();
 
 });
