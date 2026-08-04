@@ -137,7 +137,7 @@ function createAppointment(event){
     let service =
     document.getElementById("service").value;
 
-    if(service==="Other"){
+    if(service === "Other"){
 
         service =
         document.getElementById("otherService").value.trim();
@@ -150,7 +150,7 @@ function createAppointment(event){
     let appointmentDate =
     document.getElementById("appointmentDate").value;
 
-    if(appointmentDate===""){
+    if(appointmentDate === ""){
 
         alert("Please select Appointment Date.");
 
@@ -162,12 +162,14 @@ function createAppointment(event){
     JSON.parse(localStorage.getItem("appointments")) || [];
 
 
+    // ===============================
     // Duplicate Check
+    // ===============================
     let duplicate =
     appointments.find(function(a){
 
-        return a.phone===phone &&
-               a.service===service;
+        return a.phone === phone &&
+               a.service === service;
 
     });
 
@@ -180,35 +182,53 @@ function createAppointment(event){
     }
 
 
+    // ===============================
+    // Appointment Number
+    // ===============================
     let today =
     new Date().toISOString().split("T")[0];
 
+    let todayCount =
+    appointments.filter(function(a){
+
+        return a.createdDate === today;
+
+    }).length + 1;
+
     let number =
     "CRRSA-" +
-    Date.now();
+    today.replaceAll("-","") +
+    "-" +
+    String(todayCount).padStart(2,"0");
 
 
-    let appointment={
+    // ===============================
+    // Appointment Object
+    // ===============================
+    let appointment = {
 
-        number:number,
+        number: number,
 
-        name:name,
+        name: name,
 
-        phone:phone,
+        phone: phone,
 
-        service:service,
+        service: service,
 
-        applicationDate:applicationDate,
+        applicationDate: applicationDate,
 
-        appointmentDate:appointmentDate,
+        appointmentDate: appointmentDate,
 
-        createdDate:today,
+        createdDate: today,
 
-        status:"Pending"
+        status: "Pending"
 
     };
 
 
+    // ===============================
+    // Save
+    // ===============================
     appointments.push(appointment);
 
     localStorage.setItem(
@@ -217,9 +237,12 @@ function createAppointment(event){
     );
 
 
-    showAppointments();
-
+    // ===============================
+    // Show Result
+    // ===============================
     showSlip(appointment);
+
+    showAppointments();
 
 }
 
