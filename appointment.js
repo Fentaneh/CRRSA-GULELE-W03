@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", function(){
         year + "-" + month + "-" + day;
 
     }
-let appointmentInput =
-document.getElementById("appointmentDate");
 
 if(appointmentInput){
 
