@@ -23,18 +23,18 @@ document.addEventListener("DOMContentLoaded", function () {
 // ===============================
 // Application Date G.C + E.C
 // ===============================
-function setApplicationDate() {
+function setApplicationDate(){
 
     let input =
     document.getElementById("applicationDate");
 
-    if (!input) return;
+    if(!input) return;
 
 
     let today = new Date();
 
 
-    // G.C Date
+    // Gregorian Date
     let gcDay =
     String(today.getDate()).padStart(2,"0");
 
@@ -45,7 +45,7 @@ function setApplicationDate() {
     today.getFullYear();
 
 
-    let gc =
+    let gcText =
     gcDay + "/" +
     gcMonth + "/" +
     gcYear +
@@ -53,7 +53,7 @@ function setApplicationDate() {
 
 
 
-    // E.C Date
+    // Ethiopian Date
     let ec =
     gregorianToEthiopian(
         gcYear,
@@ -62,7 +62,7 @@ function setApplicationDate() {
     );
 
 
-    let eC =
+    let ecText =
     String(ec.day).padStart(2,"0") +
     "/" +
     String(ec.month).padStart(2,"0") +
@@ -72,11 +72,14 @@ function setApplicationDate() {
 
 
 
-    // Show Both
+    // Display Both
     input.value =
-    gc + " | " + eC;
+    gcText +
+    " | " +
+    ecText;
 
 }
+
 function setAppointmentDate() {
 
     let input =
