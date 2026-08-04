@@ -3,7 +3,6 @@
 // Appointment System
 // ======================================
 
-
 // ===============================
 // Page Load
 // ===============================
@@ -80,32 +79,40 @@ gregorianToEthiopian(
 
 function setApplicationDate(){
 
-    let input = document.getElementById("applicationDate");
+    let input =
+    document.getElementById("applicationDate");
+
 
     if(!input) return;
 
+
     let today = new Date();
 
-    // Gregorian
-    let gy = today.getFullYear();
-    let gm = String(today.getMonth()+1).padStart(2,"0");
-    let gd = String(today.getDate()).padStart(2,"0");
 
-    // Simple Ethiopian Date
-    let ec = gregorianToEthiopian(
-        gy,
+    let gc =
+    String(today.getDate()).padStart(2,"0") + "/" +
+    String(today.getMonth()+1).padStart(2,"0") + "/" +
+    today.getFullYear() +
+    " G.C.";
+
+
+    let ec =
+    gregorianToEthiopian(
+        today.getFullYear(),
         today.getMonth()+1,
         today.getDate()
     );
 
+
     input.value =
-        gd + "/" + gm + "/" + gy +
-        " (G.C.)   |   " +
-        ec.day + "/" + ec.month + "/" + ec.year +
-        " (E.C.)";
+    gc +
+    " | " +
+    String(ec.day).padStart(2,"0") + "/" +
+    String(ec.month).padStart(2,"0") + "/" +
+    ec.year +
+    " E.C.";
 
 }
-
 
 // Gregorian to Ethiopian Calendar
 
