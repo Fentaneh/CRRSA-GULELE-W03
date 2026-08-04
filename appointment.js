@@ -78,16 +78,46 @@ function setAppointmentDate() {
     let input =
     document.getElementById("appointmentDate");
 
+    let ecText =
+    document.getElementById("appointmentEC");
+
     if (!input) return;
 
     let today = new Date();
 
-    let minDate =
-        today.getFullYear() + "-" +
-        String(today.getMonth() + 1).padStart(2, "0") + "-" +
-        String(today.getDate()).padStart(2, "0");
+    // Today = Minimum Date
+    input.min = today.toISOString().split("T")[0];
 
-    input.min = minDate;
+    // Default = Today
+    input.value = today.toISOString().split("T")[0];
+
+    // Show today's Ethiopian Date
+    updateAppointmentEC();
+
+    // Update when date changes
+    input.addEventListener("change", updateAppointmentEC);
+
+    function updateAppointmentEC() {
+
+        let selected = new Date(input.value);
+
+        let ec = gregorianToEthiopian(
+            selected.getFullYear(),
+            selected.getMonth() + 1,
+            selected.getDate()
+        );
+
+        if (ecText) {
+
+            ecText.innerHTML =
+                "<b>E.C:</b> " +
+                String(ec.day).padStart(2, "0") + "/" +
+                String(ec.month).padStart(2, "0") + "/" +
+                ec.year;
+
+        }
+
+    }
 
 }
 
