@@ -173,3 +173,82 @@ function createAppointment(event){
 
 }
 
+// ===============================
+// Show Appointment Slip
+// ===============================
+function showSlip(data){
+
+    let result =
+    document.getElementById("appointmentResult");
+
+    if(!result) return;
+
+    result.innerHTML = `
+
+    <div id="printArea">
+
+        <h2>CRRSA Gulele Woreda 03</h2>
+
+        <h3>Appointment Confirmation</h3>
+
+        <hr>
+
+        <p><b>Appointment No:</b> ${data.number}</p>
+
+        <p><b>Name:</b> ${data.name}</p>
+
+        <p><b>Phone:</b> ${data.phone}</p>
+
+        <p><b>Service:</b> ${data.service}</p>
+
+        <p><b>Application Date:</b> ${data.applicationDate}</p>
+
+        <p><b>Appointment Date:</b> ${data.appointmentDate}</p>
+
+        <p><b>Status:</b> ${data.status}</p>
+
+    </div>
+
+    `;
+
+    createQR(data);
+
+    let btn =
+    document.getElementById("printButton");
+
+    if(btn){
+
+        btn.style.display="block";
+
+    }
+
+}
+
+
+// ===============================
+// QR Code
+// ===============================
+function createQR(data){
+
+    let qr =
+    document.getElementById("qrcode");
+
+    if(!qr) return;
+
+    qr.innerHTML="";
+
+    new QRCode(qr,{
+
+        text:
+        "Appointment No: " + data.number +
+        "\nName: " + data.name +
+        "\nPhone: " + data.phone +
+        "\nService: " + data.service +
+        "\nAppointment Date: " + data.appointmentDate,
+
+        width:150,
+        height:150
+
+    });
+
+}
