@@ -12,61 +12,49 @@ document.addEventListener("DOMContentLoaded", function(){
 
     setApplicationDate();
 
-   let appointmentInput =
+let appointmentInput =
 document.getElementById("appointmentDate");
 
+
+let appointmentEC =
+document.getElementById("appointmentEC");
+
+
 if(appointmentInput){
+
 
     let today = new Date();
 
 
-    // Minimum Date = Today (G.C)
-    let year =
-    today.getFullYear();
-
-    let month =
-    String(today.getMonth()+1).padStart(2,"0");
-
-    let day =
-    String(today.getDate()).padStart(2,"0");
-
-
     appointmentInput.min =
-    year + "-" + month + "-" + day;
+    today.toISOString().split("T")[0];
 
 
 
-    // When user select appointment date
     appointmentInput.addEventListener("change", function(){
 
 
-        let selectedDate =
+        let d =
         new Date(this.value);
 
 
 
-        let ecDate =
-gregorianToEthiopian(
-    selected.getFullYear(),
-    selected.getMonth()+1,
-    selected.getDate()
-);
+        let ec =
+        gregorianToEthiopian(
+            d.getFullYear(),
+            d.getMonth()+1,
+            d.getDate()
+        );
 
 
-
-        if(appointmentEC){
-
-            appointmentEC.innerHTML =
-            "E.C: " +
-            ecDate.day + "/" +
-            ecDate.month + "/" +
-            ecDate.year;
-
-        }
+        appointmentEC.innerHTML =
+        "E.C: " +
+        ec.day + "/" +
+        ec.month + "/" +
+        ec.year;
 
 
     });
-
 
 }
 // ===============================
