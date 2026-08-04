@@ -20,9 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
 // ===============================
-// Application Date
+// Application Date G.C + E.C
 // ===============================
 function setApplicationDate() {
 
@@ -31,42 +30,51 @@ function setApplicationDate() {
 
     if (!input) return;
 
-    let calendar =
-    document.getElementById("calendarType").value;
 
     let today = new Date();
 
+
+    // G.C Date
     let gcDay =
-    String(today.getDate()).padStart(2, "0");
+    String(today.getDate()).padStart(2,"0");
 
     let gcMonth =
-    String(today.getMonth() + 1).padStart(2, "0");
+    String(today.getMonth()+1).padStart(2,"0");
 
     let gcYear =
     today.getFullYear();
 
-    if (calendar === "gc") {
 
-        input.value =
-        gcDay + "/" +
-        gcMonth + "/" +
-        gcYear + " G.C.";
+    let gc =
+    gcDay + "/" +
+    gcMonth + "/" +
+    gcYear +
+    " G.C.";
 
-    } else {
 
-        let ec =
-        gregorianToEthiopian(
-            gcYear,
-            today.getMonth() + 1,
-            today.getDate()
-        );
 
-        input.value =
-        String(ec.day).padStart(2, "0") + "/" +
-        String(ec.month).padStart(2, "0") + "/" +
-        ec.year + " E.C.";
+    // E.C Date
+    let ec =
+    gregorianToEthiopian(
+        gcYear,
+        today.getMonth()+1,
+        today.getDate()
+    );
 
-    }
+
+    let eC =
+    String(ec.day).padStart(2,"0") +
+    "/" +
+    String(ec.month).padStart(2,"0") +
+    "/" +
+    ec.year +
+    " E.C.";
+
+
+
+    // Show Both
+    input.value =
+    gc + " | " + eC;
 
 }
 function setAppointmentDate() {
