@@ -70,3 +70,106 @@ function setAppointmentDate() {
     input.min = minDate;
 
 }
+
+// ===============================
+// Create Appointment
+// ===============================
+function createAppointment(event){
+
+    event.preventDefault();
+
+    let name =
+    document.getElementById("fullName").value.trim();
+
+    let phone =
+    document.getElementById("phone").value.trim();
+
+    let service =
+    document.getElementById("service").value;
+
+    if(service==="Other"){
+
+        service =
+        document.getElementById("otherService").value.trim();
+
+    }
+
+    let applicationDate =
+    document.getElementById("applicationDate").value;
+
+    let appointmentDate =
+    document.getElementById("appointmentDate").value;
+
+    if(appointmentDate===""){
+
+        alert("Please select Appointment Date.");
+
+        return;
+
+    }
+
+    let appointments =
+    JSON.parse(localStorage.getItem("appointments")) || [];
+
+
+    // Duplicate Check
+    let duplicate =
+    appointments.find(function(a){
+
+        return a.phone===phone &&
+               a.service===service;
+
+    });
+
+    if(duplicate){
+
+        alert("You already applied for this service.");
+
+        return;
+
+    }
+
+
+    let today =
+    new Date().toISOString().split("T")[0];
+
+    let number =
+    "CRRSA-" +
+    Date.now();
+
+
+    let appointment={
+
+        number:number,
+
+        name:name,
+
+        phone:phone,
+
+        service:service,
+
+        applicationDate:applicationDate,
+
+        appointmentDate:appointmentDate,
+
+        createdDate:today,
+
+        status:"Pending"
+
+    };
+
+
+    appointments.push(appointment);
+
+    localStorage.setItem(
+        "appointments",
+        JSON.stringify(appointments)
+    );
+
+
+    showAppointments();
+
+    showSlip(appointment);
+
+}
+
