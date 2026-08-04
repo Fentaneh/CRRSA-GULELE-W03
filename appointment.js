@@ -252,3 +252,243 @@ function createQR(data){
     });
 
 }
+
+// ===============================
+// Show Appointment Table
+// ===============================
+function showAppointments(){
+
+    let table =
+    document.getElementById("appointmentTable");
+
+    if(!table) return;
+
+    let list =
+    JSON.parse(localStorage.getItem("appointments")) || [];
+
+    table.innerHTML = "";
+
+    list.forEach(function(a,index){
+
+        table.innerHTML += `
+
+        <tr>
+
+            <td>${index+1}</td>
+
+            <td>${a.number}</td>
+
+            <td>${a.name}</td>
+
+            <td>${a.phone}</td>
+
+            <td>${a.service}</td>
+
+            <td>${a.applicationDate}</td>
+
+            <td>${a.appointmentDate}</td>
+
+            <td>${a.status}</td>
+
+        </tr>
+
+        `;
+
+    });
+
+}
+
+
+
+// ===============================
+// Print Appointment
+// ===============================
+function printAppointment(){
+
+    let printArea =
+    document.getElementById("printArea");
+
+    if(!printArea){
+
+        alert("No appointment found.");
+
+        return;
+
+    }
+
+    let oldPage =
+    document.body.innerHTML;
+
+    document.body.innerHTML =
+    printArea.innerHTML;
+
+    window.print();
+
+    document.body.innerHTML =
+    oldPage;
+
+    location.reload();
+
+}
+
+// ===============================
+// Other Service
+// ===============================
+function toggleOtherService(){
+
+    let service =
+    document.getElementById("service").value;
+
+    let otherBox =
+    document.getElementById("otherServiceBox");
+
+    if(service==="Other"){
+
+        otherBox.style.display="block";
+
+    }else{
+
+        otherBox.style.display="none";
+
+        document.getElementById("otherService").value="";
+
+    }
+
+}
+
+
+// ===============================
+// Search Appointment
+// ===============================
+function searchAppointment(){
+
+    let keyword =
+    document.getElementById("searchInput").value.toLowerCase();
+
+    let list =
+    JSON.parse(localStorage.getItem("appointments")) || [];
+
+    let table =
+    document.getElementById("appointmentTable");
+
+    table.innerHTML="";
+
+    list.forEach(function(a,index){
+
+        let text =
+        (
+            a.number +
+            a.name +
+            a.phone +
+            a.service +
+            a.applicationDate +
+            a.appointmentDate +
+            a.status
+        ).toLowerCase();
+
+        if(text.includes(keyword)){
+
+            table.innerHTML += `
+
+            <tr>
+
+                <td>${index+1}</td>
+                <td>${a.number}</td>
+                <td>${a.name}</td>
+                <td>${a.phone}</td>
+                <td>${a.service}</td>
+                <td>${a.applicationDate}</td>
+                <td>${a.appointmentDate}</td>
+                <td>${a.status}</td>
+
+            </tr>
+
+            `;
+
+        }
+
+    });
+
+}
+
+
+// ===============================
+// Reset Form
+// ===============================
+function resetAppointmentForm(){
+
+    document.getElementById("appointmentForm").reset();
+
+    setApplicationDate();
+
+    setAppointmentDate();
+
+    document.getElementById("otherServiceBox").style.display="none";
+
+}
+
+
+// ===============================
+// Refresh
+// ===============================
+function refreshAppointments(){
+
+    showAppointments();
+
+}
+
+
+// ===============================
+// Clear All
+// ===============================
+function clearAppointments(){
+
+    if(confirm("Delete all appointments?")){
+
+        localStorage.removeItem("appointments");
+
+        showAppointments();
+
+        alert("All appointments deleted.");
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
