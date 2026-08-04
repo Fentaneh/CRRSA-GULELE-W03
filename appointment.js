@@ -22,20 +22,48 @@ document.addEventListener("DOMContentLoaded", function(){
 
         let today = new Date();
 
-        let year = today.getFullYear();
 
-        let month =
+        // G.C Date
+        let gcDay =
+        String(today.getDate()).padStart(2,"0");
+
+        let gcMonth =
         String(today.getMonth()+1).padStart(2,"0");
 
-        let day =
-        String(today.getDate()).padStart(2,"0");
+        let gcYear =
+        today.getFullYear();
+
+
+        let gcDate =
+        gcDay + "/" +
+        gcMonth + "/" +
+        gcYear +
+        " G.C.";
+
+
+
+        // E.C Date
+        let ecDate =
+        gregorianToEthiopian(
+            gcYear,
+            today.getMonth()+1,
+            today.getDate()
+        );
+
+
+        let ecText =
+        ecDate.day + "/" +
+        ecDate.month + "/" +
+        ecDate.year +
+        " E.C.";
+
 
 
         appointmentInput.value =
-        year + "-" + month + "-" + day;
+        gcDate +
+        " | " +
+        ecText;
 
-        appointmentInput.min =
-        year + "-" + month + "-" + day;
 
     }
 
