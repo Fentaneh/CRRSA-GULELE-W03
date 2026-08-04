@@ -52,11 +52,11 @@ if(appointmentInput){
 
 
         let ecDate =
-        gregorianToEthiopian(
-            selectedDate.getFullYear(),
-            selectedDate.getMonth()+1,
-            selectedDate.getDate()
-        );
+gregorianToEthiopian(
+    selected.getFullYear(),
+    selected.getMonth()+1,
+    selected.getDate()
+);
 
 
 
