@@ -113,81 +113,48 @@ function setApplicationDate(){
 function gregorianToEthiopian(gYear, gMonth, gDay) {
 
 
-    let date = new Date(
-        gYear,
-        gMonth - 1,
-        gDay
-    );
+    let appointmentInput =
+document.getElementById("appointmentDate");
+
+let appointmentEC =
+document.getElementById("appointmentEC");
 
 
-    let newYear =
-    new Date(
-        gYear,
-        8,
-        11
-    );
+if(appointmentInput){
+
+    let today = new Date();
+
+    appointmentInput.min =
+    today.toISOString().split("T")[0];
 
 
-    let year;
+    appointmentInput.addEventListener("change", function(){
+
+        let selectedDate =
+        new Date(this.value);
 
 
-    if(date < newYear){
-
-        year = gYear - 8;
-
-    }else{
-
-        year = gYear - 7;
-
-    }
-
-
-    let diff =
-    Math.floor(
-        (date - newYear) /
-        (1000 * 60 * 60 * 24)
-    );
-
-
-    if(diff < 0){
-
-        newYear =
-        new Date(
-            gYear - 1,
-            8,
-            11
+        let ecDate =
+        gregorianToEthiopian(
+            selectedDate.getFullYear(),
+            selectedDate.getMonth() + 1,
+            selectedDate.getDate()
         );
 
-        diff =
-        Math.floor(
-            (date - newYear) /
-            (1000 * 60 * 60 * 24)
-        );
 
-    }
+        if(appointmentEC){
 
+            appointmentEC.innerHTML =
+            "E.C: " +
+            String(ecDate.day).padStart(2,"0") + "/" +
+            String(ecDate.month).padStart(2,"0") + "/" +
+            ecDate.year;
 
-    let month =
-    Math.floor(diff / 30) + 1;
+        }
 
-
-    let day =
-    (diff % 30) + 1;
-
-
-    return {
-
-        year: year,
-
-        month: month,
-
-        day: day
-
-    };
-
+    });
 
 }
-
 // ===============================
 // Create Appointment
 // ===============================
