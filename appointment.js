@@ -35,19 +35,31 @@ document.addEventListener("DOMContentLoaded", function(){
 // Application Date (E.C.)
 // ===============================
 
-function setApplicationDate() {
+function setApplicationDate(){
 
     let input = document.getElementById("applicationDate");
 
-    if (!input) return;
+    if(!input) return;
 
     let today = new Date();
 
-    let year = today.getFullYear();
-    let month = String(today.getMonth() + 1).padStart(2, "0");
-    let day = String(today.getDate()).padStart(2, "0");
+    // Gregorian
+    let gy = today.getFullYear();
+    let gm = String(today.getMonth()+1).padStart(2,"0");
+    let gd = String(today.getDate()).padStart(2,"0");
 
-    input.value = day + "/" + month + "/" + year;
+    // Simple Ethiopian Date
+    let ec = gregorianToEthiopian(
+        gy,
+        today.getMonth()+1,
+        today.getDate()
+    );
+
+    input.value =
+        gd + "/" + gm + "/" + gy +
+        " (G.C.)   |   " +
+        ec.day + "/" + ec.month + "/" + ec.year +
+        " (E.C.)";
 
 }
 
