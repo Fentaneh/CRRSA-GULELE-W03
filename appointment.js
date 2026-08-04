@@ -15,10 +15,6 @@ document.addEventListener("DOMContentLoaded", function(){
    let appointmentInput =
 document.getElementById("appointmentDate");
 
-let appointmentEC =
-document.getElementById("appointmentEC");
-
-
 if(appointmentInput){
 
     let today = new Date();
