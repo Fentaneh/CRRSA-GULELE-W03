@@ -394,6 +394,8 @@ function showAppointments(){
     let list =
     JSON.parse(localStorage.getItem("appointments")) || [];
 
+    console.log("Appointment List:", list);
+    
     table.innerHTML = "";
 
     list.forEach(function(a,index){
