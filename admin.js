@@ -192,6 +192,7 @@ JSON.stringify(list)
 
 
 loadAppointments();
+loadDashboard();
 
 
 
@@ -225,7 +226,7 @@ JSON.stringify(list)
 
 
 loadAppointments();
-
+loadDashboard();
 
 
 }
@@ -262,6 +263,7 @@ JSON.stringify(list)
 
 
 loadAppointments();
+loadDashboard();
 
 
 }
@@ -302,5 +304,56 @@ function exportToExcel() {
     link.click();
 
     document.body.removeChild(link);
+
+}
+function loadDashboard(){
+
+    let list =
+    JSON.parse(localStorage.getItem("appointments")) || [];
+
+    let today =
+    new Date().toISOString().split("T")[0];
+
+    let month =
+    new Date().getMonth();
+
+    let year =
+    new Date().getFullYear();
+
+    let total = list.length;
+
+    let todayTotal =
+    list.filter(a => a.createdDate === today).length;
+
+    let monthTotal =
+    list.filter(function(a){
+
+        let d = new Date(a.createdDate);
+
+        return d.getMonth() === month &&
+               d.getFullYear() === year;
+
+    }).length;
+
+    let pending =
+    list.filter(a => a.status === "Pending").length;
+
+    let approved =
+    list.filter(a => a.status === "Approved").length;
+
+    let rejected =
+    list.filter(a => a.status === "Rejected").length;
+
+    document.getElementById("totalAppointments").innerHTML = total;
+
+    document.getElementById("todayAppointments").innerHTML = todayTotal;
+
+    document.getElementById("monthAppointments").innerHTML = monthTotal;
+
+    document.getElementById("pendingAppointments").innerHTML = pending;
+
+    document.getElementById("approvedAppointments").innerHTML = approved;
+
+    document.getElementById("rejectedAppointments").innerHTML = rejected;
 
 }
