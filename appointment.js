@@ -111,16 +111,11 @@ function updateAppointmentDate(){
 
 }
 
-/document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("DOMContentLoaded",function(){
 
     setApplicationDate();
 
-    document
-    .getElementById("appointmentDate")
-    .addEventListener(
-        "change",
-        updateAppointmentDate
-    );
+    loadECCalendar();
 
 });
 
