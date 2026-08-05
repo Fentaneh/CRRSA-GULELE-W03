@@ -96,18 +96,14 @@ function updateAppointmentDate(){
 // ===============================
 // Page Load
 // ===============================
+// ===============================
+// Page Load
+// ===============================
 document.addEventListener("DOMContentLoaded",function(){
 
     setApplicationDate();
-    loadECCalendar();
 
-    document
-    .getElementById("appointmentDate")
-    .addEventListener(
-        "change",
-        updateAppointmentDate
-        
-    );
+    loadECCalendar();
 
 });
 
