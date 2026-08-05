@@ -161,14 +161,18 @@ function createAppointment(event){
 
     event.preventDefault();
 
+
     let name =
     document.getElementById("fullName").value.trim();
+
 
     let phone =
     document.getElementById("phone").value.trim();
 
+
     let service =
     document.getElementById("service").value;
+
 
     if(service === "Other"){
 
@@ -177,18 +181,26 @@ function createAppointment(event){
 
     }
 
+
     let applicationDate =
     document.getElementById("applicationDate").value;
 
-    let appointmentDate =
-document.getElementById("ecDay").value +
-"/" +
-document.getElementById("ecMonth").value +
-"/" +
-document.getElementById("ecYear").value +
-" E.C.";
 
-    if(appointmentDate === ""){
+
+    // Ethiopian Appointment Date
+
+    let day =
+    Number(document.getElementById("ecDay").value);
+
+    let month =
+    Number(document.getElementById("ecMonth").value);
+
+    let year =
+    Number(document.getElementById("ecYear").value);
+
+
+
+    if(!day || !month || !year){
 
         alert("Please select Appointment Date.");
 
@@ -196,8 +208,77 @@ document.getElementById("ecYear").value +
 
     }
 
+
+
+    // Check before Application Date
+
+    if(!checkAppointmentDate()){
+
+        return;
+
+    }
+
+
+
+    let appointmentDate =
+    day + "/" +
+    month + "/" +
+    year +
+    " E.C.";
+
+
+
     let appointments =
     JSON.parse(localStorage.getItem("appointments")) || [];
+
+
+
+    let appointmentNumber =
+    "CRRSA-" +
+    new Date().getTime();
+
+
+
+    let newAppointment = {
+
+        number: appointmentNumber,
+
+        name: name,
+
+        phone: phone,
+
+        service: service,
+
+        applicationDate: applicationDate,
+
+        date: appointmentDate,
+
+        status: "Pending"
+
+    };
+
+
+
+    appointments.push(newAppointment);
+
+
+
+    localStorage.setItem(
+        "appointments",
+        JSON.stringify(appointments)
+    );
+
+
+
+    alert(
+    "Appointment Created Successfully"
+    );
+
+
+    showAppointments();
+
+
+}
 
 
     // ===============================
