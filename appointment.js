@@ -81,22 +81,14 @@ document.addEventListener("DOMContentLoaded",function(){
 
     setApplicationDate();
 
-    let input =
-    document.getElementById("appointmentDate");
-
-    if(input){
-
-        input.addEventListener(
-            "change",
-            updateAppointmentDate
-        );
-
-        updateAppointmentDate();
-
-    }
+    document
+    .getElementById("appointmentDate")
+    .addEventListener(
+        "change",
+        updateAppointmentDate
+    );
 
 });
-
 
 // Create Appointment
 // ===============================
