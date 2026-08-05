@@ -73,33 +73,43 @@ document.addEventListener("DOMContentLoaded", function(){
 // ===============================
 // Application Date G.C + E.C
 // ===============================
-function setAppointmentDate(){
+function setApplicationDate(){
 
     let input =
-    document.getElementById("appointmentDate");
+    document.getElementById("applicationDate");
 
-    if(!input) return;
+    let today =
+    new Date();
 
-    let today = new Date();
+    let day =
+    today.getDate();
 
-    let gc =
-    String(today.getDate()).padStart(2,"0") + "/" +
-    String(today.getMonth()+1).padStart(2,"0") + "/" +
-    today.getFullYear() + " G.C.";
+    let month =
+    today.getMonth()+1;
 
-    let ec =
-    gregorianToEthiopian(
-        today.getFullYear(),
-        today.getMonth()+1,
-        today.getDate()
-    );
+    let year =
+    today.getFullYear();
 
-    let ecText =
-    String(ec.day).padStart(2,"0") + "/" +
-    String(ec.month).padStart(2,"0") + "/" +
-    ec.year + " E.C.";
+    if(selectedLanguage=="en"){
 
-    input.value = gc + " | " + ecText;
+        input.value =
+        month+"/"+day+"/"+year+" G.C.";
+
+    }
+
+    else{
+
+        let ec =
+        gregorianToEthiopian(
+            year,
+            month,
+            day
+        );
+
+        input.value =
+        ec.day+"/"+ec.month+"/"+ec.year+" E.C.";
+
+    }
 
 }
 function setAppointmentDate() {
