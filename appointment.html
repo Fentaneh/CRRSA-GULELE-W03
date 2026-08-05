@@ -62,27 +62,19 @@ id="applicationDate"
 type="text"
 readonly>
 
-<label>የቀጠሮ ቀን (E.C.)</label>
+<label>
+Appointment Date / የቀጠሮ ቀን
+</label>
 
-<select id="ecDay"></select>
+<input
+id="appointmentDate"
+type="text"
+readonly
+placeholder="Select Ethiopian Date"
+onclick="openEthiopianCalendar()">
 
-<select id="ecMonth">
-<option value="1">መስከረም</option>
-<option value="2">ጥቅምት</option>
-<option value="3">ኅዳር</option>
-<option value="4">ታኅሣሥ</option>
-<option value="5">ጥር</option>
-<option value="6">የካቲት</option>
-<option value="7">መጋቢት</option>
-<option value="8">ሚያዝያ</option>
-<option value="9">ግንቦት</option>
-<option value="10">ሰኔ</option>
-<option value="11">ሐምሌ</option>
-<option value="12">ነሐሴ</option>
-<option value="13">ጳጉሜ</option>
-</select>
 
-<select id="ecYear"></select>
+<div id="calendarBox"></div>
    
 <button type="submit">
 
