@@ -106,7 +106,55 @@ document.addEventListener("DOMContentLoaded",function(){
     loadECCalendar();
 
 });
+function checkAppointmentDate(){
 
+    let day =
+    Number(document.getElementById("ecDay").value);
+
+    let month =
+    Number(document.getElementById("ecMonth").value);
+
+    let year =
+    Number(document.getElementById("ecYear").value);
+
+
+    let todayEC =
+    gregorianToEthiopian(
+        new Date().getFullYear(),
+        new Date().getMonth()+1,
+        new Date().getDate()
+    );
+
+
+    if(year < todayEC.year){
+
+        alert("Appointment date cannot be before application date");
+
+        return false;
+    }
+
+
+    if(year == todayEC.year && month < todayEC.month){
+
+        alert("Appointment date cannot be before application date");
+
+        return false;
+    }
+
+
+    if(year == todayEC.year &&
+       month == todayEC.month &&
+       day < todayEC.day){
+
+        alert("Appointment date cannot be before application date");
+
+        return false;
+    }
+
+
+    return true;
+
+}
 // Create Appointment
 // ===============================
 function createAppointment(event){
