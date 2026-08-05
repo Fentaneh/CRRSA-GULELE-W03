@@ -57,11 +57,17 @@ document
 // ===============================
 document.addEventListener("DOMContentLoaded", function(){
 
+
     setApplicationDate();
 
-    setAppointmentDate();
 
-    showAppointments();
+    document
+    .getElementById("appointmentDate")
+    .addEventListener(
+        "change",
+        updateAppointmentDate
+    );
+
 
 });
 // ===============================
