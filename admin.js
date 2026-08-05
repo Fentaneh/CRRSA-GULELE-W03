@@ -459,3 +459,44 @@ function monthlyReport(){
     document.getElementById("reportArea").innerHTML = html;
 
 }
+// ===============================
+// Service Statistics
+// ===============================
+function serviceReport(){
+
+    let list =
+    JSON.parse(localStorage.getItem("appointments")) || [];
+
+    let report = {};
+
+    list.forEach(function(a){
+
+        if(report[a.service]){
+
+            report[a.service]++;
+
+        }else{
+
+            report[a.service] = 1;
+
+        }
+
+    });
+
+    let table =
+    document.getElementById("serviceReport");
+
+    table.innerHTML = "";
+
+    for(let service in report){
+
+        table.innerHTML += `
+        <tr>
+            <td>${service}</td>
+            <td>${report[service]}</td>
+        </tr>
+        `;
+
+    }
+
+}
