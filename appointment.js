@@ -55,11 +55,9 @@ document
 // ===============================
 // Page Load
 // ===============================
-document.addEventListener("DOMContentLoaded", function(){
-
+document.addEventListener("DOMContentLoaded",function(){
 
     setApplicationDate();
-
 
     document
     .getElementById("appointmentDate")
@@ -67,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function(){
         "change",
         updateAppointmentDate
     );
-
 
 });
 // ===============================
