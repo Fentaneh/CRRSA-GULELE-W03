@@ -5,58 +5,53 @@
 
 let selectedLanguage = "en";
 
-function changeCalendarLanguage(lang){
+function changeLanguage(lang){
 
     selectedLanguage = lang;
 
+}
 
-    if(lang === "am"){
 
-        document.getElementById("gcPicker").style.display="none";
+document
+.getElementById("appointmentDate")
+.addEventListener("change",function(){
 
-        document.getElementById("ecPicker").style.display="block";
+    let d = new Date(this.value);
+
+
+    let day =
+    String(d.getDate()).padStart(2,"0");
+
+
+    let month =
+    String(d.getMonth()+1).padStart(2,"0");
+
+
+    let year =
+    d.getFullYear();
+
+
+
+    if(selectedLanguage=="am"){
+
+        this.setAttribute(
+        "data-date",
+        day+"/"+month+"/"+year+" ዓ.ም"
+        );
 
 
     }else{
 
 
-        document.getElementById("ecPicker").style.display="none";
-
-        document.getElementById("gcPicker").style.display="block";
-
-    }
-
-}
-
-let selectedCalendar = "gc";
-
-
-function openDatePicker(){
-
-    if(selectedCalendar === "gc"){
-
-        document.getElementById("gcPicker")
-        .style.display="block";
-
-
-        document.getElementById("ecPicker")
-        .style.display="none";
-
-
-    }else{
-
-
-        document.getElementById("ecPicker")
-        .style.display="block";
-
-
-        document.getElementById("gcPicker")
-        .style.display="none";
-
+        this.setAttribute(
+        "data-date",
+        month+"/"+day+"/"+year+" G.C"
+        );
 
     }
 
-}
+
+});
 // ===============================
 // Page Load
 // ===============================
