@@ -14,8 +14,6 @@ function changeLanguage(lang){
 }
 
 // ===============================
-// Application Date
-// ===============================
 function setApplicationDate(){
 
     let input =
