@@ -126,17 +126,17 @@ function createAppointment(event){
 
     }
 
-    let applicationDate =
-    document.getElementById("applicationDate").value;
+   let applicationDate =
+document.getElementById("applicationDate").value;
 
-    let appointmentDate =
-    document.getElementById("appointmentDate").value;
+let appointmentDate =
+document.getElementById("appointmentDate").value;
 
-    if(appointmentDate==""){
+if(appointmentDate==""){
 
-        alert("Please select Appointment Date");
+    alert("Please select Appointment Date.");
 
-        return;
+    return;
 
     }
 
