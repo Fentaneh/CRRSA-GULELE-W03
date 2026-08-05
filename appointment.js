@@ -635,6 +635,7 @@ function clearAppointments(){
     }
 
 }
+
 function openEthiopianCalendar(){
 
 let box =
