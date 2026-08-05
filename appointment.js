@@ -39,18 +39,38 @@ function setApplicationDate(){
 // ===============================
 function loadECCalendar(){
 
-    // Day
-    let day = document.getElementById("ecDay");
+    let day =
+    document.getElementById("ecDay");
 
-    for(let i=1;i<=30;i++){
-        day.innerHTML += `<option value="${i}">${i}</option>`;
+    let year =
+    document.getElementById("ecYear");
+
+
+    if(!day || !year){
+
+        console.log("EC dropdown not found");
+
+        return;
     }
 
-    // Year
-    let year = document.getElementById("ecYear");
 
-    for(let y=2015;y<=2030;y++){
-        year.innerHTML += `<option value="${y}">${y}</option>`;
+    // Day 1-30
+
+    for(let i=1;i<=30;i++){
+
+        day.innerHTML +=
+        `<option value="${i}">${i}</option>`;
+
+    }
+
+
+    // Year
+
+    for(let y=2018;y<=2030;y++){
+
+        year.innerHTML +=
+        `<option value="${y}">${y}</option>`;
+
     }
 
 }
