@@ -1,8 +1,32 @@
 // ======================================
 // CRRSA Gulele Woreda 03
 // Appointment System
-// ======================================
+// ====================================
 
+let selectedLanguage = "en";
+
+function changeCalendarLanguage(lang){
+
+    selectedLanguage = lang;
+
+
+    if(lang === "am"){
+
+        document.getElementById("gcPicker").style.display="none";
+
+        document.getElementById("ecPicker").style.display="block";
+
+
+    }else{
+
+
+        document.getElementById("ecPicker").style.display="none";
+
+        document.getElementById("gcPicker").style.display="block";
+
+    }
+
+}
 
 // ===============================
 // Page Load
