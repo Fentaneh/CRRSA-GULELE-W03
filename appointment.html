@@ -63,8 +63,15 @@ Appointment Date / የቀጠሮ ቀን
 <input 
 id="appointmentDate"
 type="text"
-placeholder="DD/MM/YYYY"
+readonly
+placeholder="Select Date"
+onclick="openDatePicker()"
 required>
+
+
+<div id="gcPicker"></div>
+
+<div id="ecPicker" style="display:none;"></div>
     
 <button type="submit">
 
