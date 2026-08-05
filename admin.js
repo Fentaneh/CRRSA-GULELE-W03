@@ -31,8 +31,9 @@ document.getElementById("loginBox").style.display="none";
 document.getElementById("adminPanel").style.display="block";
 
 
-loadAppointments();
+loadDashboard();
 
+loadAppointments();
 
 
 }
@@ -109,7 +110,7 @@ ${a.service}
 
 
 <td>
-${a.date}
+${a.appointmentDate}
 </td>
 
 
