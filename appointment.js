@@ -80,12 +80,14 @@ function updateAppointmentDate(){
 document.addEventListener("DOMContentLoaded",function(){
 
     setApplicationDate();
+    loadECCalendar();
 
     document
     .getElementById("appointmentDate")
     .addEventListener(
         "change",
         updateAppointmentDate
+        
     );
 
 });
