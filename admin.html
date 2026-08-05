@@ -112,7 +112,55 @@ Login
 <button class="button" onclick="exportToExcel()">
 📥 Export to Excel
 </button>
+<h2>📊 Dashboard</h2>
 
+<div class="dashboard">
+
+<div class="card">
+<h3>Total Appointments</h3>
+<h1 id="totalAppointments">0</h1>
+</div>
+
+<div class="card">
+<h3>Today's Appointments</h3>
+<h1 id="todayAppointments">0</h1>
+</div>
+
+<div class="card">
+<h3>This Month</h3>
+<h1 id="monthAppointments">0</h1>
+</div>
+
+<div class="card">
+<h3>Pending</h3>
+<h1 id="pendingAppointments">0</h1>
+</div>
+
+<div class="card">
+<h3>Approved</h3>
+<h1 id="approvedAppointments">0</h1>
+</div>
+
+<div class="card">
+<h3>Rejected</h3>
+<h1 id="rejectedAppointments">0</h1>
+</div>
+
+</div>
+
+<hr>
+
+<button class="button" onclick="dailyReport()">
+📅 Daily Report
+</button>
+
+<button class="button" onclick="monthlyReport()">
+📆 Monthly Report
+</button>
+
+<div id="reportArea"></div>
+
+<hr>
 <h2>
 📋 Appointment List
 </h2>
