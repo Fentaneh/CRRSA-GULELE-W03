@@ -144,7 +144,7 @@ function createAppointment(event){
     JSON.parse(localStorage.getItem("appointments")) || [];
 
     let appointmentNumber =
-    "CRRSA-" + Date.now();
+generateAppointmentNumber();
 
     appointments.push({
 
