@@ -155,59 +155,6 @@ function checkAppointmentDate(){
     return true;
 
 }
-// Create Appointment
-// ===============================
-function createAppointment(event){
-
-    event.preventDefault();
-
-
-    let name =
-    document.getElementById("fullName").value.trim();
-
-
-    let phone =
-    document.getElementById("phone").value.trim();
-
-
-    let service =
-    document.getElementById("service").value;
-
-
-    if(service === "Other"){
-
-        service =
-        document.getElementById("otherService").value.trim();
-
-    }
-
-
-    let applicationDate =
-    document.getElementById("applicationDate").value;
-
-
-
-    // Ethiopian Appointment Date
-
-    let day =
-    Number(document.getElementById("ecDay").value);
-
-    let month =
-    Number(document.getElementById("ecMonth").value);
-
-    let year =
-    Number(document.getElementById("ecYear").value);
-
-
-
-    if(!day || !month || !year){
-
-        alert("Please select Appointment Date.");
-
-        return;
-
-    }
-
 
 
     // Check before Application Date
@@ -279,6 +226,59 @@ function createAppointment(event){
 
 
 }
+
+// Create Appointment
+// ===============================
+function createAppointment(event){
+
+    event.preventDefault();
+
+
+    let name =
+    document.getElementById("fullName").value.trim();
+
+
+    let phone =
+    document.getElementById("phone").value.trim();
+
+
+    let service =
+    document.getElementById("service").value;
+
+
+    if(service === "Other"){
+
+        service =
+        document.getElementById("otherService").value.trim();
+
+    }
+
+
+    let applicationDate =
+    document.getElementById("applicationDate").value;
+
+
+
+    // Ethiopian Appointment Date
+
+    let day =
+    Number(document.getElementById("ecDay").value);
+
+    let month =
+    Number(document.getElementById("ecMonth").value);
+
+    let year =
+    Number(document.getElementById("ecYear").value);
+
+
+
+    if(!day || !month || !year){
+
+        alert("Please select Appointment Date.");
+
+        return;
+
+    }
 
 
     // ===============================
