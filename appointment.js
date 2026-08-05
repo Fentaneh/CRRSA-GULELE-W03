@@ -37,6 +37,25 @@ function setApplicationDate(){
     ec.year + " E.C.";
 
 }
+// Appointment Calendar
+// ===============================
+function loadECCalendar(){
+
+    // Day
+    let day = document.getElementById("ecDay");
+
+    for(let i=1;i<=30;i++){
+        day.innerHTML += `<option value="${i}">${i}</option>`;
+    }
+
+    // Year
+    let year = document.getElementById("ecYear");
+
+    for(let y=2015;y<=2030;y++){
+        year.innerHTML += `<option value="${y}">${y}</option>`;
+    }
+
+}
 // ===============================
 // Appointment Date
 // ===============================
