@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
 // Application Date G.C + E.C
 // ===============================
 function setApplicationDate(){
-
+    document.getElementById("applicationDate").value    
     let input =
     document.getElementById("applicationDate");
 
@@ -66,6 +66,7 @@ function setApplicationDate(){
     console.log(input.value);
 
 }
+
 function setAppointmentDate() {
 
     let input =
