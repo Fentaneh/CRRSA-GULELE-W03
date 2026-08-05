@@ -1,57 +1,124 @@
-// ======================================
-// CRRSA Gulele Woreda 03
-// Appointment System
-// ====================================
-
+// ===============================
+// Language
+// ===============================
 let selectedLanguage = "en";
 
 function changeLanguage(lang){
 
     selectedLanguage = lang;
 
+    setApplicationDate();
+
+    updateAppointmentDate();
+
 }
 
+// ===============================
+// Application Date
+// ===============================
+function setApplicationDate(){
 
-document
-.getElementById("appointmentDate")
-.addEventListener("change",function(){
+    let input =
+    document.getElementById("applicationDate");
 
-    let d = new Date(this.value);
+    if(!input) return;
 
+    let today = new Date();
+
+    let day =
+    String(today.getDate()).padStart(2,"0");
+
+    let month =
+    String(today.getMonth()+1).padStart(2,"0");
+
+    let year =
+    today.getFullYear();
+
+    let ec =
+    gregorianToEthiopian(
+        year,
+        today.getMonth()+1,
+        today.getDate()
+    );
+
+    if(selectedLanguage=="en"){
+
+        input.value =
+        month+"/"+day+"/"+year+
+        " G.C.";
+
+    }else{
+
+        input.value =
+        day+"/"+month+"/"+year+
+        " G.C. | "+
+        ec.day+"/"+ec.month+"/"+ec.year+
+        " E.C.";
+
+    }
+
+}
+
+// ===============================
+// Appointment Date
+// ===============================
+function updateAppointmentDate(){
+
+    let input =
+    document.getElementById("appointmentDate");
+
+    let text =
+    document.getElementById("appointmentEC");
+
+    if(!input || !text) return;
+
+    if(input.value==""){
+
+        text.innerHTML="";
+
+        return;
+
+    }
+
+    let d =
+    new Date(input.value);
 
     let day =
     String(d.getDate()).padStart(2,"0");
 
-
     let month =
     String(d.getMonth()+1).padStart(2,"0");
-
 
     let year =
     d.getFullYear();
 
+    let ec =
+    gregorianToEthiopian(
+        year,
+        d.getMonth()+1,
+        d.getDate()
+    );
 
+    if(selectedLanguage=="en"){
 
-    if(selectedLanguage=="am"){
-
-        this.setAttribute(
-        "data-date",
-        day+"/"+month+"/"+year+" ዓ.ም"
-        );
-
+        text.innerHTML =
+        "<b>Appointment Date:</b> "+
+        month+"/"+day+"/"+year+
+        " G.C.";
 
     }else{
 
-
-        this.setAttribute(
-        "data-date",
-        month+"/"+day+"/"+year+" G.C"
-        );
+        text.innerHTML =
+        "<b>የቀጠሮ ቀን:</b> "+
+        day+"/"+month+"/"+year+
+        " G.C. | "+
+        ec.day+"/"+ec.month+"/"+ec.year+
+        " E.C.";
 
     }
 
+}
 
-});
 // ===============================
 // Page Load
 // ===============================
@@ -59,131 +126,23 @@ document.addEventListener("DOMContentLoaded",function(){
 
     setApplicationDate();
 
-    document
-    .getElementById("appointmentDate")
-    .addEventListener(
-        "change",
-        updateAppointmentDate
-    );
-
-});
-// ===============================
-// Application Date G.C + E.C
-// ===============================
-function setApplicationDate(){
-
-    let input =
-    document.getElementById("applicationDate");
-
-    let today =
-    new Date();
-
-    let day =
-    today.getDate();
-
-    let month =
-    today.getMonth()+1;
-
-    let year =
-    today.getFullYear();
-
-    if(selectedLanguage=="en"){
-
-        input.value =
-        month+"/"+day+"/"+year+" G.C.";
-
-    }
-
-    else{
-
-        let ec =
-        gregorianToEthiopian(
-            year,
-            month,
-            day
-        );
-
-        input.value =
-        ec.day+"/"+ec.month+"/"+ec.year+" E.C.";
-
-    }
-
-}
-function setAppointmentDate() {
-
     let input =
     document.getElementById("appointmentDate");
 
-    let ecText =
-    document.getElementById("appointmentEC");
+    if(input){
 
-    if (!input) return;
-
-
-    function updateEC(){
-
-        let value = input.value.trim();
-
-        if(value === ""){
-            ecText.innerHTML = "";
-            return;
-        }
-
-
-        let parts = value.split("/");
-
-
-        if(parts.length !== 3){
-            ecText.innerHTML = "Use DD/MM/YYYY";
-            return;
-        }
-
-
-        let day = Number(parts[0]);
-        let month = Number(parts[1]);
-        let year = Number(parts[2]);
-
-
-        let ec =
-        gregorianToEthiopian(
-            year,
-            month,
-            day
+        input.addEventListener(
+            "change",
+            updateAppointmentDate
         );
 
-
-        ecText.innerHTML =
-        "<b>E.C:</b> " +
-        String(ec.day).padStart(2,"0") +
-        "/" +
-        String(ec.month).padStart(2,"0") +
-        "/" +
-        ec.year;
+        updateAppointmentDate();
 
     }
 
-
-    let today = new Date();
-
-
-    input.value =
-    String(today.getDate()).padStart(2,"0") +
-    "/" +
-    String(today.getMonth()+1).padStart(2,"0") +
-    "/" +
-    today.getFullYear();
+});
 
 
-    updateEC();
-
-
-    input.addEventListener(
-        "input",
-        updateEC
-    );
-
-}
-// ===============================
 // Create Appointment
 // ===============================
 function createAppointment(event){
