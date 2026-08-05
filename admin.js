@@ -32,9 +32,8 @@ document.getElementById("adminPanel").style.display="block";
 
 
 loadDashboard();
-
 loadAppointments();
-
+serviceReport();
 
 }
 
@@ -193,6 +192,7 @@ JSON.stringify(list)
 
 loadAppointments();
 loadDashboard();
+serviceReport();
 
 
 
@@ -227,6 +227,7 @@ JSON.stringify(list)
 
 loadAppointments();
 loadDashboard();
+serviceReport();
 
 
 }
@@ -264,6 +265,7 @@ JSON.stringify(list)
 
 loadAppointments();
 loadDashboard();
+serviceReport();
 
 
 }
