@@ -19,28 +19,19 @@ document.addEventListener("DOMContentLoaded", function(){
 // ===============================
 // Application Date G.C + E.C
 // ===============================
-function setApplicationDate(){
-    document.getElementById("applicationDate").value    
+function setAppointmentDate(){
+
     let input =
-    document.getElementById("applicationDate");
+    document.getElementById("appointmentDate");
 
-    if(!input){
-        console.log("applicationDate not found");
-        return;
-    }
-
+    if(!input) return;
 
     let today = new Date();
 
-
     let gc =
-    String(today.getDate()).padStart(2,"0") +
-    "/" +
-    String(today.getMonth()+1).padStart(2,"0") +
-    "/" +
-    today.getFullYear() +
-    " G.C.";
-
+    String(today.getDate()).padStart(2,"0") + "/" +
+    String(today.getMonth()+1).padStart(2,"0") + "/" +
+    today.getFullYear() + " G.C.";
 
     let ec =
     gregorianToEthiopian(
@@ -49,24 +40,14 @@ function setApplicationDate(){
         today.getDate()
     );
 
-
     let ecText =
-    String(ec.day).padStart(2,"0") +
-    "/" +
-    String(ec.month).padStart(2,"0") +
-    "/" +
-    ec.year +
-    " E.C.";
+    String(ec.day).padStart(2,"0") + "/" +
+    String(ec.month).padStart(2,"0") + "/" +
+    ec.year + " E.C.";
 
-
-    input.value =
-    gc + " | " + ecText;
-
-
-    console.log(input.value);
+    input.value = gc + " | " + ecText;
 
 }
-
 function setAppointmentDate() {
 
     let input =
