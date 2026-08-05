@@ -230,77 +230,34 @@ function checkAppointmentDate(){
 // Create Appointment
 // ===============================
 function createAppointment(event){
-
-    event.preventDefault();
-
-
-    let name =
-    document.getElementById("fullName").value.trim();
-
-
-    let phone =
-    document.getElementById("phone").value.trim();
+event.preventDefault(); 
+let name =
+document.getElementById("fullName").value.trim(); 
+let phone =
+document.getElementById("phone").value.trim();
+let service =
 
 
-    let service =
-    document.getElementById("service").value;
+document.getElementById("service").value;
+
+if(service === "Other"){
+
+service = 
+document.getElementById("otherService").value.trim()
 
 
-    if(service === "Other"){
-
-        service =
-        document.getElementById("otherService").value.trim();
-
-    }
-
-
-    let applicationDate =
-    document.getElementById("applicationDate").value;
-
-
-
-    // Ethiopian Appointment Date
-
-    let day =
-    Number(document.getElementById("ecDay").value);
-
-    let month =
-    Number(document.getElementById("ecMonth").value);
-
-    let year =
-    Number(document.getElementById("ecYear").value);
-
-
-
-    if(!day || !month || !year){
-
-        alert("Please select Appointment Date.");
-
-        return;
-
-    }
-
-
-    // ===============================
-    // Duplicate Check
-    // ===============================
-    let duplicate =
-    appointments.find(function(a){
-
-        return a.phone === phone &&
-               a.service === service;
-
-    });
-
-    if(duplicate){
-
-        alert("You already applied for this service.");
-
-        return;
-
-    }
-
-
+} 
+let applicationDate = 
+document.getElementById("applicationDate").value;
+let appointmentDate = 
+document.getElementById("ecDay").value + "/" +
+document.getElementById("ecMonth").value + "/" +
+document.getElementById("ecYear").value + " E.C.";
+if(appointmentDate === ""){
+alert("Please select Appointment Date.");
+return;
+}
+let appointments =JSON.parse(localStorage.getItem("appointments")) || [];
     // ===============================
     // Appointment Number
     // ===============================
