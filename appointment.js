@@ -635,5 +635,94 @@ function clearAppointments(){
     }
 
 }
+function openEthiopianCalendar(){
 
+let box =
+document.getElementById("calendarBox");
+
+
+box.innerHTML = `
+
+<select id="ecMonth">
+<option value="1">መስከረም</option>
+<option value="2">ጥቅምት</option>
+<option value="3">ኅዳር</option>
+<option value="4">ታኅሣሥ</option>
+<option value="5">ጥር</option>
+<option value="6">የካቲት</option>
+<option value="7">መጋቢት</option>
+<option value="8">ሚያዝያ</option>
+<option value="9">ግንቦት</option>
+<option value="10">ሰኔ</option>
+<option value="11">ሐምሌ</option>
+<option value="12">ነሐሴ</option>
+<option value="13">ጳጉሜ</option>
+</select>
+
+
+<select id="ecDay">
+
+</select>
+
+
+<select id="ecYear">
+
+</select>
+
+
+<button onclick="selectECDate()">
+OK
+</button>
+
+`;
+
+
+
+let day =
+document.getElementById("ecDay");
+
+
+for(let i=1;i<=30;i++){
+
+day.innerHTML +=
+`<option>${i}</option>`;
+
+}
+
+
+
+let year =
+document.getElementById("ecYear");
+
+
+for(let y=2018;y<=2030;y++){
+
+year.innerHTML +=
+`<option>${y}</option>`;
+
+}
+
+}
+
+
+
+function selectECDate(){
+
+let d =
+document.getElementById("ecDay").value;
+
+let m =
+document.getElementById("ecMonth").value;
+
+let y =
+document.getElementById("ecYear").value;
+
+
+document.getElementById("appointmentDate").value =
+d+"/"+m+"/"+y+" E.C.";
+
+
+document.getElementById("calendarBox").innerHTML="";
+
+}
 
