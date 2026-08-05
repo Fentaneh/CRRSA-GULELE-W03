@@ -28,6 +28,35 @@ function changeCalendarLanguage(lang){
 
 }
 
+let selectedCalendar = "gc";
+
+
+function openDatePicker(){
+
+    if(selectedCalendar === "gc"){
+
+        document.getElementById("gcPicker")
+        .style.display="block";
+
+
+        document.getElementById("ecPicker")
+        .style.display="none";
+
+
+    }else{
+
+
+        document.getElementById("ecPicker")
+        .style.display="block";
+
+
+        document.getElementById("gcPicker")
+        .style.display="none";
+
+
+    }
+
+}
 // ===============================
 // Page Load
 // ===============================
