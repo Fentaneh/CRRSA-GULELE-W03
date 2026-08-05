@@ -357,3 +357,105 @@ function loadDashboard(){
     document.getElementById("rejectedAppointments").innerHTML = rejected;
 
 }
+function dailyReport(){
+
+    let list =
+    JSON.parse(localStorage.getItem("appointments")) || [];
+
+    let today =
+    new Date().toISOString().split("T")[0];
+
+    let todayList =
+    list.filter(a => a.createdDate === today);
+
+    let html = `
+    <h3>📅 Daily Report</h3>
+
+    <table border="1" width="100%">
+
+    <tr>
+    <th>No</th>
+    <th>Appointment No</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Service</th>
+    <th>Status</th>
+    </tr>
+    `;
+
+    todayList.forEach(function(a,index){
+
+        html += `
+        <tr>
+        <td>${index+1}</td>
+        <td>${a.number}</td>
+        <td>${a.name}</td>
+        <td>${a.phone}</td>
+        <td>${a.service}</td>
+        <td>${a.status}</td>
+        </tr>
+        `;
+
+    });
+
+    html += "</table>";
+
+    document.getElementById("reportArea").innerHTML = html;
+
+}
+function monthlyReport(){
+
+    let list =
+    JSON.parse(localStorage.getItem("appointments")) || [];
+
+    let now = new Date();
+
+    let month = now.getMonth();
+
+    let year = now.getFullYear();
+
+    let monthList =
+    list.filter(function(a){
+
+        let d = new Date(a.createdDate);
+
+        return d.getMonth() === month &&
+               d.getFullYear() === year;
+
+    });
+
+    let html = `
+    <h3>📆 Monthly Report</h3>
+
+    <table border="1" width="100%">
+
+    <tr>
+    <th>No</th>
+    <th>Appointment No</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Service</th>
+    <th>Status</th>
+    </tr>
+    `;
+
+    monthList.forEach(function(a,index){
+
+        html += `
+        <tr>
+        <td>${index+1}</td>
+        <td>${a.number}</td>
+        <td>${a.name}</td>
+        <td>${a.phone}</td>
+        <td>${a.service}</td>
+        <td>${a.status}</td>
+        </tr>
+        `;
+
+    });
+
+    html += "</table>";
+
+    document.getElementById("reportArea").innerHTML = html;
+
+}
