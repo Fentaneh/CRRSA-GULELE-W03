@@ -577,7 +577,71 @@ function clearAppointments(){
 
 }
 
+function updateAppointmentDate(){
 
+    let input =
+    document.getElementById("appointmentDate");
+
+
+    let ecText =
+    document.getElementById("appointmentEC");
+
+
+    if(!input.value){
+        return;
+    }
+
+
+    let d =
+    new Date(input.value);
+
+
+    let day =
+    d.getDate();
+
+
+    let month =
+    d.getMonth()+1;
+
+
+    let year =
+    d.getFullYear();
+
+
+
+    if(selectedLanguage=="am"){
+
+
+        let ec =
+        gregorianToEthiopian(
+            year,
+            month,
+            day
+        );
+
+
+        ecText.innerHTML =
+        "የቀጠሮ ቀን: " +
+        ec.day + "/" +
+        ec.month + "/" +
+        ec.year +
+        " E.C";
+
+
+    }else{
+
+
+        ecText.innerHTML =
+        "Appointment Date: " +
+        month + "/" +
+        day + "/" +
+        year +
+        " G.C";
+
+
+    }
+
+}
 
 
 
