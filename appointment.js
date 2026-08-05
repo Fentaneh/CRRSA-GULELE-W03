@@ -230,11 +230,17 @@ function checkAppointmentDate(){
 // Create Appointment
 // ===============================
 function createAppointment(event){
+    
 event.preventDefault(); 
+    
 let name =
+    
 document.getElementById("fullName").value.trim(); 
+    
 let phone =
+    
 document.getElementById("phone").value.trim();
+    
 let service =
 
 
@@ -243,21 +249,34 @@ document.getElementById("service").value;
 if(service === "Other"){
 
 service = 
+    
 document.getElementById("otherService").value.trim()
 
 
 } 
+    
 let applicationDate = 
+
 document.getElementById("applicationDate").value;
+    
 let appointmentDate = 
+    
 document.getElementById("ecDay").value + "/" +
+    
 document.getElementById("ecMonth").value + "/" +
+    
 document.getElementById("ecYear").value + " E.C.";
+    
 if(appointmentDate === ""){
+    
 alert("Please select Appointment Date.");
+    
 return;
+    
 }
+    
 let appointments =JSON.parse(localStorage.getItem("appointments")) || [];
+    
     // ===============================
     // Appointment Number
     // ===============================
