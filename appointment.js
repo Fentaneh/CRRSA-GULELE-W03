@@ -598,35 +598,39 @@ function updateAppointmentDate(){
     let input =
     document.getElementById("appointmentDate");
 
-
-    let ecText =
+    let result =
     document.getElementById("appointmentEC");
 
+    if(input.value==""){
 
-    if(!input.value){
+        result.innerHTML="";
+
         return;
-    }
 
+    }
 
     let d =
     new Date(input.value);
 
-
     let day =
     d.getDate();
-
 
     let month =
     d.getMonth()+1;
 
-
     let year =
     d.getFullYear();
 
+    if(selectedLanguage=="en"){
 
+        result.innerHTML =
+        "Appointment Date : "
+        +month+"/"+day+"/"+year+
+        " G.C.";
 
-    if(selectedLanguage=="am"){
+    }
 
+    else{
 
         let ec =
         gregorianToEthiopian(
@@ -635,31 +639,14 @@ function updateAppointmentDate(){
             day
         );
 
-
-        ecText.innerHTML =
-        "የቀጠሮ ቀን: " +
-        ec.day + "/" +
-        ec.month + "/" +
-        ec.year +
-        " E.C";
-
-
-    }else{
-
-
-        ecText.innerHTML =
-        "Appointment Date: " +
-        month + "/" +
-        day + "/" +
-        year +
-        " G.C";
-
+        result.innerHTML =
+        "የቀጠሮ ቀን : "
+        +ec.day+"/"+ec.month+"/"+ec.year+
+        " E.C.";
 
     }
 
 }
-
-
 
 
 
