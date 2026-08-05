@@ -133,7 +133,12 @@ function createAppointment(event){
     document.getElementById("applicationDate").value;
 
     let appointmentDate =
-    document.getElementById("appointmentDate").value;
+document.getElementById("ecDay").value +
+"/" +
+document.getElementById("ecMonth").value +
+"/" +
+document.getElementById("ecYear").value +
+" E.C.";
 
     if(appointmentDate === ""){
 
