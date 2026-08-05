@@ -21,44 +21,22 @@ function setApplicationDate(){
     let input =
     document.getElementById("applicationDate");
 
-    if(!input) return;
-
-    let today = new Date();
-
-    let day =
-    String(today.getDate()).padStart(2,"0");
-
-    let month =
-    String(today.getMonth()+1).padStart(2,"0");
-
-    let year =
-    today.getFullYear();
+    let today =
+    new Date();
 
     let ec =
     gregorianToEthiopian(
-        year,
+        today.getFullYear(),
         today.getMonth()+1,
         today.getDate()
     );
 
-    if(selectedLanguage=="en"){
-
-        input.value =
-        month+"/"+day+"/"+year+
-        " G.C.";
-
-    }else{
-
-        input.value =
-        day+"/"+month+"/"+year+
-        " G.C. | "+
-        ec.day+"/"+ec.month+"/"+ec.year+
-        " E.C.";
-
-    }
+    input.value =
+    String(ec.day).padStart(2,"0") + "/" +
+    String(ec.month).padStart(2,"0") + "/" +
+    ec.year + " E.C.";
 
 }
-
 // ===============================
 // Appointment Date
 // ===============================
@@ -67,14 +45,12 @@ function updateAppointmentDate(){
     let input =
     document.getElementById("appointmentDate");
 
-    let text =
+    let output =
     document.getElementById("appointmentEC");
-
-    if(!input || !text) return;
 
     if(input.value==""){
 
-        text.innerHTML="";
+        output.innerHTML="";
 
         return;
 
@@ -83,39 +59,18 @@ function updateAppointmentDate(){
     let d =
     new Date(input.value);
 
-    let day =
-    String(d.getDate()).padStart(2,"0");
-
-    let month =
-    String(d.getMonth()+1).padStart(2,"0");
-
-    let year =
-    d.getFullYear();
-
     let ec =
     gregorianToEthiopian(
-        year,
+        d.getFullYear(),
         d.getMonth()+1,
         d.getDate()
     );
 
-    if(selectedLanguage=="en"){
-
-        text.innerHTML =
-        "<b>Appointment Date:</b> "+
-        month+"/"+day+"/"+year+
-        " G.C.";
-
-    }else{
-
-        text.innerHTML =
-        "<b>የቀጠሮ ቀን:</b> "+
-        day+"/"+month+"/"+year+
-        " G.C. | "+
-        ec.day+"/"+ec.month+"/"+ec.year+
-        " E.C.";
-
-    }
+    output.innerHTML =
+    "<b>የቀጠሮ ቀን :</b> " +
+    String(ec.day).padStart(2,"0") + "/" +
+    String(ec.month).padStart(2,"0") + "/" +
+    ec.year + " E.C.";
 
 }
 
