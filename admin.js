@@ -109,7 +109,7 @@ ${a.service}
 
 
 <td>
-${a.appointmentDate}
+${a.date}
 </td>
 
 
