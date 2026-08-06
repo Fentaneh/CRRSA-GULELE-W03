@@ -502,3 +502,43 @@ function serviceReport(){
     }
 
 }
+
+// ===============================
+// Voice Call
+// ===============================
+
+function callAppointment(index){
+
+    let list =
+    JSON.parse(localStorage.getItem("appointments")) || [];
+
+    let a = list[index];
+
+    if(!a){
+
+        alert("Appointment not found.");
+
+        return;
+
+    }
+
+    speechSynthesis.cancel();
+
+    let speech = new SpeechSynthesisUtterance();
+
+    speech.lang = "en-US";
+
+    speech.rate = 0.9;
+
+    speech.pitch = 1;
+
+    speech.text =
+    "Appointment Number " +
+    a.number +
+    ". " +
+    a.name +
+    ". Please come to Counter One.";
+
+    speechSynthesis.speak(speech);
+
+}
