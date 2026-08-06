@@ -276,10 +276,22 @@ function generateAppointmentNumber(){
     let appointments =
     JSON.parse(localStorage.getItem("appointments")) || [];
 
-    let number =
-    String(appointments.length + 1).padStart(2,"0");
+    let today = new Date();
 
-    return number;
+    let day = String(today.getDate()).padStart(2,"0");
+    let month = String(today.getMonth()+1).padStart(2,"0");
+    let year = today.getFullYear();
+
+    let prefix =
+    `CRRSA-GUW03/${day}/${month}/${year}/`;
+
+    let count = appointments.filter(a =>
+        a.number.startsWith(prefix)
+    ).length + 1;
+
+    let serial = String(count).padStart(2,"0");
+
+    return prefix + serial;
 
 }
 function printAppointment(){
