@@ -96,7 +96,26 @@ function selectECDate() {
     let day = document.getElementById("ecDay").value;
     let month = document.getElementById("ecMonth").value;
     let year = document.getElementById("ecYear").value;
+    let today = new Date();
 
+let ecToday = gregorianToEthiopian(
+    today.getFullYear(),
+    today.getMonth() + 1,
+    today.getDate()
+);
+
+if (
+    Number(year) < ecToday.year ||
+    (Number(year) == ecToday.year && Number(month) < ecToday.month) ||
+    (Number(year) == ecToday.year &&
+     Number(month) == ecToday.month &&
+     Number(day) < ecToday.day)
+) {
+
+    alert("Appointment Date ከዛሬ ቀን በፊት መሆን አይችልም።");
+    return;
+
+}
     document.getElementById("appointmentDate").value =
         day + "/" + month + "/" + year + " E.C.";
 
