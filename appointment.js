@@ -162,21 +162,16 @@ if (exists) {
 }
     appointments.push({
 
-        number: appointmentNumber,
+    number: appointmentNumber,
+    name: name,
+    phone: phone,
+    service: service,
+    applicationDate: applicationDate,
+    date: appointmentDate,
+    createdDate: new Date().toISOString().split("T")[0],
+    status: "Pending"
 
-        name: name,
-
-        phone: phone,
-
-        service: service,
-
-        applicationDate: applicationDate,
-
-        date: appointmentDate,
-
-        status: "Pending"
-
-    });
+});
 
     localStorage.setItem(
         "appointments",
