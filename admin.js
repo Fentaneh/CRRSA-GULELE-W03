@@ -139,6 +139,10 @@ Reject
 </button>
 
 
+<button onclick="callAppointment(${index})">
+📢 Call
+</button>
+
 
 <button onclick="deleteAppointment(${index})">
 
