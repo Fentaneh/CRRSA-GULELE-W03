@@ -267,7 +267,26 @@ function generateQRCode(number){
 
 }
 
+// ======================================
+// Appointment Number
+// ======================================
 
+function generateAppointmentNumber(){
+
+    let appointments =
+    JSON.parse(localStorage.getItem("appointments")) || [];
+
+    let number =
+    String(appointments.length + 1).padStart(2,"0");
+
+    return number;
+
+}
+function printAppointment(){
+
+    window.print();
+
+}
 
 
 
