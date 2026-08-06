@@ -182,23 +182,28 @@ if(appointmentDate==""){
     let appointments =
     JSON.parse(localStorage.getItem("appointments")) || [];
 
-    let appointmentNumber =
-generateAppointmentNumber();
-    
-let exists = appointments.find(a =>
-    a.name === name &&
+    let exists = appointments.find(a =>
+
+    // Same phone + same appointment date
     a.phone === phone &&
-    a.service === service &&
     a.date === appointmentDate
+
 );
 
 if (exists) {
 
-    alert("This appointment already exists.");
+    alert(
+    "Duplicate appointment is not allowed.\n" +
+    "በዚህ ስልክ ቁጥር በዚህ ቀን ቀጠሮ አለ።"
+    );
 
     return;
 
 }
+
+
+let appointmentNumber =
+generateAppointmentNumber();
     appointments.push({
 
     number: appointmentNumber,
