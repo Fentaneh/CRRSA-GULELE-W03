@@ -33,7 +33,11 @@
 
 <label>Select Service/አገልግሎት ይምረጡ</label>
 
-<select id="service" onchange="toggleOtherService()">
+<select id="service" onchange="toggleOtherService()" required>
+
+<option value="" selected disabled>
+Service ይምረጡ / Select Service
+</option>
 
 <option value="Resident ID">መታወቂያ/ID</option>
 <option value="Birth Registration">ልደት/Birth</option>
