@@ -145,7 +145,21 @@ if(appointmentDate==""){
 
     let appointmentNumber =
 generateAppointmentNumber();
+    
+let exists = appointments.find(a =>
+    a.name === name &&
+    a.phone === phone &&
+    a.service === service &&
+    a.date === appointmentDate
+);
 
+if (exists) {
+
+    alert("This appointment already exists.");
+
+    return;
+
+}
     appointments.push({
 
         number: appointmentNumber,
