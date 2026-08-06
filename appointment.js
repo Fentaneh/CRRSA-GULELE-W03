@@ -212,6 +212,28 @@ document.getElementById("printButton").style.display="inline-block";
 
 }
 // ======================================
+// Show / Hide Other Service
+// ======================================
+
+function toggleOtherService(){
+
+    const service = document.getElementById("service");
+    const otherBox = document.getElementById("otherServiceBox");
+    const otherInput = document.getElementById("otherService");
+
+    if(service.value === "Other"){
+
+        otherBox.style.display = "block";
+
+    }else{
+
+        otherBox.style.display = "none";
+        otherInput.value = "";
+
+    }
+
+}
+// ======================================
 // Show Appointments
 // ======================================
 
