@@ -297,7 +297,7 @@ function generateAppointmentNumber(){
     let year = today.getFullYear();
 
     let prefix =
-    `CRRSA-GUW03/${day}/${month}/${year}/`;
+    `GUW03/${day}/${month}/${year}/`;
 
     let count = appointments.filter(a =>
         a.number.startsWith(prefix)
