@@ -138,14 +138,32 @@ function createAppointment(event){
     document.getElementById("phone").value.trim();
 
     let service =
-    document.getElementById("service").value;
+document.getElementById("service").value;
 
-    if(service=="Other"){
+// Service must be selected
+if(service === ""){
 
-        service =
-        document.getElementById("otherService").value.trim();
+    alert("እባክዎ አገልግሎት ይምረጡ / Please select a service.");
+
+    return;
+
+}
+
+// Other service
+if(service === "Other"){
+
+    service =
+    document.getElementById("otherService").value.trim();
+
+    if(service === ""){
+
+        alert("የሚፈልጉትን አገልግሎት ይፃፉ / Please specify the service.");
+
+        return;
 
     }
+
+}
 
    let applicationDate =
 document.getElementById("applicationDate").value;
