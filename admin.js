@@ -510,7 +510,6 @@ function serviceReport(){
 // ===============================
 // Voice Call
 // ===============================
-
 function callAppointment(index){
 
     let list =
@@ -519,36 +518,27 @@ function callAppointment(index){
     let a = list[index];
 
     if(!a){
-
         alert("Appointment not found.");
-
         return;
-
     }
 
-    // Send current customer to Queue Display
-    localStorage.setItem(
-        "currentCall",
-        JSON.stringify({
-            number: a.number,
-            name: a.name
-        })
-    );
+    localStorage.setItem("currentCall", JSON.stringify({
+        number: a.number,
+        name: a.name,
+        counter: "Counter 1"
+    }));
 
     speechSynthesis.cancel();
 
-    let speech = new SpeechSynthesisUtterance();
+    let speech = new SpeechSynthesisUtterance(
+        "Appointment Number " +
+        a.number +
+        ". " +
+        a.name +
+        ". Please come to Counter One."
+    );
 
     speech.lang = "en-US";
-    speech.rate = 0.9;
-    speech.pitch = 1;
-
-    speech.text =
-    "Appointment Number " +
-    a.number +
-    ". " +
-    a.name +
-    ". Please come to Counter One.";
 
     speechSynthesis.speak(speech);
 
