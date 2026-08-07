@@ -9,20 +9,18 @@ function loadQueue(){
 
     if(current){
 
-        document.getElementById("number").innerHTML =
+        document.getElementById("number").textContent =
         current.number;
 
-        document.getElementById("name").innerHTML =
+        document.getElementById("name").textContent =
         current.name;
 
-        document.getElementById("counter").innerHTML =
-        "Counter 1";
+        document.getElementById("counter").textContent =
+        current.counter;
 
     }
 
 }
-
-// Refresh every second
 
 loadQueue();
 
