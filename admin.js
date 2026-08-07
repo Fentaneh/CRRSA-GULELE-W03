@@ -526,14 +526,21 @@ function callAppointment(index){
 
     }
 
+    // Send current customer to Queue Display
+    localStorage.setItem(
+        "currentCall",
+        JSON.stringify({
+            number: a.number,
+            name: a.name
+        })
+    );
+
     speechSynthesis.cancel();
 
     let speech = new SpeechSynthesisUtterance();
 
     speech.lang = "en-US";
-
     speech.rate = 0.9;
-
     speech.pitch = 1;
 
     speech.text =
