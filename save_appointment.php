@@ -1,39 +1,56 @@
 <?php
+
 include "config.php";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$data = json_decode(file_get_contents("php://input"), true);
 
-    $appointment_no = $_POST["appointment_no"];
-    $full_name = $_POST["full_name"];
-    $phone = $_POST["phone"];
-    $service = $_POST["service"];
-    $application_date = $_POST["application_date"];
-    $appointment_date = $_POST["appointment_date"];
 
-    $sql = "INSERT INTO appointments
-    (appointment_no, full_name, phone, service, application_date, appointment_date)
-    VALUES (?, ?, ?, ?, ?, ?)";
+$appointment_no = $data["number"];
+$full_name = $data["name"];
+$phone = $data["phone"];
+$service = $data["service"];
+$application_date = $data["applicationDate"];
+$appointment_date = $data["appointmentDate"];
 
-    $stmt = $conn->prepare($sql);
 
-    $stmt->bind_param(
-        "ssssss",
-        $appointment_no,
-        $full_name,
-        $phone,
-        $service,
-        $application_date,
-        $appointment_date
-    );
+$sql = "INSERT INTO appointments
+(appointment_no, full_name, phone, service, application_date, appointment_date, status)
 
-    if ($stmt->execute()) {
-        echo "success";
-    } else {
-        echo "error";
-    }
+VALUES (?, ?, ?, ?, ?, ?, 'Pending')";
 
-    $stmt->close();
+
+$stmt = $conn->prepare($sql);
+
+
+$stmt->bind_param(
+"ssssss",
+$appointment_no,
+$full_name,
+$phone,
+$service,
+$application_date,
+$appointment_date
+);
+
+
+if($stmt->execute()){
+
+    echo json_encode([
+        "success"=>true,
+        "message"=>"Appointment Saved Successfully"
+    ]);
+
+}else{
+
+    echo json_encode([
+        "success"=>false,
+        "message"=>"Database Error"
+    ]);
+
 }
 
+
+$stmt->close();
 $conn->close();
+
 ?>
